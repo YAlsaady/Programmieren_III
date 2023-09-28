@@ -2,13 +2,14 @@
 #include <string>
 
 using namespace std;
+enum masseinheit { kg, liter, stueck };
 
 class Artikel {
 protected:
   string artikelname;
   string nummer;
   unsigned int lagerbestand;
-  enum masseinheit { kg, liter, stueck };
+  masseinheit einheit;
   double verkaufpreis;
   double normpreis;
 
@@ -21,7 +22,7 @@ public:
   string getName();
   string getNummer();
   unsigned int getLagerabstand();
-  string getMasseinheit();
+  masseinheit getMasseinheit();
   double getVerkaufpreis();
   double getNormpreis();
 

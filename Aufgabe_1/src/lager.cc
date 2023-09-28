@@ -1,15 +1,17 @@
-#include <iostream>
 #include "lager.hh"
+#include <iostream>
 
 Artikel::Artikel(string name, string num, unsigned int bestand,
-                 masseinheit einheit, double vp, double np) {}
+                 masseinheit einheit, double vp, double np)
+    : artikelname(name), nummer(num), lagerbestand(bestand), einheit(einheit),
+      verkaufpreis(vp), normpreis(np) {}
+Artikel::~Artikel() {}
 
 string Artikel::getName() { return this->artikelname; }
 string Artikel::getNummer() { return this->nummer; }
 unsigned int Artikel::getLagerabstand() { return this->lagerbestand; }
-string Artikel::getMasseinheit() {
-  string einheit;
-  return einheit;
+masseinheit Artikel::getMasseinheit() {
+  return this->einheit;
 }
 double Artikel::getVerkaufpreis() { return this->verkaufpreis; }
 double Artikel::getNormpreis() { return this->normpreis; }
