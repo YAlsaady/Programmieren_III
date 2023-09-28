@@ -2,7 +2,7 @@
 #include <string>
 
 using namespace std;
-enum masseinheit { kg, liter, stueck };
+enum masseinheit {anzahl, gewicht, volumen};
 
 class Artikel {
 protected:
@@ -32,7 +32,7 @@ public:
   void setLagerbestand(unsigned int bestand);
   void setMasseinheit(masseinheit einheit);
   void setVerkaufpreis(double vp);
-  void setNorpreis(double np);
+  void setNormpreis(double np);
 };
 
 class Schuettgut : public Artikel {

@@ -7,18 +7,16 @@ Artikel::Artikel(string name, string num, unsigned int bestand,
       verkaufpreis(vp), normpreis(np) {}
 Artikel::~Artikel() {}
 
-string Artikel::getName() { return this->artikelname; }
-string Artikel::getNummer() { return this->nummer; }
-unsigned int Artikel::getLagerabstand() { return this->lagerbestand; }
-masseinheit Artikel::getMasseinheit() {
-  return this->einheit;
-}
-double Artikel::getVerkaufpreis() { return this->verkaufpreis; }
-double Artikel::getNormpreis() { return this->normpreis; }
+string Artikel::getName() { return artikelname; }
+string Artikel::getNummer() { return nummer; }
+unsigned int Artikel::getLagerabstand() { return lagerbestand; }
+masseinheit Artikel::getMasseinheit() { return einheit; }
+double Artikel::getVerkaufpreis() { return verkaufpreis; }
+double Artikel::getNormpreis() { return normpreis; }
 
-void Artikel::setName(string name) { this->artikelname = name; }
-void Artikel::setNummer(string num) { this->nummer = num; }
-void Artikel::setLagerbestand(unsigned int bestand) {}
-void Artikel::setMasseinheit(masseinheit einheit) {}
-void Artikel::setVerkaufpreis(double vp) {}
-void Artikel::setNorpreis(double np) {}
+void Artikel::setName(string name) { artikelname = name; }
+void Artikel::setNummer(string num) { nummer = num; }
+void Artikel::setLagerbestand(unsigned int bestand) {lagerbestand=bestand;}
+void Artikel::setMasseinheit(masseinheit einheit) {this->einheit = einheit;}
+void Artikel::setVerkaufpreis(double vp) {verkaufpreis=vp;}
+void Artikel::setNormpreis(double np) {normpreis=np;}
