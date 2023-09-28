@@ -8,13 +8,13 @@ protected:
   string artikelname;
   string nummer;
   unsigned int lagerbestand;
-  enum masseinheit{kg, liter, stueck};
+  enum masseinheit { kg, liter, stueck };
   double verkaufpreis;
   double normpreis;
 
 public:
-  Artikel(string name, string num, unsigned int bestand,
-          masseinheit einheit, double vp, double np);
+  Artikel(string name, string num, unsigned int bestand, masseinheit einheit,
+          double vp, double np);
   ~Artikel();
 
   // getter
@@ -32,4 +32,19 @@ public:
   void setMasseinheit(masseinheit einheit);
   void setVerkaufpreis(double vp);
   void setNorpreis(double np);
+};
+
+class Schuettgut : public Artikel {
+private:
+public:
+};
+
+class Stueckgut : public Artikel {
+private:
+public:
+};
+
+class Fluessigkeit : public Artikel {
+private:
+public:
 };
