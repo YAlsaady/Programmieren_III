@@ -1,0 +1,15 @@
+Zwiebeln, rot|4000010000|2343||kg|1.26
+Champignons|4100028070|300|1.99|kg|9.95
+
+Cafe Crema Slow Roast|4370060991|536|14.99|kg|14.99
+Cafe Crema Slow Roast|4370060992|305|7.98|kg|15.96
+Kinderfahrrad Little Wheels|1005002100|7|129||
+Gurke|4106633223|655|0.79|stk|
+Beutlin's Bio-Milch|5031440120||1.15|l|
+
+Wheatly Weizengetraenk|5500648201|95|1.29|l|
+
+
+
+
+
