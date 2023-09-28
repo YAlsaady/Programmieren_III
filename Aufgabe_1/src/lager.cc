@@ -1,5 +1,7 @@
 #include "lager.hh"
 #include <iostream>
+#include <string>
+
 
 Artikel::Artikel(string name, string num, unsigned int bestand,
                  masseinheit einheit, double vp, double np)
@@ -20,3 +22,19 @@ void Artikel::setLagerbestand(unsigned int bestand) {lagerbestand=bestand;}
 void Artikel::setMasseinheit(masseinheit einheit) {this->einheit = einheit;}
 void Artikel::setVerkaufpreis(double vp) {verkaufpreis=vp;}
 void Artikel::setNormpreis(double np) {normpreis=np;}
+
+
+
+
+
+Schuettgut::Schuettgut(string name, string num, unsigned int bestand, double np){
+    Artikel(name, num, bestand, gewicht, 0, np);
+}
+
+Stueckgut::Schuettgut(string name, string num, unsigned int bestand, double vp){
+    Artikel(name, num, bestand, anzahl, vp, 0);
+}
+
+Fluessigkeit::Fluessigkeit(string name, string num,unsigned int bestand, double vp ){
+    Artikel(name, num, bestand, anzahl, vp, 0)
+}

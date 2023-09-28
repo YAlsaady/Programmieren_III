@@ -38,14 +38,19 @@ public:
 class Schuettgut : public Artikel {
 private:
 public:
+    Schuettgut(string name, string num, unsigned int bestand, double np);
 };
 
 class Stueckgut : public Artikel {
 private:
 public:
+    Stueckgut(string name, string num, unsigned int bestand, masseinheit einheit,
+          double vp);
 };
 
 class Fluessigkeit : public Artikel {
 private:
 public:
+    Fluessigkeit::(string name, string num, unsigned int bestand, masseinheit einheit,
+          double vp);
 };
