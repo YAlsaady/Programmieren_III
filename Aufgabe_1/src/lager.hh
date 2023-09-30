@@ -2,55 +2,69 @@
 #include <string>
 
 using namespace std;
-enum masseinheit {anzahl, gewicht, volumen};
+enum masseinheit { stk, kg, l };
+typedef double preis;
+
+namespace Warengruppen {
+void init();
+string getGruppe(string code);
+void addGruppe(string code, string name);
+void delGruppe(string code);
+void clear();
+} // namespace Warengruppen
 
 class Artikel {
 protected:
   string artikelname;
-  string nummer;
+  string artikelnummer;
   unsigned int lagerbestand;
   masseinheit einheit;
-  double verkaufpreis;
-  double normpreis;
+  preis verkaufpreis;
+  preis normpreis;
 
 public:
   Artikel(string name, string num, unsigned int bestand, masseinheit einheit,
-          double vp, double np);
+          preis vp, preis np);
   ~Artikel();
 
   // getter
   string getName();
-  string getNummer();
+  string getArtikelnummer();
   unsigned int getLagerabstand();
-  masseinheit getMasseinheit();
-  double getVerkaufpreis();
-  double getNormpreis();
+  string getMasseinheit();
+  preis getVerkaufpreis();
+  preis getNormpreis();
+  string getGruppe();
 
   // setter
   void setName(string name);
-  void setNummer(string num);
+  void setArtikelnummer(string num);
   void setLagerbestand(unsigned int bestand);
   void setMasseinheit(masseinheit einheit);
-  void setVerkaufpreis(double vp);
-  void setNormpreis(double np);
+  void setVerkaufpreis(preis vp);
+  void setNormpreis(preis np);
 };
 
 class Schuettgut : public Artikel {
 private:
+  double losgroesse;
+
 public:
-    Schuettgut(string name, string num, unsigned int bestand, double np);
+  Schuettgut(string name, string num, preis vp, preis np,
+             unsigned int bestand = 1);
+  double getLosgroesse();
+  void setVerkaufpreis(preis vp);
+  void setLosgroesse(double groesse);
 };
 
 class Stueckgut : public Artikel {
 private:
 public:
-    Stueckgut(string name, string num, unsigned int bestand, masseinheit einheit,
-          double vp);
+  Stueckgut(string name, string num, preis vp, unsigned int bestand = 1);
 };
 
-class Fluessigkeit : public Artikel {
+class Flüßigkeit : public Artikel {
 private:
 public:
-    Fluessigkeit::(string name, string num, unsigned int bestand, masseinheit einheit,
-          double vp);
+  Flüßigkeit(string name, string num, preis vp, unsigned int bestand = 1);
 };
