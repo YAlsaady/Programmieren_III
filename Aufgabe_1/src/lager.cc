@@ -1,3 +1,14 @@
+/**
+ * @file lager.cc
+ * @authors Yaman Alsaady, Oliver Schmidt
+ * @brief 
+ * @version 0.1
+ * @date 2023-10-04
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "lager.hh"
 #include <iostream>
 #include <map>
@@ -38,7 +49,7 @@ unsigned int Artikel::getLagerabstand() { return lagerbestand; }
 string Artikel::getMasseinheit() {
   switch (einheit) {
   case 0:
-    return "Stück";
+    return "Stueck";
   case 1:
     return "kg";
   case 2:
@@ -77,5 +88,5 @@ void Schuettgut::setVerkaufpreis(preis vp) {
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
-Flüßigkeit::Flüßigkeit(string name, string num, preis vp, unsigned int bestand)
+Flueßigkeit::Flueßigkeit(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, l, vp, 0) {}
