@@ -22,12 +22,12 @@ int main() {
   Warengruppen::init();
   Warengruppen::addGruppe("1000", "etwas");
 
-  Schuettgut produkt1("Zwiebeln, rot", "4000010000", 1.26, 1.26, 2343);
-  Schuettgut produkt2("Champignons", "4100028070", 1.99, 9.95, 300);
-  Schuettgut produkt3("Cafe Crema Slow Roast", "4370060991", 14.99, 14.99, 536);
-  Schuettgut produkt4("Cafe Crema Slow Roast", "4370060992", 7.98, 15.96, 305);
-  Stueckgut produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);
-  Stueckgut produkt6("Gurke", "4106633223", 0.79, 655);
+  Schuettgut  produkt1("Zwiebeln, rot", "4000010000", 1.26, 1.26, 2343);
+  Schuettgut  produkt2("Champignons", "4100028070", 1.99, 9.95, 300);
+  Schuettgut  produkt3("Cafe Crema Slow Roast", "4370060991", 14.99, 14.99, 536);
+  Schuettgut  produkt4("Cafe Crema Slow Roast", "4370060992", 7.98, 15.96, 305);
+  Stueckgut   produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);
+  Stueckgut   produkt6("Gurke", "4106633223", 0.79, 655);
   Flueßigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1.15);
   Flueßigkeit produkt8("Wheatly Weizengetraenk", "5500648201", 1.29, 95);
 
