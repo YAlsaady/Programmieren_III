@@ -18,13 +18,20 @@ using namespace std;
 void printInfo(Artikel produkt);
 void printInfo(Schuettgut produkt);
 
+// Warengruppen g;
+// Warengruppen Artikel::gruppe = g;
+
 int main() {
-  Warengruppen::init();
-  Warengruppen::addGruppe("4100", "etwas");
-  Warengruppen::changeGruppe("4370", "Nicht Kaffee");
+  Warengruppen gruppe;
+  gruppe.init();
+  gruppe.addGruppe("4100", "etwas");
+  gruppe.changeGruppe("4370", "Nicht Kaffee");
+
+  Artikel::gruppe = gruppe;
+  // Artikel::setGruppe(gruppe);
 
   Schuettgut  produkt1("Zwiebeln, rot", "4000010000", 1.26, 1.26, 2343);
-  Schuettgut  produkt2("Champignons", "4100028070", 1.99, 9.95, 300);
+  Schuettgut  produkt2("Champignons", "4100028070", 2, 9.95, 300);
   Schuettgut  produkt3("Cafe Crema Slow Roast", "4370060991", 14.99, 14.99, 536);
   Schuettgut  produkt4("Cafe Crema Slow Roast", "4370060992", 7.98, 15.96, 305);
   Stueckgut   produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);

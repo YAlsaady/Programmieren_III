@@ -1,23 +1,23 @@
 /**
  * @file lager.cc
  * @authors Yaman Alsaady, Oliver Schmidt
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-10-04
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #include "lager.hh"
+#include <cmath>
 #include <iostream>
 #include <map>
 #include <string>
 
-namespace Warengruppen {
-map<string, string> mapGruppe;
-map<string, string>::iterator iter;
-void init() {
+Warengruppen::Warengruppen() {
+}
+void Warengruppen::init() {
   mapGruppe["1005"] = "Fahrrad";
   mapGruppe["4000"] = "Gemüse";
   // mapGruppe["4100"] = "";
@@ -26,8 +26,7 @@ void init() {
   mapGruppe["5500"] = "Bier";
   mapGruppe["5031"] = "Milch";
 }
-
-string getGruppe(string code) {
+string Warengruppen::getGruppe(string code) {
   if (mapGruppe[code] != "")
     return mapGruppe[code];
   else {
@@ -35,27 +34,30 @@ string getGruppe(string code) {
   }
 }
 
-void addGruppe(string code, string name) { 
-  mapGruppe.insert({code, name}); 
+void Warengruppen::addGruppe(string code, string name) {
+  mapGruppe.insert({code, name});
 }
-void changeGruppe(string code, string name) { 
+void Warengruppen::changeGruppe(string code, string name) {
   mapGruppe.insert_or_assign(code, name);
 }
-void delGruppe(string code) { mapGruppe.erase(code); }
+void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
 
-void clear() { mapGruppe.clear(); }
-} // namespace Warengruppen
+void Warengruppen::clear() { mapGruppe.clear(); }
 
+Warengruppen Artikel::gruppe;
 Artikel::Artikel(string name, string num, unsigned int bestand,
                  masseinheit einheit, preis vp, preis np)
     : artikelname(name), artikelnummer(num), lagerbestand(bestand),
       einheit(einheit), verkaufpreis(vp), normpreis(np) {}
 Artikel::~Artikel() {}
 
-string Artikel::getName() { return artikelname; }
-string Artikel::getArtikelnummer() { return artikelnummer; }
-unsigned int Artikel::getLagerabstand() { return lagerbestand; }
-string Artikel::getMasseinheit() {
+void Artikel::setGruppe(Warengruppen g) {
+  gruppe =g;
+}
+string Artikel::getName() const { return artikelname; }
+string Artikel::getArtikelnummer() const { return artikelnummer; }
+unsigned int Artikel::getLagerabstand() const { return lagerbestand; }
+string Artikel::getMasseinheit() const {
   switch (einheit) {
   case 0:
     return "Stueck";
@@ -67,11 +69,11 @@ string Artikel::getMasseinheit() {
     return "None";
   }
 }
-preis Artikel::getVerkaufpreis() { return verkaufpreis; }
-preis Artikel::getNormpreis() { return normpreis; }
+preis Artikel::getVerkaufpreis() const { return verkaufpreis; }
+preis Artikel::getNormpreis() const { return normpreis; }
 string Artikel::getGruppe() {
   // string gruppe = artikelnummer.erase(4);
-  return Warengruppen::getGruppe(artikelnummer.erase(4));
+  return gruppe.getGruppe(artikelnummer.erase(4));
 }
 
 void Artikel::setName(string name) { artikelname = name; }
@@ -83,19 +85,20 @@ void Artikel::setNormpreis(preis np) { normpreis = np; }
 
 Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
-    : Artikel(name, num, bestand, kg, groesse*np, np), losgroesse(groesse) {}
+    : Artikel(name, num, bestand, kg, ceil(groesse * np), np), losgroesse(groesse) {}
 double Schuettgut::getLosgroesse() { return losgroesse; }
 void Schuettgut::setLosgroesse(double groesse) {
   losgroesse = groesse;
-  verkaufpreis = losgroesse * normpreis;
+  verkaufpreis = ceil(losgroesse * normpreis);
 }
 void Schuettgut::setVerkaufpreis(preis vp) {
   verkaufpreis = vp;
-  losgroesse = verkaufpreis / normpreis;
+  losgroesse = ceil(verkaufpreis / normpreis);
 }
 
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
-Fluessigkeit::Fluessigkeit(string name, string num, preis vp, unsigned int bestand)
+Fluessigkeit::Fluessigkeit(string name, string num, preis vp,
+                           unsigned int bestand)
     : Artikel(name, num, bestand, l, vp, 0) {}
