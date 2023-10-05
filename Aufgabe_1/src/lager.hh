@@ -10,6 +10,7 @@ void init();
 string getGruppe(string code);
 void addGruppe(string code, string name);
 void delGruppe(string code);
+void changeGruppe(string code, string name);
 void clear();
 } // namespace Warengruppen
 
@@ -50,7 +51,7 @@ private:
   double losgroesse;
 
 public:
-  Schuettgut(string name, string num, preis vp, preis np,
+  Schuettgut(string name, string num, double groesse, preis np,
              unsigned int bestand = 1);
   double getLosgroesse();
   void setVerkaufpreis(preis vp);

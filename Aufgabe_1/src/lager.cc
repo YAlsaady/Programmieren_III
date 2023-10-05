@@ -7,9 +7,13 @@ namespace Warengruppen {
 map<string, string> mapGruppe;
 map<string, string>::iterator iter;
 void init() {
-  mapGruppe["1000"] = "Lebensmittel";
-  mapGruppe["2000"] = "Getrinke";
-  mapGruppe["3000"] = "Baumarkt";
+  mapGruppe["1005"] = "Fahrrad";
+  mapGruppe["4000"] = "Gemüse";
+  // mapGruppe["4100"] = "";
+  mapGruppe["4106"] = "Gemüse";
+  mapGruppe["4370"] = "Kaffee";
+  mapGruppe["5500"] = "Bier";
+  mapGruppe["5031"] = "Milch";
 }
 
 string getGruppe(string code) {
@@ -20,7 +24,12 @@ string getGruppe(string code) {
   }
 }
 
-void addGruppe(string code, string name) { mapGruppe.insert({code, name}); }
+void addGruppe(string code, string name) { 
+  mapGruppe.insert({code, name}); 
+}
+void changeGruppe(string code, string name) { 
+  mapGruppe.insert_or_assign(code, name);
+}
 void delGruppe(string code) { mapGruppe.erase(code); }
 
 void clear() { mapGruppe.clear(); }
@@ -50,8 +59,8 @@ string Artikel::getMasseinheit() {
 preis Artikel::getVerkaufpreis() { return verkaufpreis; }
 preis Artikel::getNormpreis() { return normpreis; }
 string Artikel::getGruppe() {
-  string gruppe = artikelnummer.erase(4);
-  return Warengruppen::getGruppe(gruppe);
+  // string gruppe = artikelnummer.erase(4);
+  return Warengruppen::getGruppe(artikelnummer.erase(4));
 }
 
 void Artikel::setName(string name) { artikelname = name; }
@@ -61,9 +70,9 @@ void Artikel::setMasseinheit(masseinheit einheit) { this->einheit = einheit; }
 void Artikel::setVerkaufpreis(preis vp) { verkaufpreis = vp; }
 void Artikel::setNormpreis(preis np) { normpreis = np; }
 
-Schuettgut::Schuettgut(string name, string num, preis vp, preis np,
+Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
-    : Artikel(name, num, bestand, kg, vp, np), losgroesse(vp / np) {}
+    : Artikel(name, num, bestand, kg, groesse*np, np), losgroesse(groesse) {}
 double Schuettgut::getLosgroesse() { return losgroesse; }
 void Schuettgut::setLosgroesse(double groesse) {
   losgroesse = groesse;
