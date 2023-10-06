@@ -95,22 +95,26 @@ Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
 double Schuettgut::getLosgroesse() const { return losgroesse; }
 void Schuettgut::setLosgroesse(double groesse) {
   losgroesse = groesse;
-  verkaufpreis = ceil(losgroesse * normpreis);
+  verkaufpreis = int((losgroesse * normpreis) * 100 + 0.5);
+  verkaufpreis /= 100;
 }
 void Schuettgut::setVerkaufpreis(preis vp) {
   verkaufpreis = vp;
-  losgroesse = ceil(verkaufpreis / normpreis);
+  losgroesse = int((verkaufpreis / normpreis) * 100 + 0.5);
+  losgroesse /= 100;
 }
 
 Fluessigkeit::Fluessigkeit(string name, string num, double vol, preis np,
                            unsigned int bestand)
-    : Artikel(name, num, bestand, l, ceil(vol * np), np), volume(vol) {}
+    : Artikel(name, num, bestand, l, (vol * np), np), volume(vol) {}
 double Fluessigkeit::getVolume() const { return volume; }
 void Fluessigkeit::setVolume(double vol) {
   volume = vol;
-  verkaufpreis = ceil(volume * normpreis);
+  verkaufpreis = int((volume * normpreis) * 100 + 0.5);
+  verkaufpreis /= 100;
 }
 void Fluessigkeit::setVerkaufpreis(preis vp) {
   verkaufpreis = vp;
-  volume = ceil(verkaufpreis / normpreis);
+  volume = int((verkaufpreis / normpreis) * 100 + 0.5);
+  volume /= 100;
 }

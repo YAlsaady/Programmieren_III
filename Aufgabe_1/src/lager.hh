@@ -38,7 +38,7 @@ public:
   Warengruppen();
 
   /**
-  * @brief Setzt eine Standard-Warengruppenliste (nicht implementiert).
+  * @brief Setzt eine Standard-Warengruppenliste.
   */
   void defaultList();
 
@@ -127,49 +127,49 @@ public:
   static void setGruppe(Warengruppen g);
 
 /**
- * @brief Gibt den Namen des Artikels zurück.
+ * @brief Gibt den Namen des Artikels zurueck.
  *
  * @return Der Name des Artikels.
  */
 string getName() const;
 
 /**
- * @brief Gibt die Artikelnummer des Artikels zurück.
+ * @brief Gibt die Artikelnummer des Artikels zurueck.
  *
  * @return Die Artikelnummer des Artikels.
  */
 string getArtikelnummer() const;
 
 /**
- * @brief Gibt den Lagerbestand des Artikels zurück.
+ * @brief Gibt den Lagerbestand des Artikels zurueck.
  *
  * @return Der Lagerbestand des Artikels.
  */
 unsigned int getLagerabstand() const;
 
 /**
- * @brief Gibt die Masseinheit des Artikels zurück.
+ * @brief Gibt die Masseinheit des Artikels zurueck.
  *
  * @return Die Masseinheit des Artikels (stk, kg, l).
  */
 string getMasseinheit() const;
 
 /**
- * @brief Gibt den Verkaufspreis des Artikels zurück.
+ * @brief Gibt den Verkaufspreis des Artikels zurueck.
  *
  * @return Der Verkaufspreis des Artikels.
  */
 preis getVerkaufpreis() const;
 
 /**
- * @brief Gibt den Normalpreis des Artikels zurück.
+ * @brief Gibt den Normalpreis des Artikels zurueck.
  *
  * @return Der Normalpreis des Artikels.
  */
 preis getNormpreis() const;
 
 /**
- * @brief Gibt die Warengruppe des Artikels zurück.
+ * @brief Gibt die Warengruppe des Artikels zurueck.
  *
  * @return Die Warengruppe des Artikels oder die Artikelnummer, falls keine Warengruppe gefunden wurde.
  */
