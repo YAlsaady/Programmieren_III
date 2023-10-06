@@ -9,7 +9,7 @@
  * Es erstellt Produkte unterschiedlicher Typen und zeigt Informationen zu ihnen an.
  * 
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #include "lager.hh"
@@ -30,6 +30,7 @@ void printInfo(Artikel produkt);
  * @param produkt Das Schüttgut, dessen Informationen angezeigt werden sollen.
  */
 void printInfo(Schuettgut produkt);
+void printInfo(Fluessigkeit produkt);
 
 // Warengruppen g;
 // Warengruppen Artikel::gruppe = g;
@@ -45,14 +46,13 @@ int main() {
   Artikel::gruppe = gruppe;
   // Artikel::setGruppe(gruppe);
 
-  // Erstellen verschiedener Produkttypen
-  Schuettgut  produkt1("Zwiebeln, rot", "4000010000", 1.26, 1.26, 2343);
-  Schuettgut  produkt2("Champignons", "4100028070", 2, 9.95, 300);
-  Schuettgut  produkt3("Cafe Crema Slow Roast", "4370060991", 14.99, 14.99, 536);
-  Schuettgut  produkt4("Cafe Crema Slow Roast", "4370060992", 7.98, 15.96, 305);
-  Stueckgut   produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);
-  Stueckgut   produkt6("Gurke", "4106633223", 0.79, 655);
-  Fluessigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1.15);
+  Schuettgut produkt1("Zwiebeln, rot", "4000010000", 1.26, 1.26, 2343);
+  Schuettgut produkt2("Champignons", "4100028070", 2, 9.95, 300);
+  Schuettgut produkt3("Cafe Crema Slow Roast", "4370060991", 14.99, 14.99, 536);
+  Schuettgut produkt4("Cafe Crema Slow Roast", "4370060992", 7.98, 15.96, 305);
+  Stueckgut produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);
+  Stueckgut produkt6("Gurke", "4106633223", 0.79, 655);
+  Fluessigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1.15, 1.15);
   Fluessigkeit produkt8("Wheatly Weizengetraenk", "5500648201", 1.29, 95);
   // Setzen der Losgrößen für bestimmte Produkte
   produkt1.setLosgroesse(0.3);
@@ -74,8 +74,8 @@ void printInfo(Artikel produkt) {
   cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
   cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
   cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " €" << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " €"  << endl;
   cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
   cout << endl;
 }
@@ -83,11 +83,23 @@ void printInfo(Artikel produkt) {
 void printInfo(Schuettgut produkt) {
   cout << "Name:\t\t" << produkt.getName() << endl;
   cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
   cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " €"  << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " €"  << endl;
   cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Losgroeße:\t" << produkt.getLosgroesse() << endl;
+  cout << "Losgroeße:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
+  cout << endl;
+}
+
+void printInfo(Fluessigkeit produkt) {
+  cout << "Name:\t\t" << produkt.getName() << endl;
+  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
+  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " €"  << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " €"  << endl;
+  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
+  cout << "Volumen:\t" << produkt.getVolume() << " "<< produkt.getMasseinheit() << endl;
   cout << endl;
 }
