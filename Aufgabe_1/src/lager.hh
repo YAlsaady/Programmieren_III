@@ -12,6 +12,9 @@
  *
  */
 
+#ifndef LAGER_HH
+#define LAGER_HH
+
 #include <iostream>
 #include <map>
 #include <string>
@@ -27,7 +30,7 @@ private:
 
 public:
   Warengruppen();
-  void init();
+  void defaultList();
   string getGruppe(string code);
   void addGruppe(string code, string name);
   void delGruppe(string code);
@@ -155,3 +158,5 @@ public:
   void setVerkaufpreis(preis vp);
   void setVolume(double vol);
 };
+
+#endif // !LAGER_HH

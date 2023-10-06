@@ -19,10 +19,9 @@
 #include <string>
 
 Warengruppen::Warengruppen() {}
-void Warengruppen::init() {
+void Warengruppen::defaultList() {
   mapGruppe["1005"] = "Fahrrad";
   mapGruppe["4000"] = "Gemüse";
-  // mapGruppe["4100"] = "";
   mapGruppe["4106"] = "Gemüse";
   mapGruppe["4370"] = "Kaffee";
   mapGruppe["5500"] = "Bier";
