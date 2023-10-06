@@ -49,7 +49,6 @@ protected:
   preis normpreis;
 
 public:
-  static Warengruppen gruppe;
   /**
    * Konstruktor fuer die Klasse "Artikel".
    *
@@ -63,6 +62,8 @@ public:
   Artikel(string name, string num, unsigned int bestand, masseinheit einheit,
           preis vp, preis np);
   ~Artikel();
+
+  static Warengruppen gruppe;
   static void setGruppe(Warengruppen g);
 
   // Getter-Funktionen

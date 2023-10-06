@@ -1,9 +1,12 @@
 /**
  * @file lager.cc
  * @authors Yaman Alsaady, Oliver Schmidt
- * @brief
+ * @brief Implementierung der Lagerverwaltungsfunktionen.
  * @version 0.1
  * @date 2023-10-04
+ *
+ * Dies ist die Implementierung der Funktionen für die Lagerverwaltung,
+ * einschließlich der Warengruppenverwaltung und der Artikelklassen.
  *
  * @copyright Copyright (c) 2023
  *
