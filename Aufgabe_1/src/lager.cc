@@ -5,7 +5,7 @@
  * @version 0.1
  * @date 2023-10-04
  *
- * Dies ist die Implementierung der Funktionen für die Lagerverwaltung,
+ * Dies ist die Implementierung der Funktionen fuer die Lagerverwaltung,
  * einschließlich der Warengruppenverwaltung und der Artikelklassen.
  *
  * @copyright Copyright (c) 2023
@@ -21,8 +21,8 @@
 Warengruppen::Warengruppen() {}
 void Warengruppen::defaultList() {
   mapGruppe["1005"] = "Fahrrad";
-  mapGruppe["4000"] = "Gemüse";
-  mapGruppe["4106"] = "Gemüse";
+  mapGruppe["4000"] = "Gemuese";
+  mapGruppe["4106"] = "Gemuese";
   mapGruppe["4370"] = "Kaffee";
   mapGruppe["5500"] = "Bier";
   mapGruppe["5031"] = "Milch";
@@ -59,7 +59,7 @@ unsigned int Artikel::getLagerabstand() const { return lagerbestand; }
 string Artikel::getMasseinheit() const {
   switch (einheit) {
   case 0:
-    return "Stueck";
+    return "Stk";
   case 1:
     return "kg";
   case 2:
@@ -68,6 +68,7 @@ string Artikel::getMasseinheit() const {
     return "None";
   }
 }
+
 preis Artikel::getVerkaufpreis() const { return verkaufpreis; }
 preis Artikel::getNormpreis() const { return normpreis; }
 string Artikel::getGruppe() const {
