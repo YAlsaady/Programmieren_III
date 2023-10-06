@@ -6,7 +6,7 @@
  * @date 2023-10-04
  *
  * Dies ist die Implementierung der Funktionen fuer die Lagerverwaltung,
- * einschließlich der Warengruppenverwaltung und der Artikelklassen.
+ * einschliesslich der Warengruppenverwaltung und der Artikelklassen.
  *
  * @copyright Copyright (c) 2023
  *

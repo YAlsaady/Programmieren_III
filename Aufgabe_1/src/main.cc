@@ -38,7 +38,7 @@ void printInfo(Fluessigkeit produkt);
 int main() {
   // Initialisieren der Warengruppen
   Warengruppen gruppe;
-  //gruppe.init();
+  gruppe.defaultList();
   gruppe.addGruppe("4100", "etwas");
   gruppe.changeGruppe("4370", "Nicht Kaffee");
 
@@ -54,7 +54,7 @@ int main() {
   Stueckgut produkt6("Gurke", "4106633223", 0.79, 655);
   Fluessigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1.15, 1.15);
   Fluessigkeit produkt8("Wheatly Weizengetraenk", "5500648201", 1.29, 95);
-  // Setzen der Losgroeßen fuer bestimmte Produkte
+  // Setzen der Losgroessen fuer bestimmte Produkte
   produkt1.setLosgroesse(0.3);
   // Informationen zu den Produkten anzeige
   printInfo(produkt1);
@@ -88,7 +88,7 @@ void printInfo(Schuettgut produkt) {
   cout << "Normpreis:\t" << produkt.getNormpreis() << " €"  << endl;
   cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " €"  << endl;
   cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Losgroeße:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
+  cout << "Losgroesse:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
   cout << endl;
 }
 

@@ -252,30 +252,30 @@ public:
   * 
   * @param name Der Name des Schuettgut-Artikels.
   * @param num Die Artikelnummer des Schuettgut-Artikels.
-  * @param groesse Die Losgroeße des Schuettgut-Artikels.
+  * @param groesse Die Losgroesse des Schuettgut-Artikels.
   * @param np Der Normalpreis des Schuettgut-Artikels.
   * @param bestand Der Lagerbestand des Schuettgut-Artikels (Standardwert: 1).
   */
   Schuettgut(string name, string num, double groesse, preis np,
              unsigned int bestand = 1);
   /**
-  * @brief Gibt die Losgroeße des Schuettgut-Artikels zurueck.
+  * @brief Gibt die Losgroesse des Schuettgut-Artikels zurueck.
   * 
-  * @return Die Losgroeße des Artikels.
+  * @return Die Losgroesse des Artikels.
   */
   double getLosgroesse() const;
 
   /**
-  * @brief Setzt den Verkaufspreis des Schuettgut-Artikels basierend auf der Losgroeße.
+  * @brief Setzt den Verkaufspreis des Schuettgut-Artikels basierend auf der Losgroesse.
   * 
   * @param vp Der Verkaufspreis, der gesetzt werden soll.
   */
   void setVerkaufpreis(preis vp);
 
   /**
-  * @brief Setzt die Losgroeße des Schuettgut-Artikels.
+  * @brief Setzt die Losgroesse des Schuettgut-Artikels.
   * 
-  * @param groesse Die neue Losgroeße.
+  * @param groesse Die neue Losgroesse.
   */
   void setLosgroesse(double groesse);
 };
