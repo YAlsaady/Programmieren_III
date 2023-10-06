@@ -1,0 +1,55 @@
+\doxysection{/home/oliver/\+Programmieren\+\_\+\+III/\+Aufgabe\+\_\+1/src/lager.hh-\/\+Dateireferenz}
+\hypertarget{lager_8hh}{}\label{lager_8hh}\index{/home/oliver/Programmieren\_III/Aufgabe\_1/src/lager.hh@{/home/oliver/Programmieren\_III/Aufgabe\_1/src/lager.hh}}
+
+
+Dieses Header-\/\+Datei enthaelt die Definitionen von Klassen und Funktionen zur Verwaltung von Artikeln und \doxylink{classWarengruppen}{Warengruppen} in einem C++-\/\+Programm.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classWarengruppen}{Warengruppen}}
+\item 
+class \mbox{\hyperlink{classArtikel}{Artikel}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Artikel"{} repraesentiert einen \doxylink{classArtikel}{Artikel} mit verschiedenen Eigenschaften. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classStueckgut}{Stueckgut}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Stueckgut"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Stueckgut-\/\+Artikel. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSchuettgut}{Schuettgut}}
+\item 
+class \mbox{\hyperlink{classFluessigkeit}{Fluessigkeit}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Fluessigkeit"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Fluessigkeits-\/\+Artikel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typdefinitionen}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}\label{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3} 
+typedef double {\bfseries preis}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Aufzählungen}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}\label{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8} 
+enum {\bfseries masseinheit} \{ {\bfseries stk}
+, {\bfseries kg}
+, {\bfseries l}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Dieses Header-\/\+Datei enthaelt die Definitionen von Klassen und Funktionen zur Verwaltung von Artikeln und \doxylink{classWarengruppen}{Warengruppen} in einem C++-\/\+Programm. 
+
+\begin{DoxyAuthor}{Autoren}
+Yaman Alsaady, Oliver Schmidt 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Datum}
+2023-\/10-\/04
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
