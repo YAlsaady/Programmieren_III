@@ -1,0 +1,126 @@
+\doxysection{Stueckgut Klassenreferenz}
+\hypertarget{classStueckgut}{}\label{classStueckgut}\index{Stueckgut@{Stueckgut}}
+
+
+Die Klasse "{}\+Stueckgut"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Stueckgut-\/\+Artikel.  
+
+
+
+
+{\ttfamily \#include $<$lager.\+hh$>$}
+
+
+
+Klassendiagramm für Stueckgut\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classStueckgut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Zusammengehörigkeiten von Stueckgut\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classStueckgut__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStueckgut_a15e3b3bd3f926ee1d8e2499bb33dcc29}{Stueckgut}} (string name, string num, preis vp, unsigned int bestand=1)
+\begin{DoxyCompactList}\small\item\em Konstruktor fuer die Klasse "{}\+Stueckgut"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Öffentliche Methoden geerbt von \mbox{\hyperlink{classArtikel}{Artikel}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArtikel_a18c5b0543f34f969a2869192bf8afc7c}{Artikel}} (string name, string num, unsigned int bestand, masseinheit einheit, preis vp, preis np)
+\begin{DoxyCompactList}\small\item\em Konstruktor fuer die Klasse "{}\+Artikel"{}. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Artikel} ()
+\begin{DoxyCompactList}\small\item\em Destruktor fuer die Klasse "{}\+Artikel"{}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArtikel_a5d6957c608452333fbd97dfe68903538}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gibt den Namen des Artikels zurück. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArtikel_a03226a80f8f65e33ef55370e524d85cf}{get\+Artikelnummer}} () const
+\begin{DoxyCompactList}\small\item\em Gibt die Artikelnummer des Artikels zurück. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classArtikel_a2d3babab7c98f37b16e4547e4c298306}{get\+Lagerabstand}} () const
+\begin{DoxyCompactList}\small\item\em Gibt den Lagerbestand des Artikels zurück. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArtikel_a60c48aa90d170388b041432dabaacbb5}{get\+Masseinheit}} () const
+\begin{DoxyCompactList}\small\item\em Gibt die Masseinheit des Artikels zurück. \end{DoxyCompactList}\item 
+preis \mbox{\hyperlink{classArtikel_abb39b12f98c3bf5804f47b673627c261}{get\+Verkaufpreis}} () const
+\begin{DoxyCompactList}\small\item\em Gibt den Verkaufspreis des Artikels zurück. \end{DoxyCompactList}\item 
+preis \mbox{\hyperlink{classArtikel_a9fe9802d1739baca518a46994a7e331d}{get\+Normpreis}} () const
+\begin{DoxyCompactList}\small\item\em Gibt den Normalpreis des Artikels zurück. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa}{get\+Gruppe}} () const
+\begin{DoxyCompactList}\small\item\em Gibt die Warengruppe des Artikels zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d}{set\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Setzt den Namen des Artikels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_aa3c19491e117cf8c72c168a6a64b1663}{set\+Artikelnummer}} (string num)
+\begin{DoxyCompactList}\small\item\em Setzt die Artikelnummer des Artikels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_ada867198ef58d55e7515812983fe71c3}{set\+Lagerbestand}} (unsigned int bestand)
+\begin{DoxyCompactList}\small\item\em Setzt den Lagerbestand des Artikels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_a238b06b2d69a41b69c145d92859889f9}{set\+Masseinheit}} (masseinheit einheit)
+\begin{DoxyCompactList}\small\item\em Setzt die Masseinheit des Artikels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_a43c3c148333da4650007c453c091cb51}{set\+Verkaufpreis}} (preis vp)
+\begin{DoxyCompactList}\small\item\em Setzt den Verkaufspreis des Artikels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5}{set\+Normpreis}} (preis np)
+\begin{DoxyCompactList}\small\item\em Setzt den Normalpreis des Artikels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Weitere Geerbte Elemente}
+\doxysubsection*{Öffentliche, statische Methoden geerbt von \mbox{\hyperlink{classArtikel}{Artikel}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classArtikel_a26b5f73a75444c9cc4f5a0b9a6b3248a}{set\+Gruppe}} (\mbox{\hyperlink{classWarengruppen}{Warengruppen}} g)
+\begin{DoxyCompactList}\small\item\em Setzt die Warengruppe fuer \doxylink{classArtikel}{Artikel}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statische öffentliche Attribute geerbt von \mbox{\hyperlink{classArtikel}{Artikel}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classWarengruppen}{Warengruppen}} {\bfseries gruppe}
+\begin{DoxyCompactList}\small\item\em Statische Warengruppen-\/\+Instanz, die fuer alle \doxylink{classArtikel}{Artikel} gemeinsam genutzt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Geschützte Attribute geerbt von \mbox{\hyperlink{classArtikel}{Artikel}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries artikelname}
+\item 
+string {\bfseries artikelnummer}
+\item 
+unsigned int {\bfseries lagerbestand}
+\item 
+masseinheit {\bfseries einheit}
+\item 
+preis {\bfseries verkaufpreis}
+\item 
+preis {\bfseries normpreis}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Die Klasse "{}\+Stueckgut"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Stueckgut-\/\+Artikel. 
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classStueckgut_a15e3b3bd3f926ee1d8e2499bb33dcc29}\label{classStueckgut_a15e3b3bd3f926ee1d8e2499bb33dcc29} 
+\index{Stueckgut@{Stueckgut}!Stueckgut@{Stueckgut}}
+\index{Stueckgut@{Stueckgut}!Stueckgut@{Stueckgut}}
+\doxysubsubsection{\texorpdfstring{Stueckgut()}{Stueckgut()}}
+{\footnotesize\ttfamily Stueckgut\+::\+Stueckgut (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{num,  }\item[{preis}]{vp,  }\item[{unsigned int}]{bestand = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor fuer die Klasse "{}\+Stueckgut"{}. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em name} & Der Name des Stueckgut-\/\+Artikels. \\
+\hline
+{\em num} & Die Artikelnummer des Stueckgut-\/\+Artikels. \\
+\hline
+{\em vp} & Der Verkaufspreis des Stueckgut-\/\+Artikels. \\
+\hline
+{\em bestand} & Der Lagerbestand des Stueckgut-\/\+Artikels (Standardwert\+: 1). \\
+\hline
+\end{DoxyParams}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lager_8hh}{lager.\+hh}}\item 
+\mbox{\hyperlink{lager_8cc}{lager.\+cc}}\end{DoxyCompactItemize}

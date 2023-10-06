@@ -1,0 +1,126 @@
+\doxysection{Warengruppen Klassenreferenz}
+\hypertarget{classWarengruppen}{}\label{classWarengruppen}\index{Warengruppen@{Warengruppen}}
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWarengruppen_a79390470455e7bb27edf75b611c1d47a}{Warengruppen}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor fuer die Klasse "{}\+Warengruppen"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classWarengruppen_a38eb20b76418f44b94f05e54d19380d7}\label{classWarengruppen_a38eb20b76418f44b94f05e54d19380d7} 
+void {\bfseries default\+List} ()
+\begin{DoxyCompactList}\small\item\em Setzt eine Standard-\/\+Warengruppenliste. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c}{get\+Gruppe}} (string code)
+\begin{DoxyCompactList}\small\item\em Gibt den Namen der Warengruppe fuer einen gegebenen Code zurueck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarengruppen_aa41ecb8faea7854d3f0208cc3070006f}{add\+Gruppe}} (string code, string name)
+\begin{DoxyCompactList}\small\item\em Fuegt eine neue Warengruppe hinzu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarengruppen_a429683e4d82350e9ca966bd7116fe0d4}{del\+Gruppe}} (string code)
+\begin{DoxyCompactList}\small\item\em Loescht eine Warengruppe anhand ihres Codes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarengruppen_ac29ff5381af7d3a21c65a672f7580c43}{change\+Gruppe}} (string code, string name)
+\begin{DoxyCompactList}\small\item\em Aendert den Namen einer vorhandenen Warengruppe. \end{DoxyCompactList}\item 
+\Hypertarget{classWarengruppen_a9b278fa7cd5fec175f82d00d4b774517}\label{classWarengruppen_a9b278fa7cd5fec175f82d00d4b774517} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Loescht alle \doxylink{classWarengruppen}{Warengruppen} und setzt sie zurck. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}\label{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c} 
+map$<$ string, string $>$ {\bfseries map\+Gruppe}
+\item 
+\Hypertarget{classWarengruppen_a15e291d57382b4fa68c872fc632522bc}\label{classWarengruppen_a15e291d57382b4fa68c872fc632522bc} 
+map$<$ string, string $>$\+::iterator {\bfseries iter}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classWarengruppen_a79390470455e7bb27edf75b611c1d47a}\label{classWarengruppen_a79390470455e7bb27edf75b611c1d47a} 
+\index{Warengruppen@{Warengruppen}!Warengruppen@{Warengruppen}}
+\index{Warengruppen@{Warengruppen}!Warengruppen@{Warengruppen}}
+\doxysubsubsection{\texorpdfstring{Warengruppen()}{Warengruppen()}}
+{\footnotesize\ttfamily Warengruppen\+::\+Warengruppen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor fuer die Klasse "{}\+Warengruppen"{}. 
+
+Dieser Konstruktor initialisiert eine leere Warengruppenliste. 
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classWarengruppen_aa41ecb8faea7854d3f0208cc3070006f}\label{classWarengruppen_aa41ecb8faea7854d3f0208cc3070006f} 
+\index{Warengruppen@{Warengruppen}!addGruppe@{addGruppe}}
+\index{addGruppe@{addGruppe}!Warengruppen@{Warengruppen}}
+\doxysubsubsection{\texorpdfstring{addGruppe()}{addGruppe()}}
+{\footnotesize\ttfamily void Warengruppen\+::add\+Gruppe (\begin{DoxyParamCaption}\item[{string}]{code,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Fuegt eine neue Warengruppe hinzu. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em code} & Der Warengruppencode. \\
+\hline
+{\em name} & Der Name der Warengruppe. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWarengruppen_ac29ff5381af7d3a21c65a672f7580c43}\label{classWarengruppen_ac29ff5381af7d3a21c65a672f7580c43} 
+\index{Warengruppen@{Warengruppen}!changeGruppe@{changeGruppe}}
+\index{changeGruppe@{changeGruppe}!Warengruppen@{Warengruppen}}
+\doxysubsubsection{\texorpdfstring{changeGruppe()}{changeGruppe()}}
+{\footnotesize\ttfamily void Warengruppen\+::change\+Gruppe (\begin{DoxyParamCaption}\item[{string}]{code,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Aendert den Namen einer vorhandenen Warengruppe. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em code} & Der Warengruppencode. \\
+\hline
+{\em name} & Der neue Name der Warengruppe. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWarengruppen_a429683e4d82350e9ca966bd7116fe0d4}\label{classWarengruppen_a429683e4d82350e9ca966bd7116fe0d4} 
+\index{Warengruppen@{Warengruppen}!delGruppe@{delGruppe}}
+\index{delGruppe@{delGruppe}!Warengruppen@{Warengruppen}}
+\doxysubsubsection{\texorpdfstring{delGruppe()}{delGruppe()}}
+{\footnotesize\ttfamily void Warengruppen\+::del\+Gruppe (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Loescht eine Warengruppe anhand ihres Codes. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em code} & Der Warengruppencode. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c}\label{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c} 
+\index{Warengruppen@{Warengruppen}!getGruppe@{getGruppe}}
+\index{getGruppe@{getGruppe}!Warengruppen@{Warengruppen}}
+\doxysubsubsection{\texorpdfstring{getGruppe()}{getGruppe()}}
+{\footnotesize\ttfamily string Warengruppen\+::get\+Gruppe (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Gibt den Namen der Warengruppe fuer einen gegebenen Code zurueck. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em code} & Der Warengruppencode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Der Name der Warengruppe oder der Code, falls keine Warengruppe gefunden wurde. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph}
+\end{center}
+\end{figure}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lager_8hh}{lager.\+hh}}\item 
+\mbox{\hyperlink{lager_8cc}{lager.\+cc}}\end{DoxyCompactItemize}
