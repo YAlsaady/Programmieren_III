@@ -1,7 +1,8 @@
 /**
  * @file lager.hh
  * @authors Yaman Alsaady, Oliver Schmidt
- * @brief Dieses Header-Datei enthaelt die Definitionen von Klassen und
+ * @brief
+ * Dieses Header-Datei enthaelt die Definitionen von Klassen und
  * Funktionen zur Verwaltung von Artikeln und Warengruppen in einem
  * C++-Programm.
  * @version 0.1
