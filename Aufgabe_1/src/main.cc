@@ -1,11 +1,11 @@
 /**
  * @file main.cc
  * @authors Yaman Alsaady, Oliver Schmidt
- * @brief Hauptprogramm für Lagerverwaltung.
+ * @brief Hauptprogramm fuer Lagerverwaltung.
  * @version 0.1
  * @date 2023-10-04
  * 
- * Dieses Programm dient zur Verwaltung von Lagerbeständen verschiedener Produkte.
+ * Dieses Programm dient zur Verwaltung von Lagerbestaenden verschiedener Produkte.
  * Es erstellt Produkte unterschiedlicher Typen und zeigt Informationen zu ihnen an.
  * 
  * @copyright Copyright (c) 2023
@@ -25,9 +25,9 @@ using namespace std;
  */
 void printInfo(Artikel produkt);
 /**
- * @brief Zeigt Informationen zu einem Schüttgut an.
+ * @brief Zeigt Informationen zu einem Schuettgut an.
  * 
- * @param produkt Das Schüttgut, dessen Informationen angezeigt werden sollen.
+ * @param produkt Das Schuettgut, dessen Informationen angezeigt werden sollen.
  */
 void printInfo(Schuettgut produkt);
 void printInfo(Fluessigkeit produkt);
@@ -38,7 +38,7 @@ void printInfo(Fluessigkeit produkt);
 int main() {
   // Initialisieren der Warengruppen
   Warengruppen gruppe;
-  gruppe.init();
+  //gruppe.init();
   gruppe.addGruppe("4100", "etwas");
   gruppe.changeGruppe("4370", "Nicht Kaffee");
 
@@ -54,7 +54,7 @@ int main() {
   Stueckgut produkt6("Gurke", "4106633223", 0.79, 655);
   Fluessigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1.15, 1.15);
   Fluessigkeit produkt8("Wheatly Weizengetraenk", "5500648201", 1.29, 95);
-  // Setzen der Losgrößen für bestimmte Produkte
+  // Setzen der Losgroeßen fuer bestimmte Produkte
   produkt1.setLosgroesse(0.3);
   // Informationen zu den Produkten anzeige
   printInfo(produkt1);
@@ -72,8 +72,8 @@ int main() {
 void printInfo(Artikel produkt) {
   cout << "Name:\t\t" << produkt.getName() << endl;
   cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
+  //cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << " " << produkt.getMasseinheit() << endl;
   cout << "Normpreis:\t" << produkt.getNormpreis() << " €" << endl;
   cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " €"  << endl;
   cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
