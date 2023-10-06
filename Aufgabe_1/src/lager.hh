@@ -34,7 +34,6 @@ public:
   void clear();
 };
 
-
 /**
  * Die Klasse "Artikel" repraesentiert einen Artikel mit verschiedenen
  * Eigenschaften.
@@ -72,18 +71,29 @@ public:
   string getMasseinheit() const;
   preis getVerkaufpreis() const;
   preis getNormpreis() const;
-  string getGruppe();
+  string getGruppe() const;
 
   // Setter-Funktionen
   void setName(string name);
-  void
-  setArtikelnummer(string num);
-  void setLagerbestand(
-      unsigned int bestand);
-  void
-  setMasseinheit(masseinheit einheit);
+  void setArtikelnummer(string num);
+  void setLagerbestand(unsigned int bestand);
+  void setMasseinheit(masseinheit einheit);
   void setVerkaufpreis(preis vp);
   void setNormpreis(preis np);
+};
+
+class Stueckgut : public Artikel {
+private:
+public:
+  /**
+   * Konstruktor fuer die Klasse "Stueckgut".
+   *
+   * @param name Der Name des Stueckgut-Artikels.
+   * @param num Die Artikelnummer des Stueckgut-Artikels.
+   * @param vp Der Verkaufspreis des Stueckgut-Artikels.
+   * @param bestand Der Lagerbestand des Stueckgut-Artikels (Standardwert: 1).
+   */
+  Stueckgut(string name, string num, preis vp, unsigned int bestand = 1);
 };
 
 /**
@@ -111,7 +121,7 @@ public:
    *
    * @return double
    */
-  double getLosgroesse();
+  double getLosgroesse() const;
   void setVerkaufpreis(preis vp);
   void setLosgroesse(double groesse);
 };
@@ -120,26 +130,13 @@ public:
  * Die Klasse "Stueckgut" erbt von der Klasse "Artikel" und spezialisiert sie
  * fuer Stueckgut-Artikel.
  */
-class Stueckgut : public Artikel {
-private:
-public:
-  /**
-   * Konstruktor fuer die Klasse "Stueckgut".
-   *
-   * @param name Der Name des Stueckgut-Artikels.
-   * @param num Die Artikelnummer des Stueckgut-Artikels.
-   * @param vp Der Verkaufspreis des Stueckgut-Artikels.
-   * @param bestand Der Lagerbestand des Stueckgut-Artikels (Standardwert: 1).
-   */
-  Stueckgut(string name, string num, preis vp, unsigned int bestand = 1);
-};
-
 /**
  * Die Klasse "Flueßigkeit" erbt von der Klasse "Artikel" und spezialisiert sie
  * fuer Fluessigkeits-Artikel.
  */
 class Fluessigkeit : public Artikel {
 private:
+  double volume;
 public:
   /**
    * Konstruktor fuer die Klasse "Flueßigkeit".
@@ -150,5 +147,9 @@ public:
    * @param bestand Der Lagerbestand des Fluessigkeits-Artikels (Standardwert:
    * 1).
    */
-  Fluessigkeit(string name, string num, preis vp, unsigned int bestand = 1);
+  Fluessigkeit(string name, string num, double vol, preis np,
+             unsigned int bestand = 1);
+  double getVolume() const;
+  void setVerkaufpreis(preis vp);
+  void setVolume(double vol);
 };
