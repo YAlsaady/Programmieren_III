@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src
+cd ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -14,16 +14,16 @@ else
   set shortmess=aoO
 endif
 badd +1 main.cc
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/lager.cc
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/lager.hh
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/waren.txt
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/Makefile
+badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc
+badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.hh
+badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/waren.txt
+badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/Makefile
 argglobal
 %argdel
 $argadd main.cc
 edit main.cc
 argglobal
-balt ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/Makefile
+balt ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
