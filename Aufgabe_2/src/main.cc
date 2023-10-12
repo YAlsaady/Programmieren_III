@@ -15,6 +15,7 @@
 #include "lager.hh"
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -46,26 +47,23 @@ int main() {
   Artikel::gruppe = gruppe;
   // Artikel::setGruppe(gruppe);
 
-  Schuettgut produkt1("Zwiebeln, rot", "4000010000", 1, 1.26, 2343);
-  Schuettgut produkt2("Champignons", "4100028070", 0.2, 9.95, 300);
-  Schuettgut produkt3("Cafe Crema Slow Roast", "4370060991", 1, 14.99, 536);
-  Schuettgut produkt4("Cafe Crema Slow Roast", "4370060992", 0.5, 15.96, 305);
-  Stueckgut produkt5("Kinderfahrrad Little Wheels", "1005002100", 129, 7);
-  Stueckgut produkt6("Gurke", "4106633223", 0.79, 655);
-  Fluessigkeit produkt7("Beutlin's Bio-Milch", "5031440120", 1, 1.15);
-  Fluessigkeit produkt8("Wheatly Weizengetraenk", "5500648201", 1, 1.29, 95);
-  // Setzen der Losgroessen fuer bestimmte Produkte
-  produkt8.setVolume(2.5);
-  produkt1.setLosgroesse(0.5);
-  // Informationen zu den Produkten anzeige
-  printInfo(produkt1);
-  printInfo(produkt2);
-  printInfo(produkt3);
-  printInfo(produkt4);
-  printInfo(produkt5);
-  printInfo(produkt6);
-  printInfo(produkt7);
-  printInfo(produkt8);
+    string filename("waren.txt");
+
+
+    ifstream input_file(filename);
+    if (!input_file.is_open()) {
+        cerr << "Could not open the file - '" << filename << "'" << endl;
+        return EXIT_FAILURE;
+    }
+    input_file.close();
+
+    string line;
+
+    while (std::getline(input_file, line)) {
+     std::cout << line << '\n';
+    }  
+    input_file.close();
+
   return 0;
 }
 
