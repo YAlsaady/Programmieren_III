@@ -1,5 +1,5 @@
 CXX = g++
-CFLAGS = -Wall -Wextra -pedantic 
+CFLAGS = -Wall -Wextra
 SRC = $(wildcard *.cc)
 OBJ = $(patsubst %.cc, build/%.o, $(SRC))
 

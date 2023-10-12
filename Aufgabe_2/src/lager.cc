@@ -16,7 +16,6 @@
 #include <cmath>
 #include <iostream>
 #include <map>
-#include <sstream>
 #include <string>
 
 Warengruppen::Warengruppen() {}
@@ -47,12 +46,13 @@ void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
 void Warengruppen::clear() { mapGruppe.clear(); }
 
 Warengruppen Artikel::gruppe;
-Artikel::Artikel() {}
 Artikel::Artikel(string name, string num, unsigned int bestand,
                  masseinheit einheit, preis vp, preis np)
     : artikelname(name), artikelnummer(num), lagerbestand(bestand),
       einheit(einheit), verkaufpreis(vp), normpreis(np) {}
 Artikel::~Artikel() {}
+
+Artikel x(Cafe , xyz, )
 
 void Artikel::setGruppe(Warengruppen g) { gruppe = g; }
 string Artikel::getName() const { return artikelname; }
@@ -87,99 +87,13 @@ void Artikel::setMasseinheit(masseinheit einheit) { this->einheit = einheit; }
 void Artikel::setVerkaufpreis(preis vp) { verkaufpreis = vp; }
 void Artikel::setNormpreis(preis np) { normpreis = np; }
 
-std::ostream &Artikel::print(std::ostream &os) {
-  return os << artikelname << "|" << artikelnummer << "|" << lagerbestand << "|"
-            << verkaufpreis << "|" << getMasseinheit() << "|" << normpreis;
-}
-
-std::ostream &operator<<(std::ostream &os, Artikel produkt) {
-  return produkt.print(os);
-}
-
-void operator>>(istream &os, Artikel &a) {
-  string beschreigung[10];
-  string text, name, num;
-  int bestand = 0;
-  preis vp = 0, np = 0;
-  masseinheit einheit;
-  getline(os, text);
-  // std::cout << text << std::endl;
-  stringstream ss(text);
-  if (text[0]) {
-    for (size_t i = 0; getline(ss, beschreigung[i], '|') && i < 10; i++) {
-    }
-    name = beschreigung[0];
-    num = beschreigung[1];
-    if (beschreigung[4] == "kg")
-      einheit = kg;
-    else if (beschreigung[4] == "l")
-      einheit = l;
-    else if (beschreigung[4] == "stk")
-      einheit = stk;
-    else {
-      einheit = stk;
-    }
-    for (size_t i = 1; i < 10; i++) {
-      for (size_t j = 0; j < beschreigung[i].length(); j++) {
-        if (beschreigung[i][j] == ' ') {
-          beschreigung[i].erase(beschreigung[i].begin() + j);
-          j--;
-        }
-      }
-    }
-    if (name == "" || num == "") {
-      throw(-1);
-    }
-    if (beschreigung[3] == "" && beschreigung[4] == "") {
-      throw(-1);
-    }
-
-    if (beschreigung[2] != "") {
-      try {
-        bestand = stof(beschreigung[2]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    } else {
-      bestand = 1;
-    }
-
-    if (beschreigung[3] != "") {
-      try {
-        vp = stof(beschreigung[3]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    }
-    if (beschreigung[5] != "") {
-      try {
-        np = stof(beschreigung[5]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    }
-
-    if (vp == 0)
-      vp = np;
-    if (np == 0)
-      np = vp;
-    a.setMasseinheit(einheit);
-    a.setName(beschreigung[0]);
-    a.setArtikelnummer(beschreigung[1]);
-    a.setLagerbestand(bestand);
-    a.setVerkaufpreis(vp);
-    a.setNormpreis(np);
-  } else {
-    throw(-1);
-  }
-}
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
 Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
-    : Artikel(name, num, bestand, kg, (groesse * np), np), losgroesse(groesse) {
-}
+    : Artikel(name, num, bestand, kg, ceil(groesse * np), np),
+      losgroesse(groesse) {}
 double Schuettgut::getLosgroesse() const { return losgroesse; }
 void Schuettgut::setLosgroesse(double groesse) {
   losgroesse = groesse;
