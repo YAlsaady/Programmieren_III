@@ -52,6 +52,8 @@ Artikel::Artikel(string name, string num, unsigned int bestand,
       einheit(einheit), verkaufpreis(vp), normpreis(np) {}
 Artikel::~Artikel() {}
 
+Artikel x(Cafe , xyz, )
+
 void Artikel::setGruppe(Warengruppen g) { gruppe = g; }
 string Artikel::getName() const { return artikelname; }
 string Artikel::getArtikelnummer() const { return artikelnummer; }
