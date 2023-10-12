@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
     string arg = argv[i];
     if (arg == "-o") {
       filewrite = argv[i + 1];
+      break;
     }
   }
 

@@ -97,7 +97,7 @@ std::ostream &operator<<(std::ostream &os, Artikel produkt) {
 }
 
 void operator>>(istream &os, Artikel &a) {
-  string beschreigung[10];
+  string beschreibung[10];
   string text, name, num;
   int bestand = 0;
   preis vp = 0, np = 0;
@@ -106,37 +106,37 @@ void operator>>(istream &os, Artikel &a) {
   // std::cout << text << std::endl;
   stringstream ss(text);
   if (text[0]) {
-    for (size_t i = 0; getline(ss, beschreigung[i], '|') && i < 10; i++) {
+    for (size_t i = 0; getline(ss, beschreibung[i], '|') && i < 10; i++) {
     }
-    name = beschreigung[0];
-    num = beschreigung[1];
-    if (beschreigung[4] == "kg")
+    name = beschreibung[0];
+    num = beschreibung[1];
+    if (beschreibung[4] == "kg")
       einheit = kg;
-    else if (beschreigung[4] == "l")
+    else if (beschreibung[4] == "l")
       einheit = l;
-    else if (beschreigung[4] == "stk")
+    else if (beschreibung[4] == "stk")
       einheit = stk;
     else {
       einheit = stk;
     }
     for (size_t i = 1; i < 10; i++) {
-      for (size_t j = 0; j < beschreigung[i].length(); j++) {
-        if (beschreigung[i][j] == ' ') {
-          beschreigung[i].erase(beschreigung[i].begin() + j);
+      for (size_t j = 0; j < beschreibung[i].length(); j++) {
+        if (beschreibung[i][j] == ' ') {
+          beschreibung[i].erase(beschreibung[i].begin() + j);
           j--;
         }
       }
     }
-    if (name == "" || num == "") {
+    if (name == "" || num == "" || num.length() != 10) {
       throw(-1);
     }
-    if (beschreigung[3] == "" && beschreigung[4] == "") {
+    if (beschreibung[3] == "" && beschreibung[4] == "") {
       throw(-1);
     }
 
-    if (beschreigung[2] != "") {
+    if (beschreibung[2] != "") {
       try {
-        bestand = stof(beschreigung[2]);
+        bestand = stof(beschreibung[2]);
       } catch (std::invalid_argument const &ex) {
         throw(-1);
       }
@@ -144,28 +144,28 @@ void operator>>(istream &os, Artikel &a) {
       bestand = 1;
     }
 
-    if (beschreigung[3] != "") {
+    if (beschreibung[3] != "") {
       try {
-        vp = stof(beschreigung[3]);
+        vp = stof(beschreibung[3]);
       } catch (std::invalid_argument const &ex) {
         throw(-1);
       }
     }
-    if (beschreigung[5] != "") {
+    if (beschreibung[5] != "") {
       try {
-        np = stof(beschreigung[5]);
+        np = stof(beschreibung[5]);
       } catch (std::invalid_argument const &ex) {
         throw(-1);
       }
     }
 
-    if (vp == 0)
-      vp = np;
-    if (np == 0)
-      np = vp;
+    // if (vp == 0)
+    //   vp = np;
+    // if (np == 0)
+    //   np = vp;
     a.setMasseinheit(einheit);
-    a.setName(beschreigung[0]);
-    a.setArtikelnummer(beschreigung[1]);
+    a.setName(beschreibung[0]);
+    a.setArtikelnummer(beschreibung[1]);
     a.setLagerbestand(bestand);
     a.setVerkaufpreis(vp);
     a.setNormpreis(np);
