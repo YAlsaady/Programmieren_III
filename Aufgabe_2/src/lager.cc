@@ -118,3 +118,43 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume = int((verkaufpreis / normpreis) * 100 + 0.5);
   volume /= 100;
 }
+
+
+// Weitere Funktionen printInfo(Artikel) und printInfo(Schuettgut) sind ebenfalls vorhanden.
+void printInfo(Artikel produkt) {
+  cout << "Name:\t\t" << produkt.getName() << endl;
+  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
+  //cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << " " << produkt.getMasseinheit() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro" << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
+  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
+  cout << endl;
+}
+
+void printInfo(Schuettgut produkt) {
+  cout << "Name:\t\t" << produkt.getName() << endl;
+  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
+  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
+  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
+  cout << "Losgroesse:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
+  cout << endl;
+}
+
+void printInfo(Fluessigkeit produkt) {
+  cout << "Name:\t\t" << produkt.getName() << endl;
+  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
+  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
+  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
+  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
+  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
+  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
+  cout << "Volumen:\t" << produkt.getVolume() << " "<< produkt.getMasseinheit() << endl;
+  cout << endl;
+}
+
+
+

@@ -19,86 +19,34 @@
 
 using namespace std;
 
-/**
- * @brief Zeigt Informationen zu einem Artikel an.
- * 
- * @param produkt Der Artikel, dessen Informationen angezeigt werden sollen.
- */
-void printInfo(Artikel produkt);
-/**
- * @brief Zeigt Informationen zu einem Schuettgut an.
- * 
- * @param produkt Das Schuettgut, dessen Informationen angezeigt werden sollen.
- */
 void printInfo(Schuettgut produkt);
 void printInfo(Fluessigkeit produkt);
 
-// Warengruppen g;
-// Warengruppen Artikel::gruppe = g;
-
-int main() {
-  // Initialisieren der Warengruppen
+int main(int argc, char argv) {
+  
   Warengruppen gruppe;
+  string line;  
+
+  string filename_input("eingang.txt");
+  string filename_output("ausgang.txt");
+  
   gruppe.defaultList();
   gruppe.addGruppe("4100", "etwas");
   gruppe.changeGruppe("4370", "Nicht Kaffee");
 
-  // Zuweisen der Warengruppen zu den Artikeln
   Artikel::gruppe = gruppe;
-  // Artikel::setGruppe(gruppe);
-
-    string filename("waren.txt");
-
-
-    ifstream input_file(filename);
-    if (!input_file.is_open()) {
-        cerr << "Could not open the file - '" << filename << "'" << endl;
-        return EXIT_FAILURE;
+    
+    ifstream file_input(filename_input);    
+    if (!file_input) {
+      cerr << "Die Datei '" << filename_input << "' konnte nicht geoeffnet werden" << endl;
+      return -1;
     }
-    input_file.close();
 
-    string line;
+    while (getline(file_input, line)) {
+     cout << line << '\n';
+    }
+    file_input.close();
 
-    while (std::getline(input_file, line)) {
-     std::cout << line << '\n';
-    }  
-    input_file.close();
 
   return 0;
-}
-
-// Weitere Funktionen printInfo(Artikel) und printInfo(Schuettgut) sind ebenfalls vorhanden.
-void printInfo(Artikel produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  //cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << " " << produkt.getMasseinheit() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro" << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << endl;
-}
-
-void printInfo(Schuettgut produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Losgroesse:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
-  cout << endl;
-}
-
-void printInfo(Fluessigkeit produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Volumen:\t" << produkt.getVolume() << " "<< produkt.getMasseinheit() << endl;
-  cout << endl;
 }
