@@ -46,46 +46,28 @@ int main() {
     cerr << "Die Datei '" << filename_input << "' konnte nicht geoeffnet werden" << endl;
     return -1;
   }
-  Artikel test;
-  try {
-    file_input >> test;
-  } catch (std::invalid_argument &e) {
-  }
-  cout << test <<endl;  
-  try {
-    file_input >> test;
-  } catch (std::invalid_argument &e) {
-  }
-  cout << test <<endl;
 
- /*
-  while (getline(file_input, line)) {
-  
-  vector<string> productAttributes;
-  //string productAttributes[10];
-  istringstream lineStream(line);
-  string attribute;
-    while (getline(lineStream, attribute, '|')) {
-        productAttributes.push_back(attribute);
+
+  Artikel produkt;
+  while (!file_input.eof()) {
+    int error = 0;
+
+    try {
+      file_input >> produkt;
     }
-  productMatrix.push_back(productAttributes);
-  
-    if (file_input.eof()) {
-      break;
+
+    catch (invalid_argument &e) {
+    error = -1;
+    } 
+
+    catch (int &e) {
+      error = -1;
+    }
+    
+    if (!error){
+     cout << produkt <<endl;
     }
   }
-  file_input.close();
-  
-  //cout << productMatrix[0][1] << endl;
-  Artikel test;
-
-  productMatrix >> test;
-
-  test.setName(productMatrix[0][0]);
-  test.setArtikelnummer(productMatrix[0][1]);
-  cout << test.getName() << endl;
-  cout << test.getArtikelnummer() << endl;
-  */
   file_input.close();
   return 0;
 }

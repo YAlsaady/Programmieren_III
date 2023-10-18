@@ -90,7 +90,7 @@ void Artikel::setNormpreis(preis np) { normpreis = np; }
 
 std::ostream &Artikel::print(std::ostream &os) {
   return os << artikelname << "|" << artikelnummer << "|" << lagerbestand << "|"
-            << verkaufpreis << "|" << getMasseinheit() << "|" << normpreis;
+            << ((verkaufpreis != 0) ? (verkaufpreis) : -1) << "|" << getMasseinheit() << "|" << normpreis;
 }
 
 std::ostream &operator<<(std::ostream &os, Artikel produkt) {
@@ -100,18 +100,37 @@ std::ostream &operator<<(std::ostream &os, Artikel produkt) {
 void operator>>(istream &os, Artikel &a) {
   string line;
   getline(os, line);
+  if (line == "") throw (-1);
   vector<string> productAttributes;
   istringstream lineStream(line);
   string attribute;
-    while (getline(lineStream, attribute, '|')) {
-        productAttributes.push_back(attribute);
-    }
+  while (getline(lineStream, attribute, '|')) {
+      productAttributes.push_back(attribute);
+  }
   a.setName(productAttributes[0]);
   a.setArtikelnummer(productAttributes[1]);
   a.setLagerbestand(stoi(productAttributes[2]));
-  a.setVerkaufpreis(stof(productAttributes[3]));
-  a.setMasseinheit(stk);
+  
+  if (productAttributes[3] != "") {
+    a.setVerkaufpreis(stof(productAttributes[3]));
+  }
+  else {
+    a.setVerkaufpreis(stof(productAttributes[5]));
+  }
   a.setNormpreis(stof(productAttributes[5]));
+
+  if(productAttributes[4] == "stk"){
+    a.setMasseinheit(stk);
+  }
+  else if(productAttributes[4] == "kg"){
+    a.setMasseinheit(kg);
+  }
+  else if(productAttributes[4] == "l"){
+    a.setMasseinheit(l);
+  }
+  else{
+    a.setMasseinheit(stk);
+  }
 }
 
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
