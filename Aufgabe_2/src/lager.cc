@@ -16,9 +16,8 @@
 #include <cmath>
 #include <iostream>
 #include <map>
-#include <string>
 #include <sstream>
-
+#include <string>
 
 Warengruppen::Warengruppen() {}
 void Warengruppen::defaultList() {
@@ -90,7 +89,8 @@ void Artikel::setNormpreis(preis np) { normpreis = np; }
 
 std::ostream &Artikel::print(std::ostream &os) {
   return os << artikelname << "|" << artikelnummer << "|" << lagerbestand << "|"
-            << ((verkaufpreis != 0) ? (verkaufpreis) : -1) << "|" << getMasseinheit() << "|" << normpreis;
+            << ((verkaufpreis != 0) ? (verkaufpreis) : -1) << "|"
+            << getMasseinheit() << "|" << normpreis;
 }
 
 std::ostream &operator<<(std::ostream &os, Artikel produkt) {
@@ -100,35 +100,32 @@ std::ostream &operator<<(std::ostream &os, Artikel produkt) {
 void operator>>(istream &os, Artikel &a) {
   string line;
   getline(os, line);
-  if (line == "") throw (-1);
+  if (line == "")
+    throw(-1);
   vector<string> productAttributes;
   istringstream lineStream(line);
   string attribute;
   while (getline(lineStream, attribute, '|')) {
-      productAttributes.push_back(attribute);
+    productAttributes.push_back(attribute);
   }
   a.setName(productAttributes[0]);
   a.setArtikelnummer(productAttributes[1]);
   a.setLagerbestand(stoi(productAttributes[2]));
-  
+
   if (productAttributes[3] != "") {
     a.setVerkaufpreis(stof(productAttributes[3]));
-  }
-  else {
+  } else {
     a.setVerkaufpreis(stof(productAttributes[5]));
   }
   a.setNormpreis(stof(productAttributes[5]));
 
-  if(productAttributes[4] == "stk"){
+  if (productAttributes[4] == "stk") {
     a.setMasseinheit(stk);
-  }
-  else if(productAttributes[4] == "kg"){
+  } else if (productAttributes[4] == "kg") {
     a.setMasseinheit(kg);
-  }
-  else if(productAttributes[4] == "l"){
+  } else if (productAttributes[4] == "l") {
     a.setMasseinheit(l);
-  }
-  else{
+  } else {
     a.setMasseinheit(stk);
   }
 }
