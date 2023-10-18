@@ -17,6 +17,8 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <sstream>
+
 
 Warengruppen::Warengruppen() {}
 void Warengruppen::defaultList() {
@@ -46,6 +48,7 @@ void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
 void Warengruppen::clear() { mapGruppe.clear(); }
 
 Warengruppen Artikel::gruppe;
+Artikel::Artikel() {}
 Artikel::Artikel(string name, string num, unsigned int bestand,
                  masseinheit einheit, preis vp, preis np)
     : artikelname(name), artikelnummer(num), lagerbestand(bestand),
@@ -85,6 +88,32 @@ void Artikel::setMasseinheit(masseinheit einheit) { this->einheit = einheit; }
 void Artikel::setVerkaufpreis(preis vp) { verkaufpreis = vp; }
 void Artikel::setNormpreis(preis np) { normpreis = np; }
 
+std::ostream &Artikel::print(std::ostream &os) {
+  return os << artikelname << "|" << artikelnummer << "|" << lagerbestand << "|"
+            << verkaufpreis << "|" << getMasseinheit() << "|" << normpreis;
+}
+
+std::ostream &operator<<(std::ostream &os, Artikel produkt) {
+  return produkt.print(os);
+}
+
+void operator>>(istream &os, Artikel &a) {
+  string line;
+  getline(os, line);
+  vector<string> productAttributes;
+  istringstream lineStream(line);
+  string attribute;
+    while (getline(lineStream, attribute, '|')) {
+        productAttributes.push_back(attribute);
+    }
+  a.setName(productAttributes[0]);
+  a.setArtikelnummer(productAttributes[1]);
+  a.setLagerbestand(stoi(productAttributes[2]));
+  a.setVerkaufpreis(stof(productAttributes[3]));
+  a.setMasseinheit(stk);
+  a.setNormpreis(stof(productAttributes[5]));
+}
+
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
@@ -118,43 +147,3 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume = int((verkaufpreis / normpreis) * 100 + 0.5);
   volume /= 100;
 }
-
-
-// Weitere Funktionen printInfo(Artikel) und printInfo(Schuettgut) sind ebenfalls vorhanden.
-void printInfo(Artikel produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  //cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << " " << produkt.getMasseinheit() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro" << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << endl;
-}
-
-void printInfo(Schuettgut produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Losgroesse:\t" << produkt.getLosgroesse() << " "<< produkt.getMasseinheit() << endl;
-  cout << endl;
-}
-
-void printInfo(Fluessigkeit produkt) {
-  cout << "Name:\t\t" << produkt.getName() << endl;
-  cout << "Artikelnummer:\t" << produkt.getArtikelnummer() << endl;
-  // cout << "Masseinheit:\t" << produkt.getMasseinheit() << endl;
-  cout << "Lagerbestand:\t" << produkt.getLagerabstand() << endl;
-  cout << "Normpreis:\t" << produkt.getNormpreis() << " Euro"  << endl;
-  cout << "Verkaufpreis:\t" << produkt.getVerkaufpreis() << " Euro"  << endl;
-  cout << "Gruppe:\t\t" << produkt.getGruppe() << endl;
-  cout << "Volumen:\t" << produkt.getVolume() << " "<< produkt.getMasseinheit() << endl;
-  cout << endl;
-}
-
-
-

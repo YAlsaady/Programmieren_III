@@ -18,6 +18,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <vector>
 
 using namespace std;
 enum masseinheit { stk, kg, l };
@@ -103,6 +104,7 @@ public:
   * @param vp Der Verkaufspreis des Artikels.
   * @param np Der Normalpreis des Artikels.
   */
+  Artikel();
   Artikel(string name, string num, unsigned int bestand, masseinheit einheit,
           preis vp, preis np);
   
@@ -218,9 +220,13 @@ void setVerkaufpreis(preis vp);
  *
  * @param np Der neue Normalpreis des Artikels.
  */
-void setNormpreis(preis np);
+    void setNormpreis(preis np);
 
+    std::ostream &print(std::ostream &outstream);
 };
+
+std::ostream &operator<<(std::ostream &os, Artikel produkt);
+void operator>>(istream &os, Artikel &a);
 
 /**
 * @brief Die Klasse "Stueckgut" erbt von der Klasse "Artikel" und spezialisiert sie fuer Stueckgut-Artikel.
