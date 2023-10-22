@@ -18,6 +18,7 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <vector>
 
 Warengruppen::Warengruppen() {}
 void Warengruppen::defaultList() {
@@ -58,7 +59,8 @@ void Artikel::setGruppe(Warengruppen g) { gruppe = g; }
 string Artikel::getName() const { return artikelname; }
 string Artikel::getArtikelnummer() const { return artikelnummer; }
 unsigned int Artikel::getLagerabstand() const { return lagerbestand; }
-string Artikel::getMasseinheit() const {
+masseinheit Artikel::getMasseinheit() const { return einheit; }
+string Artikel::getStrMasseinheit() const {
   switch (einheit) {
   case 0:
     return "Stk";
@@ -89,93 +91,97 @@ void Artikel::setNormpreis(preis np) { normpreis = np; }
 
 std::ostream &Artikel::print(std::ostream &os) {
   return os << artikelname << "|" << artikelnummer << "|" << lagerbestand << "|"
-            << verkaufpreis << "|" << getMasseinheit() << "|" << normpreis;
+            << verkaufpreis << "|" << getStrMasseinheit() << "|" << normpreis;
 }
 
 std::ostream &operator<<(std::ostream &os, Artikel produkt) {
   return produkt.print(os);
 }
 
-void operator>>(istream &os, Artikel &a) {
-  string beschreibung[10];
+void operator>>(istream &is, Artikel &produkt) {
+  vector<string> beschreibung;
   string text, name, num;
   int bestand = 0;
   preis vp = 0, np = 0;
   masseinheit einheit;
-  getline(os, text);
-  // std::cout << text << std::endl;
+
+  getline(is, text);
   stringstream ss(text);
-  if (text[0]) {
-    for (size_t i = 0; getline(ss, beschreibung[i], '|') && i < 10; i++) {
-    }
-    name = beschreibung[0];
-    num = beschreibung[1];
-    if (beschreibung[4] == "kg")
-      einheit = kg;
-    else if (beschreibung[4] == "l")
-      einheit = l;
-    else if (beschreibung[4] == "stk")
-      einheit = stk;
-    else {
-      einheit = stk;
-    }
-    for (size_t i = 1; i < 10; i++) {
-      for (size_t j = 0; j < beschreibung[i].length(); j++) {
-        if (beschreibung[i][j] == ' ') {
-          beschreibung[i].erase(beschreibung[i].begin() + j);
-          j--;
-        }
-      }
-    }
-    if (name == "" || num == "" || num.length() != 10) {
-      throw(-1);
-    }
-    if (beschreibung[3] == "" && beschreibung[4] == "") {
-      throw(-1);
-    }
 
-    if (beschreibung[2] != "") {
-      try {
-        bestand = stof(beschreibung[2]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    } else {
-      bestand = 1;
-    }
-
-    if (beschreibung[3] != "") {
-      try {
-        vp = stof(beschreibung[3]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    }
-    if (beschreibung[5] != "") {
-      try {
-        np = stof(beschreibung[5]);
-      } catch (std::invalid_argument const &ex) {
-        throw(-1);
-      }
-    }
-
-    // if (vp == 0)
-    //   vp = np;
-    // if (np == 0)
-    //   np = vp;
-    a.setMasseinheit(einheit);
-    a.setName(beschreibung[0]);
-    a.setArtikelnummer(beschreibung[1]);
-    a.setLagerbestand(bestand);
-    a.setVerkaufpreis(vp);
-    a.setNormpreis(np);
-  } else {
+  if (!text[0]) {
     throw(-1);
   }
+  text = "";
+  for (size_t i = 0; getline(ss, text, '|') && i < 6; i++) {
+    beschreibung.push_back(text);
+  }
+  // cout << beschreibung.size()<< endl;
+  if (beschreibung.size() < 5)
+    throw -1;
+  name = beschreibung[0];
+  num = beschreibung[1];
+
+  if (beschreibung[4] == "kg")
+    einheit = kg;
+  else if (beschreibung[4] == "l")
+    einheit = l;
+  else if (beschreibung[4] == "stk")
+    einheit = stk;
+  else {
+    einheit = stk;
+  }
+
+  for (size_t i = 1; i < 6; i++) {
+    for (size_t j = 0; j < beschreibung[i].length(); j++) {
+      if (beschreibung[i][j] == ' ') {
+        beschreibung[i].erase(beschreibung[i].begin() + j);
+        j--;
+      }
+    }
+  }
+
+  if (name == "" || num == "" || num.length() != 10) {
+    throw(-1);
+  }
+  if (beschreibung[3] == "" && beschreibung[4] == "") {
+    throw(-1);
+  }
+
+  if (beschreibung[2] != "") {
+    bestand = stoi(beschreibung[2]);
+  } else {
+    bestand = 0;
+  }
+  if (beschreibung[3] != "") {
+    vp = stof(beschreibung[3]);
+  }
+
+  if (beschreibung.size() > 5 && beschreibung[5] != "") {
+    np = stof(beschreibung[5]);
+  }
+  if (vp == 0)
+    vp = np;
+  if (np == 0)
+    np = vp;
+
+  produkt.setMasseinheit(einheit);
+  produkt.setName(beschreibung[0]);
+  produkt.setArtikelnummer(beschreibung[1]);
+  produkt.setLagerbestand(bestand);
+  produkt.setVerkaufpreis(vp);
+  produkt.setNormpreis(np);
 }
+
+Stueckgut::Stueckgut(Artikel produkt)
+    : Stueckgut(produkt.getName(), produkt.getArtikelnummer(),
+                produkt.getVerkaufpreis(), produkt.getLagerabstand()) {}
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
+Schuettgut::Schuettgut(Artikel produkt)
+    : Schuettgut(produkt.getName(), produkt.getArtikelnummer(),
+                 produkt.getVerkaufpreis() / produkt.getNormpreis(),
+                 produkt.getNormpreis(), produkt.getLagerabstand()) {}
 Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
     : Artikel(name, num, bestand, kg, (groesse * np), np), losgroesse(groesse) {
@@ -192,6 +198,10 @@ void Schuettgut::setVerkaufpreis(preis vp) {
   losgroesse /= 100;
 }
 
+Fluessigkeit::Fluessigkeit(Artikel produkt)
+    : Fluessigkeit(produkt.getName(), produkt.getArtikelnummer(),
+                   produkt.getVerkaufpreis() / produkt.getNormpreis(),
+                   produkt.getNormpreis(), produkt.getLagerabstand()) {}
 Fluessigkeit::Fluessigkeit(string name, string num, double vol, preis np,
                            unsigned int bestand)
     : Artikel(name, num, bestand, l, (vol * np), np), volume(vol) {}

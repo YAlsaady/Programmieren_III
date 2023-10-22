@@ -153,7 +153,8 @@ public:
    *
    * @return Die Masseinheit des Artikels (stk, kg, l).
    */
-  string getMasseinheit() const;
+  masseinheit getMasseinheit() const;
+  string getStrMasseinheit() const;
 
   /**
    * @brief Gibt den Verkaufspreis des Artikels zurueck.
@@ -221,12 +222,46 @@ public:
    */
   void setNormpreis(preis np);
 
-  // ostream &print(ostream &outstream);
-  std::ostream &print(std::ostream &outstream);
+  /**
+   * @brief Gibt die Artikelinformationen aus.
+   *
+   * Diese Funktion gibt die Informationen des Artikels aus, einschließlich
+   * Artikelname, Artikelnummer, Lagerbestand, Verkaufspreis, Maßeinheit und
+   * Normpreis.
+   *
+   * @param os Die Ausgabestromreferenz, in die die Informationen geschrieben
+   * werden.
+   * @return Die Ausgabestromreferenz, in die die Informationen geschrieben
+   * wurden.
+   */
+  ostream &print(ostream &outstream);
 };
+/**
+ * @brief Überladen des Ausgabeoperators für die Artikelklasse.
+ *
+ * Diese Funktion ermöglicht das Ausgeben eines Artikels mit dem Ausgabeoperator
+ * '<<'.
+ *
+ * @param os Die Ausgabestromreferenz, in die die Informationen geschrieben
+ * werden.
+ * @param produkt Der Artikel, der ausgegeben werden soll.
+ * @return Die Ausgabestromreferenz, in die die Informationen geschrieben
+ * wurden.
+ */
+ostream &operator<<(ostream &os, Artikel produkt);
 
-std::ostream &operator<<(std::ostream &os, Artikel produkt);
-void operator>>(istream &os, Artikel &a);
+/**
+ * @brief Überladen des Eingabeoperators für die Artikelklasse.
+ *
+ * Diese Funktion ermöglicht das Einlesen von Artikelinformationen mit dem
+ * Eingabeoperator '>>'.
+ *
+ * @param is Die Eingabestromreferenz, aus der die Informationen eingelesen
+ * werden.
+ * @param produkt Der Artikel, in den die Informationen eingelesen werden
+ * sollen.
+ */
+void operator>>(istream &is, Artikel &produkt);
 
 /**
  * @brief Die Klasse "Stueckgut" erbt von der Klasse "Artikel" und spezialisiert
@@ -243,6 +278,7 @@ public:
    * @param vp Der Verkaufspreis des Stueckgut-Artikels.
    * @param bestand Der Lagerbestand des Stueckgut-Artikels (Standardwert: 1).
    */
+  Stueckgut(Artikel produkt);
   Stueckgut(string name, string num, preis vp, unsigned int bestand = 1);
 };
 
@@ -255,6 +291,12 @@ private:
   double losgroesse;
 
 public:
+  /**
+   * @brief Kopierkonstruktor für die Klasse "Schuettgut".
+   *
+   * @param produkt Der zu kopierende Schuettgut-Artikel.
+   */
+  Schuettgut(Artikel produkt);
   /**
    * @brief Konstruktor fuer die Klasse "Schuettgut".
    *
@@ -308,6 +350,7 @@ public:
    * @param bestand Der Lagerbestand des Fluessigkeits-Artikels (Standardwert:
    * 1).
    */
+  Fluessigkeit(Artikel produkt);
   Fluessigkeit(string name, string num, double vol, preis np,
                unsigned int bestand = 1);
 
