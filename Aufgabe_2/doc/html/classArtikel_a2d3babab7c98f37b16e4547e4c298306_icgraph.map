@@ -1,0 +1,7 @@
+<map id="Artikel::getLagerabstand" name="Artikel::getLagerabstand">
+<area shape="rect" id="Node000001" title="Gibt den Lagerbestand des Artikels zurueck." alt="" coords="122,31,284,57"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#a1bb5796263fff87bfa0a3826ced11e54" title="Zeigt Informationen zu einem Artikel an." alt="" coords="5,5,74,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,32,74,27,75,21,106,26"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#a46d5446af17bf2fb4822a6ac5407ed78" title="Zeigt Informationen zu einem Schuettgut an." alt="" coords="5,56,74,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,62,75,67,74,61,106,56"/>
+</map>

@@ -1,34 +1,15 @@
-\chapter{Fragen}
-\textbf{Begründen Sie bitte auch kurz Ihre Entscheidungen, welche
-Eigenschaften öffentlich zugreifbar sein sollen (public) und welche nicht (abgestuft
-in protected und private; diese können sich im Lauf der Zeit natürlich noch ändern,
-wenn weitere Anforderungen definiert werden)}\\
-
-\begin{itemize}
-    \item\textbf{Warengruppen-Klasse:}
-    Die mapGruppe und iter-Variablen sind als private deklariert, da sie für die interne Verwaltung der Warengruppen in der Klasse verwendet werden und nicht von außen zugreifbar sein sollten.
-    Die öffentlichen Funktionen wie getGruppe, addGruppe, delGruppe, changeGruppe und clear sind als public deklariert, da sie von anderen Teilen des Codes verwendet werden können, um die Warengruppen zu verwalten.
-    \item\textbf{Artikel-Klasse:}
-    Die member-Variablen wie Artikelname, Artikelnummer, Lagerbestand, Einheit, Verkaufspreis und Normpreis sind als protected deklariert. Dies bedeutet, dass sie in den abgeleiteten Klassen (z.B., Stückgut, Schüttgut, Flüssigkeit) direkt zugegriffen werden können, jedoch nicht von außerhalb der Klassen.
-    Die statische Variable "gruppe" ist als public deklariert, da sie von außen verwendet werden kann, um die Warengruppen für alle Artikel festzulegen.
-    Die Getter- und Setter-Funktionen für die member-Variablen sind als public deklariert, um den Zugriff und die Änderung der Eigenschaften von Artikeln zu ermöglichen.
-    \item\textbf{Stückgut, Schüttgut, und Flüssigkeits-Klassen:}
-    Diese abgeleiteten Klassen erben von der Artikel-Klasse und erben somit die protected member-Variablen. Dies bedeutet, dass sie auf diese Variablen zugreifen können.
-    Zusätzlich haben sie jeweils spezifische private member-Variablen, die für die jeweilige Art des Artikels relevant sind.
-    Die Getter und Setter für die spezifischen Eigenschaften der abgeleiteten Klassen sind als public deklariert, um den Zugriff von außerhalb der Klassen zu ermöglichen.
-\end{itemize}
 \chapter{Quellencode}
 \doxysection{Datei 'Lager.hh'}
-\lstinputlisting[caption={Die Header-Datei lager.hh}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/lager.hh}
+\lstinputlisting[caption={Die Header-Datei lager.hh}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.hh}
 \newpage
 
 \doxysection{Datei 'Lager.cc'}
-\lstinputlisting[caption={Die Header-Datei lager.cc}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/lager.cc}
+\lstinputlisting[caption={Die Header-Datei lager.cc}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc}
 \newpage
 
 \doxysection{Datei 'main.cc'}
-\lstinputlisting[caption={Die Header-Datei main.cc}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/src/main.cc}
+\lstinputlisting[caption={Die Header-Datei main.cc}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/main.cc}
 \newpage
 
-\doxysection{Ausgabe-Test}
-\lstinputlisting[language=bash,caption={Ausgabe-Test}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/doc/ausgabe.txt}
+% \doxysection{Ausgabe-Test}
+% \lstinputlisting[language=bash,caption={Ausgabe-Test}]{~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_1/doc/ausgabe.txt}

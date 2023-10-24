@@ -1,0 +1,5 @@
+<map id="Artikel::getGruppe" name="Artikel::getGruppe">
+<area shape="rect" id="Node000001" title="Gibt die Warengruppe des Artikels zurueck." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="Node000002" href="$classWarengruppen.html#ac8850d8bf5e312c620125495c2235b4c" title="Gibt den Namen der Warengruppe fuer einen gegebenen Code zurueck." alt="" coords="180,5,352,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="operator&gt;&gt;" name="operator&gt;&gt;">
+<area shape="rect" id="Node000001" title="Überladen des Eingabeoperators für die Artikelklasse." alt="" coords="5,132,90,159"/>
+<area shape="rect" id="Node000002" href="$classArtikel.html#aa3c19491e117cf8c72c168a6a64b1663" title="Setzt die Artikelnummer des Artikels." alt="" coords="138,5,306,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,130,87,87,110,62,136,42,146,36,148,41,139,46,114,66,91,90,60,133"/>
+<area shape="rect" id="Node000003" href="$classArtikel.html#ada867198ef58d55e7515812983fe71c3" title="Setzt den Lagerbestand des Artikels." alt="" coords="141,56,303,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="69,129,137,92,153,86,155,91,139,97,71,134"/>
+<area shape="rect" id="Node000004" href="$classArtikel.html#a238b06b2d69a41b69c145d92859889f9" title="Setzt die Masseinheit des Artikels." alt="" coords="145,107,299,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,137,129,131,130,136,90,142"/>
+<area shape="rect" id="Node000005" href="$classArtikel.html#a9d7acb4495b74dc82ed6f6e63b97270d" title="Setzt den Namen des Artikels." alt="" coords="162,157,282,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="90,149,147,157,146,162,90,154"/>
+<area shape="rect" id="Node000006" href="$classArtikel.html#a347ef535f08ce2ff802a8e2c73b37fd5" title="Setzt den Normalpreis des Artikels." alt="" coords="150,208,294,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="71,157,139,194,155,200,153,205,137,198,69,162"/>
+<area shape="rect" id="Node000007" href="$classArtikel.html#a43c3c148333da4650007c453c091cb51" title="Setzt den Verkaufspreis des Artikels." alt="" coords="144,259,300,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="60,158,91,201,114,224,139,244,148,250,146,254,136,249,110,228,87,204,55,161"/>
+</map>
