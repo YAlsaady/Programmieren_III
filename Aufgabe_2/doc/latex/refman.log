@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.4)  24 OCT 2023 10:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.4)  24 OCT 2023 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -823,13 +823,13 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 ] [2] [3] [4] [5]) [6] (/home/yaman/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc [7] [8] [9]) [10] (/home/yaman/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/main.cc [11] [12] [13]) [14])
 Kapitel 2.
 (./classArtikel.tex <./classArtikel__inherit__graph.pdf>
-<classArtikel__inherit__graph.pdf, id=1321, 309.155pt x 156.585pt>
+<classArtikel__inherit__graph.pdf, id=1324, 309.155pt x 156.585pt>
 File: classArtikel__inherit__graph.pdf Graphic file (type pdf)
 <use classArtikel__inherit__graph.pdf>
 Package pdftex.def Info: classArtikel__inherit__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 308.0pt x 156.01357pt.
  <./classArtikel__coll__graph.pdf>
-<classArtikel__coll__graph.pdf, id=1329, 158.5925pt x 168.63pt>
+<classArtikel__coll__graph.pdf, id=1332, 158.5925pt x 168.63pt>
 File: classArtikel__coll__graph.pdf Graphic file (type pdf)
 <use classArtikel__coll__graph.pdf>
 Package pdftex.def Info: classArtikel__coll__graph.pdf  used on input line 27.
@@ -869,7 +869,7 @@ Underfull \hbox (badness 10000) detected at line 160
  []
 
  <./classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf>
-<classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf, id=1412, 341.275pt x 100.375pt>
+<classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf, id=1415, 341.275pt x 100.375pt>
 File: classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf Graphic file (type pdf)
 <use classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf>
 Package pdftex.def Info: classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa_cgraph.pdf  used on input line 167.
@@ -900,7 +900,7 @@ Underfull \hbox (badness 10000) detected at line 232
  []
 
  <./classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf>
-<classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf, id=1426, 314.17375pt x 100.375pt>
+<classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf, id=1429, 314.17375pt x 100.375pt>
 File: classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf>
 Package pdftex.def Info: classArtikel_a900bcb74995ac0ae2e4089dfad32da30_icgraph.pdf  used on input line 239.
@@ -916,55 +916,55 @@ Underfull \hbox (badness 10000) detected at line 272
  []
 
  <./classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf>
-<classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf, id=1440, 314.17375pt x 100.375pt>
+<classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf, id=1443, 314.17375pt x 100.375pt>
 File: classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf Graphic file (type pdf)
 <use classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf>
 Package pdftex.def Info: classArtikel_a38a8a06be813582c5ca881e6f6127c3a_cgraph.pdf  used on input line 279.
 (pdftex.def)             Requested size: 313.0pt x 100.00409pt.
  <./classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf>
-<classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf, id=1448, 307.1475pt x 100.375pt>
+<classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf, id=1451, 307.1475pt x 100.375pt>
 File: classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf>
 Package pdftex.def Info: classArtikel_aa3c19491e117cf8c72c168a6a64b1663_icgraph.pdf  used on input line 301.
 (pdftex.def)             Requested size: 306.0pt x 100.00562pt.
  [20] <./classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf>
-<classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf, id=1467, 302.12875pt x 100.375pt>
+<classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf, id=1470, 302.12875pt x 100.375pt>
 File: classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf>
 Package pdftex.def Info: classArtikel_ada867198ef58d55e7515812983fe71c3_icgraph.pdf  used on input line 338.
 (pdftex.def)             Requested size: 301.0pt x 99.9995pt.
  <./classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf>
-<classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf, id=1475, 296.10625pt x 100.375pt>
+<classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf, id=1478, 296.10625pt x 100.375pt>
 File: classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf>
 Package pdftex.def Info: classArtikel_a238b06b2d69a41b69c145d92859889f9_icgraph.pdf  used on input line 360.
 (pdftex.def)             Requested size: 295.0pt x 100.00255pt.
  [21] <./classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf>
-<classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf, id=1493, 270.00874pt x 100.375pt>
+<classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf, id=1496, 270.00874pt x 100.375pt>
 File: classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf>
 Package pdftex.def Info: classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d_icgraph.pdf  used on input line 382.
 (pdftex.def)             Requested size: 269.0pt x 100.00255pt.
  <./classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf>
-<classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf, id=1501, 289.08pt x 100.375pt>
+<classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf, id=1504, 289.08pt x 100.375pt>
 File: classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf>
 Package pdftex.def Info: classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5_icgraph.pdf  used on input line 404.
 (pdftex.def)             Requested size: 288.0pt x 100.00562pt.
  [22] <./classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf>
-<classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf, id=1520, 298.11375pt x 100.375pt>
+<classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf, id=1523, 298.11375pt x 100.375pt>
 File: classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf Graphic file (type pdf)
 <use classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf>
 Package pdftex.def Info: classArtikel_a43c3c148333da4650007c453c091cb51_icgraph.pdf  used on input line 426.
 (pdftex.def)             Requested size: 297.0pt x 100.00562pt.
 ) (./classFluessigkeit.tex <./classFluessigkeit__inherit__graph.pdf>
-<classFluessigkeit__inherit__graph.pdf, id=1530, 149.55875pt x 156.585pt>
+<classFluessigkeit__inherit__graph.pdf, id=1533, 149.55875pt x 156.585pt>
 File: classFluessigkeit__inherit__graph.pdf Graphic file (type pdf)
 <use classFluessigkeit__inherit__graph.pdf>
 Package pdftex.def Info: classFluessigkeit__inherit__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 149.0pt x 156.01117pt.
  <./classFluessigkeit__coll__graph.pdf>
-<classFluessigkeit__coll__graph.pdf, id=1538, 158.5925pt x 225.84375pt>
+<classFluessigkeit__coll__graph.pdf, id=1541, 158.5925pt x 225.84375pt>
 File: classFluessigkeit__coll__graph.pdf Graphic file (type pdf)
 <use classFluessigkeit__coll__graph.pdf>
 Package pdftex.def Info: classFluessigkeit__coll__graph.pdf  used on input line 27.
@@ -978,13 +978,13 @@ Underfull \hbox (badness 10000) detected at line 173
  []
 
 ) (./classSchuettgut.tex <./classSchuettgut__inherit__graph.pdf>
-<classSchuettgut__inherit__graph.pdf, id=1624, 143.53625pt x 156.585pt>
+<classSchuettgut__inherit__graph.pdf, id=1628, 143.53625pt x 156.585pt>
 File: classSchuettgut__inherit__graph.pdf Graphic file (type pdf)
 <use classSchuettgut__inherit__graph.pdf>
 Package pdftex.def Info: classSchuettgut__inherit__graph.pdf  used on input line 13.
 (pdftex.def)             Requested size: 143.0pt x 156.004pt.
  <./classSchuettgut__coll__graph.pdf>
-<classSchuettgut__coll__graph.pdf, id=1633, 158.5925pt x 225.84375pt>
+<classSchuettgut__coll__graph.pdf, id=1636, 158.5925pt x 225.84375pt>
 File: classSchuettgut__coll__graph.pdf Graphic file (type pdf)
 <use classSchuettgut__coll__graph.pdf>
 Package pdftex.def Info: classSchuettgut__coll__graph.pdf  used on input line 22.
@@ -995,13 +995,13 @@ Underfull \hbox (badness 10000) detected at line 166
  []
 
 [30]) (./classStueckgut.tex <./classStueckgut__inherit__graph.pdf>
-<classStueckgut__inherit__graph.pdf, id=1719, 140.525pt x 156.585pt>
+<classStueckgut__inherit__graph.pdf, id=1722, 140.525pt x 156.585pt>
 File: classStueckgut__inherit__graph.pdf Graphic file (type pdf)
 <use classStueckgut__inherit__graph.pdf>
 Package pdftex.def Info: classStueckgut__inherit__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 140.0pt x 156.00879pt.
  <./classStueckgut__coll__graph.pdf>
-<classStueckgut__coll__graph.pdf, id=1727, 158.5925pt x 225.84375pt>
+<classStueckgut__coll__graph.pdf, id=1730, 158.5925pt x 225.84375pt>
 File: classStueckgut__coll__graph.pdf Graphic file (type pdf)
 <use classStueckgut__coll__graph.pdf>
 Package pdftex.def Info: classStueckgut__coll__graph.pdf  used on input line 27.
@@ -1012,7 +1012,7 @@ Underfull \hbox (badness 10000) detected at line 111
  []
 
  <./classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf>
-<classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf, id=1816, 341.275pt x 100.375pt>
+<classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf, id=1819, 341.275pt x 100.375pt>
 File: classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf Graphic file (type pdf)
 <use classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf>
 Package pdftex.def Info: classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icgraph.pdf  used on input line 118.
@@ -1020,7 +1020,7 @@ Package pdftex.def Info: classWarengruppen_ac8850d8bf5e312c620125495c2235b4c_icg
  [35]) [36]
 Kapitel 3.
 (./lager_8cc.tex <./lager_8cc__incl.pdf>
-<lager_8cc__incl.pdf, id=1841, 440.64626pt x 212.795pt>
+<lager_8cc__incl.pdf, id=1844, 440.64626pt x 212.795pt>
 File: lager_8cc__incl.pdf Graphic file (type pdf)
 <use lager_8cc__incl.pdf>
 Package pdftex.def Info: lager_8cc__incl.pdf  used on input line 19.
@@ -1048,19 +1048,19 @@ Underfull \hbox (badness 10000) detected at line 46
  []
 
  <./lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf>
-<lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf, id=1865, 307.1475pt x 291.0875pt>
+<lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf, id=1868, 307.1475pt x 291.0875pt>
 File: lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf Graphic file (type pdf)
 <use lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf>
 Package pdftex.def Info: lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf  used on input line 75.
 (pdftex.def)             Requested size: 306.0pt x 290.01634pt.
 ) (./lager_8hh.tex [38] <./lager_8hh__incl.pdf>
-<lager_8hh__incl.pdf, id=1879, 244.915pt x 156.585pt>
+<lager_8hh__incl.pdf, id=1882, 244.915pt x 156.585pt>
 File: lager_8hh__incl.pdf Graphic file (type pdf)
 <use lager_8hh__incl.pdf>
 Package pdftex.def Info: lager_8hh__incl.pdf  used on input line 15.
 (pdftex.def)             Requested size: 244.0pt x 156.004pt.
  <./lager_8hh__dep__incl.pdf>
-<lager_8hh__dep__incl.pdf, id=1887, 200.75pt x 156.585pt>
+<lager_8hh__dep__incl.pdf, id=1890, 200.75pt x 156.585pt>
 File: lager_8hh__dep__incl.pdf Graphic file (type pdf)
 <use lager_8hh__dep__incl.pdf>
 Package pdftex.def Info: lager_8hh__dep__incl.pdf  used on input line 22.
@@ -1091,13 +1091,13 @@ Underfull \hbox (badness 10000) detected at line 101
  []
 
 [41] <./lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf>
-<lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf, id=1941, 307.1475pt x 291.0875pt>
+<lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf, id=1944, 307.1475pt x 291.0875pt>
 File: lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf Graphic file (type pdf)
 <use lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf>
 Package pdftex.def Info: lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph.pdf  used on input line 127.
 (pdftex.def)             Requested size: 306.0pt x 290.01634pt.
 ) (./lager_8hh_source.tex [42] [43]) (./main_8cc.tex <./main_8cc__incl.pdf>
-<main_8cc__incl.pdf, id=2019, 492.84125pt x 212.795pt>
+<main_8cc__incl.pdf, id=2022, 492.84125pt x 212.795pt>
 File: main_8cc__incl.pdf Graphic file (type pdf)
 <use main_8cc__incl.pdf>
 Package pdftex.def Info: main_8cc__incl.pdf  used on input line 19.
@@ -1128,25 +1128,25 @@ Underfull \hbox (badness 10000) detected at line 72
  []
 
  <./main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>
-<main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf, id=2044, 354.32375pt x 176.66pt>
+<main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf, id=2047, 354.32375pt x 176.66pt>
 File: main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf Graphic file (type pdf)
 <use main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>
 Package pdftex.def Info: main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf  used on input line 80.
 (pdftex.def)             Requested size: 350.0pt x 174.50845pt.
  [45] <./main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf>
-<main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf, id=2061, 282.05376pt x 119.44624pt>
+<main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf, id=2064, 282.05376pt x 119.44624pt>
 File: main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf Graphic file (type pdf)
 <use main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf>
 Package pdftex.def Info: main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph.pdf  used on input line 105.
 (pdftex.def)             Requested size: 281.0pt x 119.0085pt.
  [46] <./main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf>
-<main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf, id=2082, 208.78pt x 100.375pt>
+<main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf, id=2085, 208.78pt x 100.375pt>
 File: main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf Graphic file (type pdf)
 <use main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf>
 Package pdftex.def Info: main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph.pdf  used on input line 132.
 (pdftex.def)             Requested size: 208.0pt x 100.00562pt.
  <./main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf>
-<main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf, id=2090, 210.7875pt x 100.375pt>
+<main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf, id=2093, 210.7875pt x 100.375pt>
 File: main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf Graphic file (type pdf)
 <use main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf>
 Package pdftex.def Info: main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph.pdf  used on input line 140.
@@ -1166,18 +1166,18 @@ Package rerunfilecheck Info: File `refman.out' has not changed.
 (rerunfilecheck)             Checksum: 1B152CEDF126329B094BE3A4C9C60784;15250.
  ) 
 Here is how much of TeX's memory you used:
- 22608 strings out of 477932
- 370316 string characters out of 5837866
+ 22611 strings out of 477932
+ 370367 string characters out of 5837866
  2364388 words of memory out of 5000000
  41275 multiletter control sequences out of 15000+600000
  577207 words of font info for 105 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,14n,117p,472b,2269s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (53 pages, 725058 bytes).
+Output written on refman.pdf (53 pages, 725299 bytes).
 PDF statistics:
- 2488 PDF objects out of 2984 (max. 8388607)
- 2277 compressed objects within 23 object streams
- 1139 named destinations out of 1200 (max. 500000)
+ 2492 PDF objects out of 2984 (max. 8388607)
+ 2281 compressed objects within 23 object streams
+ 1142 named destinations out of 1200 (max. 500000)
  738 words of extra memory for PDF output out of 10000 (max. 10000000)
 

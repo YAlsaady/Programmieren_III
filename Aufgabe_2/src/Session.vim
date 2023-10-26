@@ -14,16 +14,16 @@ else
   set shortmess=aoO
 endif
 badd +1 main.cc
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.hh
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/waren.txt
-badd +1 ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/Makefile
+badd +1 lager.cc
+badd +1 lager.hh
+badd +1 waren.txt
+badd +1 Makefile
 argglobal
 %argdel
 $argadd main.cc
 edit main.cc
 argglobal
-balt ~/Studium/3.Semster/Programmieren_3/Aufgaben/Aufgabe_2/src/lager.cc
+balt lager.cc
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}

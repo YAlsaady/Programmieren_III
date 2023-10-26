@@ -180,6 +180,9 @@ void readWrite(string read, string write) {
   }
 }
 
+//-----------------------
+//Wurde auskommentiert, da wir nur hier die Artikel-Klasse verwendet und nicht die abgeleitete Klassen.
+//-----------------------
 
 /*
 void readWrite_old(string read, string write) {
