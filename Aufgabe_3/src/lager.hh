@@ -23,74 +23,7 @@
 using namespace std;
 enum masseinheit { stk, kg, l };
 typedef double preis;
-
-class Lager {
-public:
-  Lager();
-  Lager(Lager &&) = default;
-  Lager(const Lager &) = default;
-  Lager &operator=(Lager &&) = default;
-  Lager &operator=(const Lager &) = default;
-  ~Lager();
-
-private:
-  
-};
-class Warengruppen {
-private:
-  map<string, string> mapGruppe;
-  map<string, string>::iterator iter;
-
-public:
-  /**
-   * @brief Konstruktor fuer die Klasse "Warengruppen".
-   *
-   * Dieser Konstruktor initialisiert eine leere Warengruppenliste.
-   */
-  Warengruppen();
-
-  /**
-   * @brief Setzt eine Standard-Warengruppenliste.
-   */
-  void defaultList();
-
-  /**
-   * @brief Gibt den Namen der Warengruppe fuer einen gegebenen Code zurueck.
-   *
-   * @param code Der Warengruppencode.
-   * @return Der Name der Warengruppe oder der Code, falls keine Warengruppe
-   * gefunden wurde.
-   */
-  string getGruppe(string code);
-
-  /**
-   * @brief Fuegt eine neue Warengruppe hinzu.
-   *
-   * @param code Der Warengruppencode.
-   * @param name Der Name der Warengruppe.
-   */
-  void addGruppe(string code, string name);
-
-  /**
-   * @brief Loescht eine Warengruppe anhand ihres Codes.
-   *
-   * @param code Der Warengruppencode.
-   */
-  void delGruppe(string code);
-
-  /**
-   * @brief Aendert den Namen einer vorhandenen Warengruppe.
-   *
-   * @param code Der Warengruppencode.
-   * @param name Der neue Name der Warengruppe.
-   */
-  void changeGruppe(string code, string name);
-
-  /**
-   * @brief Loescht alle Warengruppen und setzt sie zurck.
-   */
-  void clear();
-};
+typedef int Nummer;
 
 /**
  * @brief Die Klasse "Artikel" repraesentiert einen Artikel mit verschiedenen
@@ -106,7 +39,6 @@ protected:
   preis normpreis;
 
 public:
-  typedef int Nummer;
   /**
    * @brief Standardkonstruktor fuer die Klasse "Artikel".
    */
@@ -136,14 +68,14 @@ public:
    * @brief Statische Warengruppen-Instanz, die fuer alle Artikel gemeinsam
    * genutzt wird.
    */
-  static Warengruppen gruppe;
+  // static Warengruppen gruppe;
 
   /**
    * @brief Setzt die Warengruppe fuer Artikel.
    *
    * @param g Die Warengruppe, die zugewiesen werden soll.
    */
-  static void setGruppe(Warengruppen g);
+  // static void setGruppe(Warengruppen g);
 
   /**
    * @brief Gibt den Namen des Artikels zurueck.
@@ -164,7 +96,7 @@ public:
    *
    * @return Der Lagerbestand des Artikels.
    */
-  unsigned int getLagerabstand() const;
+  unsigned int getLagerbestand() const;
 
   /**
    * @brief Gibt die Masseinheit des Artikels als Wert aus der Enumeration
@@ -202,7 +134,7 @@ public:
    * @return Die Warengruppe des Artikels oder die Artikelnummer, falls keine
    * Warengruppe gefunden wurde.
    */
-  string getGruppe() const;
+  int getGruppe() const;
 
   // Setter-Funktionen
 
@@ -265,7 +197,8 @@ public:
 /**
  * @brief ueberladen des Ausgabeoperators fuer die Artikelklasse.
  *
- * Diese Funktion ermoeglicht das Ausgeben eines Artikels mit dem Ausgabeoperator
+ * Diese Funktion ermoeglicht das Ausgeben eines Artikels mit dem
+ * Ausgabeoperator
  * '<<'.
  *
  * @param os Die Ausgabestromreferenz, in die die Informationen geschrieben
@@ -417,4 +350,75 @@ public:
   void setVolume(double vol);
 };
 
+class Lager {
+public:
+  Lager() = default;
+
+  typedef map<string, Artikel *> artikelMap;
+
+  void readFile(string filename);
+  void write(ostream &os);
+  void write(string filename);
+  Artikel getArtikel(string artikelnummer);
+  artikelMap getMap();
+
+private:
+  artikelMap lagerMap;
+};
+
+// class Warengruppen {
+// private:
+//   map<string, string> mapGruppe;
+//   // map<string, string>::iterator iter;
+//
+// public:
+//   /**
+//    * @brief Konstruktor fuer die Klasse "Warengruppen".
+//    *
+//    * Dieser Konstruktor initialisiert eine leere Warengruppenliste.
+//    */
+//   Warengruppen();
+//
+//   /**
+//    * @brief Setzt eine Standard-Warengruppenliste.
+//    */
+//   void defaultList();
+//
+//   /**
+//    * @brief Gibt den Namen der Warengruppe fuer einen gegebenen Code zurueck.
+//    *
+//    * @param code Der Warengruppencode.
+//    * @return Der Name der Warengruppe oder der Code, falls keine Warengruppe
+//    * gefunden wurde.
+//    */
+//   string getGruppe(string code);
+//
+//   /**
+//    * @brief Fuegt eine neue Warengruppe hinzu.
+//    *
+//    * @param code Der Warengruppencode.
+//    * @param name Der Name der Warengruppe.
+//    */
+//   void addGruppe(string code, string name);
+//
+//   /**
+//    * @brief Loescht eine Warengruppe anhand ihres Codes.
+//    *
+//    * @param code Der Warengruppencode.
+//    */
+//   void delGruppe(string code);
+//
+//   /**
+//    * @brief Aendert den Namen einer vorhandenen Warengruppe.
+//    *
+//    * @param code Der Warengruppencode.
+//    * @param name Der neue Name der Warengruppe.
+//    */
+//   void changeGruppe(string code, string name);
+//
+//   /**
+//    * @brief Loescht alle Warengruppen und setzt sie zurck.
+//    */
+//   void clear();
+// };
 #endif // !LAGER_HH

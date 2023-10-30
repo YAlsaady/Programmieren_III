@@ -1,17 +1,44 @@
+#ifndef LADEN_HH
+#define LADEN_HH
+
 #include "lager.hh"
 #include <set>
+#include <vector>
 
 class Regal {
 public:
-  Regal(const Lager &lager, Artikel::Nummer warengruppe);
-  Regal(const Lager &lager, std::set<Artikel::Nummer> warengruppen);
-  template <class OutputIterator> void products(OutputIterator out) const;
+  Regal(string name, Lager const &lager, int warengruppe);
+  Regal(string name, Lager const &lager, std::set<int> warengruppen);
+  string getName() const;
+  std::set<int> getWaren() const;
+  Artikel getArtikel(string num) const;
+  // template <class OutputIterator>
+  // void products(OutputIterator out) const;
+  vector<string> getImRegal();
 
 private:
-  const Lager &lager;
-  std::set<Artikel::Nummer> waren;
+  string regalname;
+  Lager const &lager;
+  std::set<int> waren;
+  friend ostream &operator<<(ostream &os, Regal regal);
+  // vector<string> imGemueseRegal;
 };
 
-template <class OutputIterator> // int out {}
+class Kunde {
+public:
+  Kunde(vector<Regal> const &regale);
+  void kundeUI();
+  void printRegale();
+  void printArtikel(int num);
+  void printWarenkorb();
+  typedef struct {
+    string artikelnummer;
+    double menge;
+  } waren;
 
-void Regal::products(OutputIterator out) const {}
+private:
+  vector<Regal> const &regale;
+  vector<waren> warenkorb;
+};
+
+#endif // !LADEN_HH

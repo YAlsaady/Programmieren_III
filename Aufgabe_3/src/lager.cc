@@ -14,47 +14,65 @@
 
 #include "lager.hh"
 #include <cmath>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <sstream>
 #include <string>
 #include <vector>
 
-
-Lager::Lager() {
-}
-
-Lager::~Lager() {
-}
-
-Warengruppen::Warengruppen() {}
-void Warengruppen::defaultList() {
-  mapGruppe["1005"] = "Fahrrad";
-  mapGruppe["4000"] = "Gemuese";
-  mapGruppe["4106"] = "Gemuese";
-  mapGruppe["4370"] = "Kaffee";
-  mapGruppe["5500"] = "Bier";
-  mapGruppe["5031"] = "Milch";
-}
-string Warengruppen::getGruppe(string code) {
-  if (mapGruppe[code] != "")
-    return mapGruppe[code];
-  else {
-    return code;
+void Lager::readFile(string filename) {
+  ifstream file(filename);
+  if (file.is_open()) {
+    Artikel tmp;
+    do {
+      try {
+        file >> tmp;
+        switch (tmp.getMasseinheit()) {
+        case 0:
+          lagerMap.insert({tmp.getArtikelnummer(), new Stueckgut(tmp)});
+          // cout << typeid(lagerMap[tmp.getArtikelnummer()]).name() << endl;
+          break;
+        case 1:
+          lagerMap.insert({tmp.getArtikelnummer(), new Schuettgut(tmp)});
+          break;
+        case 2:
+          lagerMap.insert({tmp.getArtikelnummer(), new Fluessigkeit(tmp)});
+          break;
+        }
+      } catch (const int &ex) {
+      } catch (std::invalid_argument const &ex) {
+      }
+    } while (!file.eof());
+    file.close();
   }
 }
 
-void Warengruppen::addGruppe(string code, string name) {
-  mapGruppe.insert({code, name});
+void Lager::write(ostream &os) {
+  artikelMap::iterator it = lagerMap.begin();
+  while (it != lagerMap.end()) {
+    os << *it->second << endl;
+    it++;
+  }
 }
-void Warengruppen::changeGruppe(string code, string name) {
-  mapGruppe.insert_or_assign(code, name);
+
+void Lager::write(string filename) {
+  ofstream file(filename);
+  if (file.is_open()) {
+    artikelMap::iterator it = lagerMap.begin();
+    while (it != lagerMap.end()) {
+      file << *it->second << endl;
+      it++;
+    }
+  }
 }
-void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
 
-void Warengruppen::clear() { mapGruppe.clear(); }
+Artikel Lager::getArtikel(string artikelnummer) {
+  return *lagerMap[artikelnummer];
+}
 
-Warengruppen Artikel::gruppe;
+Lager::artikelMap Lager::getMap() { return lagerMap; }
+
 Artikel::Artikel() {}
 Artikel::Artikel(string name, string num, unsigned int bestand,
                  masseinheit einheit, preis vp, preis np)
@@ -62,10 +80,10 @@ Artikel::Artikel(string name, string num, unsigned int bestand,
       einheit(einheit), verkaufpreis(vp), normpreis(np) {}
 Artikel::~Artikel() {}
 
-void Artikel::setGruppe(Warengruppen g) { gruppe = g; }
+// void Artikel::setGruppe(Warengruppen g) { gruppe = g; }
 string Artikel::getName() const { return artikelname; }
 string Artikel::getArtikelnummer() const { return artikelnummer; }
-unsigned int Artikel::getLagerabstand() const { return lagerbestand; }
+unsigned int Artikel::getLagerbestand() const { return lagerbestand; }
 masseinheit Artikel::getMasseinheit() const { return einheit; }
 string Artikel::getStrMasseinheit() const {
   switch (einheit) {
@@ -82,10 +100,10 @@ string Artikel::getStrMasseinheit() const {
 
 preis Artikel::getVerkaufpreis() const { return verkaufpreis; }
 preis Artikel::getNormpreis() const { return normpreis; }
-string Artikel::getGruppe() const {
+int Artikel::getGruppe() const {
   string artnum = artikelnummer;
   artnum = artnum.erase(4);
-  return gruppe.getGruppe(artnum);
+  return stoi(artnum);
   // return artnum;
 }
 
@@ -181,14 +199,14 @@ void operator>>(istream &is, Artikel &produkt) {
 
 Stueckgut::Stueckgut(Artikel produkt)
     : Stueckgut(produkt.getName(), produkt.getArtikelnummer(),
-                produkt.getVerkaufpreis(), produkt.getLagerabstand()) {}
+                produkt.getVerkaufpreis(), produkt.getLagerbestand()) {}
 Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
     : Artikel(name, num, bestand, stk, vp, vp) {}
 
 Schuettgut::Schuettgut(Artikel produkt)
     : Schuettgut(produkt.getName(), produkt.getArtikelnummer(),
                  produkt.getVerkaufpreis() / produkt.getNormpreis(),
-                 produkt.getNormpreis(), produkt.getLagerabstand()) {}
+                 produkt.getNormpreis(), produkt.getLagerbestand()) {}
 Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
     : Artikel(name, num, bestand, kg, (groesse * np), np), losgroesse(groesse) {
@@ -208,7 +226,7 @@ void Schuettgut::setVerkaufpreis(preis vp) {
 Fluessigkeit::Fluessigkeit(Artikel produkt)
     : Fluessigkeit(produkt.getName(), produkt.getArtikelnummer(),
                    produkt.getVerkaufpreis() / produkt.getNormpreis(),
-                   produkt.getNormpreis(), produkt.getLagerabstand()) {}
+                   produkt.getNormpreis(), produkt.getLagerbestand()) {}
 Fluessigkeit::Fluessigkeit(string name, string num, double vol, preis np,
                            unsigned int bestand)
     : Artikel(name, num, bestand, l, (vol * np), np), volume(vol) {}
@@ -223,3 +241,32 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume = int((verkaufpreis / normpreis) * 100 + 0.5);
   volume /= 100;
 }
+
+// Warengruppen::Warengruppen() {}
+// void Warengruppen::defaultList() {
+//   mapGruppe["1005"] = "Fahrrad";
+//   mapGruppe["4000"] = "Gemuese";
+//   mapGruppe["4106"] = "Gemuese";
+//   mapGruppe["4370"] = "Kaffee";
+//   mapGruppe["5500"] = "Bier";
+//   mapGruppe["5031"] = "Milch";
+// }
+// string Warengruppen::getGruppe(string code) {
+//   if (mapGruppe[code] != "")
+//     return mapGruppe[code];
+//   else {
+//     return code;
+//   }
+// }
+//
+// void Warengruppen::addGruppe(string code, string name) {
+//   mapGruppe.insert({code, name});
+// }
+// void Warengruppen::changeGruppe(string code, string name) {
+//   mapGruppe.insert_or_assign(code, name);
+// }
+// void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
+//
+// void Warengruppen::clear() { mapGruppe.clear(); }
+//
+// Warengruppen Artikel::gruppe;
