@@ -31,7 +31,7 @@ void Lager::readFile(string filename) {
         switch (tmp.getMasseinheit()) {
         case 0:
           lagerMap.insert({tmp.getArtikelnummer(), new Stueckgut(tmp)});
-          // cout << typeid(lagerMap[tmp.getArtikelnummer()]).name() << endl;
+          // cout << typeid(*lagerMap[tmp.getArtikelnummer()]).name() << endl;
           break;
         case 1:
           lagerMap.insert({tmp.getArtikelnummer(), new Schuettgut(tmp)});

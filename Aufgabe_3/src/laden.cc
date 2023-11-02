@@ -104,8 +104,14 @@ void Kunde::printRegale() {
   int i = 0;
   cout << "Warenkorb: " << warenkorb.size() << endl;
   cout << "Wählen Sie einen Regal aus\n" << left << endl;
-  cout << setw(15) << "";
+  cout << setw(2) << "";
+  cout << "Wahl" << setw(9) << ":" << left;
   cout << setw(30) << "Bezeichnung" << endl;
+  cout << setw(5) << "";
+  cout << "0" << setw(9) << ":" << left;
+
+  cout << "Warenkorb" << left;
+  cout << endl;
   for (auto regal : regale) {
     i++;
     cout << setw(5) << "";
@@ -114,7 +120,8 @@ void Kunde::printRegale() {
   }
   cout << setw(5) << "";
   cout << "q" << setw(9) << ":" << left;
-  cout << "Quit" << left;
+
+  cout << "Beenden" << left;
   cout << endl;
   cout << endl;
   while (true) {
@@ -126,6 +133,9 @@ void Kunde::printRegale() {
       wahlNum = stoi(wahl);
       if (wahlNum > regale.size()) {
         cout << "Falsche Eingabe" << endl;
+      } else if (wahlNum == 0) {
+        printWarenkorb();
+        break;
       } else {
         printArtikel(wahlNum - 1);
         break;
@@ -151,11 +161,11 @@ void Kunde::printArtikel(int num) {
   cout << regale[num];
   cout << setw(5) << "";
   cout << "." << setw(9) << ":" << left;
-  cout << "back" << left;
+  cout << "Zurück" << left;
   cout << endl;
   cout << setw(5) << "";
   cout << "q" << setw(9) << ":" << left;
-  cout << "Quit" << left;
+  cout << "Beenden" << left;
   cout << endl;
   cout << endl;
   while (true) {
@@ -169,23 +179,29 @@ void Kunde::printArtikel(int num) {
       break;
     }
     try {
+
       wahl1Num = stoi(wahl1);
       if (wahl1Num > Regal(regale[num]).getImRegal().size()) {
       } else {
         wahl1Num--;
-        cout << Regal(regale[num]).getImRegal()[wahl1Num] << endl;
+        Artikel artikel =
+            Regal(regale[num])
+                .getArtikel(Regal(regale[num]).getImRegal()[wahl1Num]);
+        cout << artikel.getName() << endl;
+        // cout << Regal(regale[num]).getImRegal()[wahl1Num] << endl;
         cout << "Geben Sie die Menge" << endl;
         cin >> wahl2;
         wahl2num = stof(wahl2);
-        if (wahl2num <=
-            regale[num]
-                .getArtikel(Regal(regale[num]).getImRegal()[wahl1Num])
-                .getLagerbestand()) {
+        if (wahl2num <= artikel.getLagerbestand()) {
           warenkorb.push_back(
               {Regal(regale[num]).getImRegal()[wahl1Num], wahl2num});
-          cout << warenkorb[0].menge << " * " << warenkorb[0].artikelnummer
+          cout << CLEAR;
+          cout << warenkorb[warenkorb.size() - 1].menge << " * "
+               << Regal(regale[num])
+                      .getArtikel(warenkorb[warenkorb.size() - 1].artikelnummer)
+                      .getName()
                << endl;
-          sleep(1);
+          sleep(2);
           printArtikel(num);
           break;
         }
@@ -196,9 +212,43 @@ void Kunde::printArtikel(int num) {
   }
 }
 void Kunde::printWarenkorb() {
+  string wahl;
+  int i = 0;
+  cout << CLEAR;
+  cout << "Warenkorb: " << warenkorb.size() << endl;
+  cout << "Wählen Sie aus\n" << left << endl;
   for (auto ware : warenkorb) {
-    Artikel a = regale[0].getArtikel(ware.artikelnummer);
-    cout << regale[0].getArtikel(ware.artikelnummer) << endl;
+    Artikel artikel = regale[0].getArtikel(ware.artikelnummer);
+    i++;
+    cout << setw(5) << "";
+    cout << i << setw(9) << ":" << left;
+    cout << setw(30) << artikel.getName();
+    cout << artikel.getVerkaufpreis() << "/"
+         << artikel.getVerkaufpreis() / artikel.getNormpreis() << setw(30)
+         << artikel.getStrMasseinheit();
+    cout << setw(20) << ware.menge;
+    cout << setw(20) << artikel.getVerkaufpreis() * ware.menge << endl;
+    // cout << a.getName() << " X " << ware.menge;
+    // cout << a.getName() << " X " << ware.menge << endl;
+  }
+  cout << setw(5) << "";
+  cout << "." << setw(9) << ":" << left;
+  cout << "Zurück" << left;
+  cout << endl;
+  cout << setw(5) << "";
+  cout << "q" << setw(9) << ":" << left;
+  cout << "Beenden" << left<< endl;
+  cout << "Auswahl: ";
+  while (true) {
+    cin >> wahl;
+    if (wahl[0] == 'q') {
+      break;
+    }
+    if (wahl[0] == '.') {
+      printRegale();
+      break;
+    }
+    cout << "Falsche Eingabe!" << endl;
   }
 }
 
