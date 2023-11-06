@@ -242,31 +242,3 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume /= 100;
 }
 
-// Warengruppen::Warengruppen() {}
-// void Warengruppen::defaultList() {
-//   mapGruppe["1005"] = "Fahrrad";
-//   mapGruppe["4000"] = "Gemuese";
-//   mapGruppe["4106"] = "Gemuese";
-//   mapGruppe["4370"] = "Kaffee";
-//   mapGruppe["5500"] = "Bier";
-//   mapGruppe["5031"] = "Milch";
-// }
-// string Warengruppen::getGruppe(string code) {
-//   if (mapGruppe[code] != "")
-//     return mapGruppe[code];
-//   else {
-//     return code;
-//   }
-// }
-//
-// void Warengruppen::addGruppe(string code, string name) {
-//   mapGruppe.insert({code, name});
-// }
-// void Warengruppen::changeGruppe(string code, string name) {
-//   mapGruppe.insert_or_assign(code, name);
-// }
-// void Warengruppen::delGruppe(string code) { mapGruppe.erase(code); }
-//
-// void Warengruppen::clear() { mapGruppe.clear(); }
-//
-// Warengruppen Artikel::gruppe;
