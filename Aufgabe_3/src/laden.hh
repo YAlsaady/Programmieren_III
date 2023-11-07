@@ -35,8 +35,10 @@ public:
     string artikelnummer;
     double menge;
   } waren;
+  vector<waren> getWarenkorb() const;
 
 private:
+  string name;
   vector<Regal> const &regale;
   vector<waren> warenkorb;
 };
