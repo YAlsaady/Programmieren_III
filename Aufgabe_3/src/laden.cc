@@ -10,7 +10,6 @@ using namespace std;
 
 Regal::Regal(string name, Lager const &lager, int warengruppe)
     : regalname(name), lager(lager) {
-  name = "kunde Name";    
   waren.insert(warengruppe);
 }
 Regal::Regal(string name, Lager const &lager, std::set<int> warengruppen)
@@ -61,10 +60,13 @@ ostream &operator<<(ostream &os, Regal regal) {
   return os;
 }
 
-Kunde::Kunde(vector<Regal> const &regale) : regale(regale) {}
+Kunde::Kunde(vector<Regal> const &regale) : regale(regale) {
+    name = "kunde Name";    
+}
 vector<Kunde::waren> Kunde::getWarenkorb() const{
   return warenkorb;
 }
+string Kunde::getName()const{return name;}
 void Kunde::kundeUI() { printRegale(); }
 void Kunde::printRegale() {
   string wahl;

@@ -28,6 +28,7 @@ class Kunde {
 public:
   Kunde(vector<Regal> const &regale);
   void kundeUI();
+  string getName() const;
   void printRegale();
   void printArtikel(int num);
   void printWarenkorb();
