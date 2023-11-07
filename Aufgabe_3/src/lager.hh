@@ -359,7 +359,7 @@ public:
   void readFile(string filename);
   void write(ostream &os);
   void write(string filename);
-  Artikel getArtikel(string artikelnummer);
+  Artikel getArtikel(string artikelnummer) const;
   artikelMap getMap();
 
 private:

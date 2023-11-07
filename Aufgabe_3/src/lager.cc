@@ -67,8 +67,9 @@ void Lager::write(string filename) {
   }
 }
 
-Artikel Lager::getArtikel(string artikelnummer) {
-  return *lagerMap[artikelnummer];
+Artikel Lager::getArtikel(string artikelnummer) const {
+  
+  return *artikelMap(lagerMap)[artikelnummer];
 }
 
 Lager::artikelMap Lager::getMap() { return lagerMap; }
@@ -241,4 +242,3 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume = int((verkaufpreis / normpreis) * 100 + 0.5);
   volume /= 100;
 }
-
