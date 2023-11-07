@@ -14,6 +14,7 @@
  * @copyright Copyright (c) 2023
  *
  */
+#include "kasse.hh"
 #include "laden.hh"
 #include "lager.hh"
 #include <cstdlib>
@@ -25,13 +26,10 @@
 #include <vector>
 
 using namespace std;
-int main()
-{
+int main() {
   Lager lager;
   vector<Regal> regale;
   lager.readFile("waren.txt");
-  // lager.write(cout);
-  // cout << lager.getArtikel("1005002100") << endl;
   Regal gemueseRegal("Gemuese", lager, {40, 41});
   Regal getraenkeRegal("Getrinke", lager, {43, 50, 55});
   Regal sonderRegal("Sonderartikel", lager, 10);
@@ -40,6 +38,8 @@ int main()
   regale.push_back(sonderRegal);
   Kunde kunde(regale);
   kunde.kundeUI();
+  Kasse kasse(kunde, lager);
+  kasse.rechnung(cout);
 
   return 0;
 }
