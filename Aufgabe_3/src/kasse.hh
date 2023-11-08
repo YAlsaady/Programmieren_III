@@ -9,11 +9,10 @@ class Kasse {
 public:
   Kasse(Kunde const &kunde, Lager const &lager);
   void rechnung(ostream &os);
-
+  void printRechnung(ostream &os, const string &date,
+                     const string &rechnungsnummer, double sum);
 
 private:
   Kunde const &kunde;
   Lager const &lager;
 };
-
-
