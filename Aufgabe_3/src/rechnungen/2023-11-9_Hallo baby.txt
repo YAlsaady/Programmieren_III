@@ -1,0 +1,13 @@
+Rechnung des Warenwirtschaftssystems
+Rechnungsnummer: 1120239
+Kunde: Hallo baby
+Rechnungdatum: 2023-11-9
+
+------------------------------------------------------
+Cafe Crema Slow Roast	14.99 x 0.5 kg/€	7.495€
+
+Summe Netto:	7.495€
+MwSt. 19%:	1.42405€
+Gesamt:		6.07095€
+-----------------------
+-----------------------

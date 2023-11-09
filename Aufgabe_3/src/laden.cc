@@ -61,7 +61,7 @@ ostream &operator<<(ostream &os, Regal regal) {
 }
 
 Kunde::Kunde(vector<Regal> const &regale) : regale(regale) {
-    name = "kunde Name";    
+    name = "MAX MUSTERMAN";    
 }
 vector<Kunde::waren> Kunde::getWarenkorb() const{
   return warenkorb;
