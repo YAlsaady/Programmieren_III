@@ -7,8 +7,9 @@
 
 class Regal {
 public:
-  Regal(string name, Lager const &lager, int warengruppe);
-  Regal(string name, Lager const &lager, std::set<int> warengruppen);
+  Regal(string name, Lager &lager, int warengruppe);
+  Regal(string name, Lager &lager, std::set<int> warengruppen);
+  Lager &getLager();
   string getName() const;
   std::set<int> getWaren() const;
   Artikel getArtikel(string num) const;
@@ -18,7 +19,7 @@ public:
 
 private:
   string regalname;
-  Lager const &lager;
+  Lager &lager;
   std::set<int> waren;
   friend ostream &operator<<(ostream &os, Regal regal);
   // vector<string> imGemueseRegal;
@@ -26,7 +27,7 @@ private:
 
 class Kunde {
 public:
-  Kunde(vector<Regal> const &regale);
+  Kunde(string name,vector<Regal> const &regale);
   void kundeUI();
   string getName() const;
   void printRegale();

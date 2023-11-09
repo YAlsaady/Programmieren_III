@@ -10,13 +10,13 @@
 
 class Kasse {
 public:
-  Kasse(Kunde const &kunde, Lager const &lager);
+  Kasse(Kunde const &kunde, Lager &lager);
   void rechnung(ostream &os);
   void printRechnung(ostream &os, const string &date,
                      const string &rechnungsnummer, bool print_auswahl);
 
 private:
   Kunde const &kunde;
-  Lager const &lager;
+  Lager &lager;
 };
 #endif // !KASSE_HH

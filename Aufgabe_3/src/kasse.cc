@@ -15,9 +15,8 @@
 
 using namespace std;
 
-static double rounding(double);
-
-Kasse::Kasse(Kunde const &kunde, Lager const &lager)
+#define CLEAR u8"\033[2J\033[1;1H"
+Kasse::Kasse(Kunde const &kunde, Lager &lager)
     : kunde(kunde), lager(lager) {}
 
 void Kasse::rechnung(ostream &os) {
@@ -40,6 +39,7 @@ void Kasse::rechnung(ostream &os) {
   }
   ofstream datei(dateiname);
 
+  cout << CLEAR;
   printRechnung(os, date, rechnungsnummer, true);
   string wahl;
   while (true) {
@@ -56,6 +56,7 @@ void Kasse::rechnung(ostream &os) {
         printRechnung(datei, date, rechnungsnummer, false);
         datei.close();
       }
+      cout << CLEAR;
       cout << "Rechnung liegt hier: " << currentDir << "/" << dateiname << endl;
       break;
     }
@@ -80,6 +81,8 @@ void Kasse::printRechnung(ostream &os, const string &date,
     os << artikel.getName() << "\t" << artikel.getNormpreis() << " x "
        << ware.menge << " " << artikel.getStrMasseinheit() << "/€"
        << "\t" << artikel.getNormpreis() * ware.menge << "€" << endl;
+    artikel.setLagerbestand(artikel.getLagerbestand()- ware.menge);
+    lager.updateArtikel(ware.artikelnummer, new Artikel(artikel));
     sum += artikel.getNormpreis() * ware.menge;
   }
 

@@ -1,4 +1,5 @@
 #include "laden.hh"
+#include "kasse.hh"
 #include "lager.hh"
 #include <iomanip>
 #include <string>
@@ -8,11 +9,11 @@
 using namespace std;
 #define CLEAR u8"\033[2J\033[1;1H"
 
-Regal::Regal(string name, Lager const &lager, int warengruppe)
+Regal::Regal(string name, Lager &lager, int warengruppe)
     : regalname(name), lager(lager) {
   waren.insert(warengruppe);
 }
-Regal::Regal(string name, Lager const &lager, std::set<int> warengruppen)
+Regal::Regal(string name, Lager &lager, std::set<int> warengruppen)
     : regalname(name), lager(lager) {
   waren.merge(warengruppen);
 }
@@ -20,9 +21,7 @@ Regal::Regal(string name, Lager const &lager, std::set<int> warengruppen)
 string Regal::getName() const { return regalname; }
 std::set<int> Regal::getWaren() const { return waren; }
 
-Artikel Regal::getArtikel(string num) const {
-  return lager.getArtikel(num);
-}
+Artikel Regal::getArtikel(string num) const { return lager.getArtikel(num); }
 
 vector<string> Regal::getImRegal() {
   Lager::artikelMap map = Lager(lager).getMap();
@@ -42,6 +41,8 @@ vector<string> Regal::getImRegal() {
   return imRegal;
 }
 
+Lager &Regal::getLager() { return lager; }
+
 ostream &operator<<(ostream &os, Regal regal) {
   vector<string> imRegal = regal.getImRegal();
   int i = 0;
@@ -60,13 +61,10 @@ ostream &operator<<(ostream &os, Regal regal) {
   return os;
 }
 
-Kunde::Kunde(vector<Regal> const &regale) : regale(regale) {
-    name = "MAX MUSTERMAN";    
-}
-vector<Kunde::waren> Kunde::getWarenkorb() const{
-  return warenkorb;
-}
-string Kunde::getName()const{return name;}
+Kunde::Kunde(string name, vector<Regal> const &regale)
+    : name(name) , regale(regale){}
+vector<Kunde::waren> Kunde::getWarenkorb() const { return warenkorb; }
+string Kunde::getName() const { return name; }
 void Kunde::kundeUI() { printRegale(); }
 void Kunde::printRegale() {
   string wahl;
@@ -103,7 +101,7 @@ void Kunde::printRegale() {
     try {
       wahlNum = stoi(wahl);
       if (wahlNum > regale.size()) {
-        cout << "Falsche Eingabe" << endl;
+        cout << "Falsche Eingabe!" << endl;
       } else if (wahlNum == 0) {
         printWarenkorb();
         break;
@@ -112,7 +110,7 @@ void Kunde::printRegale() {
         break;
       }
     } catch (const std::exception &) {
-      cout << "Falsche Eingabe" << endl;
+      cout << "Falsche Eingabe!!" << endl;
     }
   }
 }
@@ -172,7 +170,7 @@ void Kunde::printArtikel(int num) {
                       .getArtikel(warenkorb[warenkorb.size() - 1].artikelnummer)
                       .getName()
                << endl;
-          sleep(2);
+          sleep(1);
           printArtikel(num);
           break;
         }
@@ -195,12 +193,17 @@ void Kunde::printWarenkorb() {
     cout << setw(5) << "";
     cout << i << setw(9) << ":" << left;
     cout << setw(30) << artikel.getName();
-    cout << setw(6) << artikel.getVerkaufpreis() << "/"
-         << setw(4) << artikel.getVerkaufpreis() / artikel.getNormpreis();
+    cout << setw(6) << artikel.getVerkaufpreis() << "/" << setw(4)
+         << artikel.getVerkaufpreis() / artikel.getNormpreis();
     cout << setw(20) << artikel.getStrMasseinheit();
     cout << setw(20) << ware.menge;
-    cout << setw(20) <<showbase << put_money(artikel.getVerkaufpreis() * ware.menge) << endl;
+    cout << setw(20) << showbase
+         << put_money(artikel.getVerkaufpreis() * ware.menge) << endl;
   }
+  cout << setw(5) << "";
+  cout << "k" << setw(9) << ":" << left;
+  cout << "Kasse" << left;
+  cout << endl;
   cout << setw(5) << "";
   cout << "." << setw(9) << ":" << left;
   cout << "Zurück" << left;
@@ -216,6 +219,11 @@ void Kunde::printWarenkorb() {
     }
     if (wahl[0] == '.') {
       printRegale();
+      break;
+    }
+    if (wahl[0] == 'k') {
+      Kasse kasse(*this, Regal(regale[0]).getLager());
+      kasse.rechnung(cout);
       break;
     }
     cout << "Falsche Eingabe!" << endl;

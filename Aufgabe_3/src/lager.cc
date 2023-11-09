@@ -59,6 +59,9 @@ void Lager::write(ostream &os) {
   }
 }
 
+void Lager::updateArtikel(string num, Artikel* artikel){
+  lagerMap[num] = artikel;
+}
 void Lager::write(string filename) {
   ofstream file(filename);
   if (file.is_open()) {

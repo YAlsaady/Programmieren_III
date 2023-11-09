@@ -361,6 +361,7 @@ public:
   void write(string filename);
   Artikel getArtikel(string artikelnummer) const;
   artikelMap getMap();
+  void updateArtikel(string num, Artikel* artikel);
 
 private:
   artikelMap lagerMap;

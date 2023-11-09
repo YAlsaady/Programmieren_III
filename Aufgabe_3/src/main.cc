@@ -26,7 +26,11 @@
 #include <vector>
 
 using namespace std;
+#define CLEAR u8"\033[2J\033[1;1H"
 int main() {
+  char wahl;
+  string vorname;
+  string name;
   Lager lager;
   vector<Regal> regale;
   lager.readFile("waren.txt");
@@ -36,10 +40,31 @@ int main() {
   regale.push_back(gemueseRegal);
   regale.push_back(getraenkeRegal);
   regale.push_back(sonderRegal);
-  Kunde kunde(regale);
-  kunde.kundeUI();
-  Kasse kasse(kunde, lager);
-  kasse.rechnung(cout);
+  while (true) {
+  cout << CLEAR;
+  cout << "Wählen Sie aus!" << endl;
+  cout << setw(20) << left << "\tEinkaufen: "
+       << "n" << endl;
+  cout << setw(20) << left << "\tFeierabend: "
+       << "q" << endl;
+  cout << "\nAuswahl:";
+    cin >> wahl;
+    if (wahl == 'q') {
+      break;
+    }
+    if (wahl == 'n') {
+      cout << "Geben Ihre Name!" << endl;
+      cin >> vorname;
+      cin >> name;
+      Kunde kunde(vorname + string(" ") + name, regale);
+      kunde.kundeUI();
+      cout << CLEAR;
+      // Kasse kasse(kunde, lager);
+      // kasse.rechnung(cout);
+    } else {
+      break;
+    }
+  }
 
   return 0;
 }
