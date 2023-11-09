@@ -5,6 +5,7 @@
 #include <ctime>
 #include <fstream>
 #include <iomanip>
+#include <ios>
 #include <iostream>
 #include <ostream>
 #include <string>
@@ -12,6 +13,8 @@
 #include <vector>
 
 using namespace std;
+
+static double rounding(double);
 
 Kasse::Kasse(Kunde const &kunde, Lager const &lager)
     : kunde(kunde), lager(lager) {}
@@ -30,6 +33,9 @@ void Kasse::rechnung(ostream &os) {
 
     printRechnung(os, date, rechnungsnummer, sum);
 
+    os << "Beenden q:" << endl;
+    os << "Drucken p:" << endl;
+    os << "Auswahl: ";
     string wahl;
     while (true) {
         cin >> wahl;
@@ -65,15 +71,14 @@ void Kasse::printRechnung(ostream &os, const string &date, const string &rechnun
         os << artikel.getName() << "\t" << artikel.getNormpreis() << " x " << ware.menge
             << " " << artikel.getStrMasseinheit() << "/€"
             << "\t" << artikel.getNormpreis() * ware.menge << "€" << endl;
+        sum += artikel.getNormpreis() * ware.menge ;
     }
 
+    cout.imbue(locale("de_DE.UTF-8"));
     os << "\n"
-       << "Summe Netto:\t" << sum << "€" << endl;
-    os << "MwSt. 19%:\t" << sum * 0.19 << "€" << endl;
-    os << "Gesamt:\t\t" << sum * (1 - 0.19) << "€" << endl;
+       << "Summe Netto:\t"  << showbase << put_money(sum) << endl;
+    os << "MwSt. 19%:\t" << showbase  << put_money(sum * 0.19) << endl;
     os << double_short << endl;
+    os << "Gesamt:\t\t"  << showbase << put_money(sum * (1 - 0.19))<< endl;
 
-    os << "Beenden q:" << endl;
-    os << "Drucken p:" << endl;
-    os << "Auswahl: ";
 }

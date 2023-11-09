@@ -191,14 +191,15 @@ void Kunde::printWarenkorb() {
   for (auto ware : warenkorb) {
     Artikel artikel = regale[0].getArtikel(ware.artikelnummer);
     i++;
+    cout.imbue(locale("de_DE.UTF-8"));
     cout << setw(5) << "";
     cout << i << setw(9) << ":" << left;
     cout << setw(30) << artikel.getName();
-    cout << artikel.getVerkaufpreis() << "/"
-         << artikel.getVerkaufpreis() / artikel.getNormpreis() << setw(30)
-         << artikel.getStrMasseinheit();
+    cout << setw(6) << artikel.getVerkaufpreis() << "/"
+         << setw(4) << artikel.getVerkaufpreis() / artikel.getNormpreis();
+    cout << setw(20) << artikel.getStrMasseinheit();
     cout << setw(20) << ware.menge;
-    cout << setw(20) << artikel.getVerkaufpreis() * ware.menge << endl;
+    cout << setw(20) <<showbase << put_money(artikel.getVerkaufpreis() * ware.menge) << endl;
   }
   cout << setw(5) << "";
   cout << "." << setw(9) << ":" << left;

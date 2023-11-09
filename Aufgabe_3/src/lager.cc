@@ -13,6 +13,7 @@
  */
 
 #include "lager.hh"
+// #include <cmath>
 #include <cmath>
 #include <fstream>
 #include <iostream>
@@ -20,6 +21,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+static double rounding(double);
 
 void Lager::readFile(string filename) {
   ifstream file(filename);
@@ -206,7 +209,7 @@ Stueckgut::Stueckgut(string name, string num, preis vp, unsigned int bestand)
 
 Schuettgut::Schuettgut(Artikel produkt)
     : Schuettgut(produkt.getName(), produkt.getArtikelnummer(),
-                 produkt.getVerkaufpreis() / produkt.getNormpreis(),
+                 rounding(produkt.getVerkaufpreis() / produkt.getNormpreis()),
                  produkt.getNormpreis(), produkt.getLagerbestand()) {}
 Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
                        unsigned int bestand)
@@ -215,18 +218,16 @@ Schuettgut::Schuettgut(string name, string num, double groesse, preis np,
 double Schuettgut::getLosgroesse() const { return losgroesse; }
 void Schuettgut::setLosgroesse(double groesse) {
   losgroesse = groesse;
-  verkaufpreis = int((losgroesse * normpreis) * 100 + 0.5);
-  verkaufpreis /= 100;
+  verkaufpreis = rounding(verkaufpreis);
 }
 void Schuettgut::setVerkaufpreis(preis vp) {
   verkaufpreis = vp;
-  losgroesse = int((verkaufpreis / normpreis) * 100 + 0.5);
-  losgroesse /= 100;
+  losgroesse = rounding(losgroesse);
 }
 
 Fluessigkeit::Fluessigkeit(Artikel produkt)
     : Fluessigkeit(produkt.getName(), produkt.getArtikelnummer(),
-                   produkt.getVerkaufpreis() / produkt.getNormpreis(),
+                   rounding(produkt.getVerkaufpreis() / produkt.getNormpreis()),
                    produkt.getNormpreis(), produkt.getLagerbestand()) {}
 Fluessigkeit::Fluessigkeit(string name, string num, double vol, preis np,
                            unsigned int bestand)
@@ -234,11 +235,17 @@ Fluessigkeit::Fluessigkeit(string name, string num, double vol, preis np,
 double Fluessigkeit::getVolume() const { return volume; }
 void Fluessigkeit::setVolume(double vol) {
   volume = vol;
-  verkaufpreis = int((volume * normpreis) * 100 + 0.5);
-  verkaufpreis /= 100;
+  verkaufpreis = rounding(verkaufpreis);
 }
 void Fluessigkeit::setVerkaufpreis(preis vp) {
   verkaufpreis = vp;
-  volume = int((verkaufpreis / normpreis) * 100 + 0.5);
-  volume /= 100;
+  volume = rounding(volume);
+}
+
+static double rounding(double num){
+  num *= 100;
+  num += 0.5;
+  num = int(num);
+  num /= 100;
+  return num;
 }

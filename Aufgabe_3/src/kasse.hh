@@ -1,3 +1,6 @@
+#ifndef KASSE_HH
+#define KASSE_HH
+
 #include "laden.hh"
 #include "lager.hh"
 #include <iomanip>
@@ -16,3 +19,4 @@ private:
   Kunde const &kunde;
   Lager const &lager;
 };
+#endif // !KASSE_HH
