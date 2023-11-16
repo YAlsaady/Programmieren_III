@@ -1,0 +1,196 @@
+\doxysection{Lager Klassenreferenz}
+\hypertarget{classLager}{}\label{classLager}\index{Lager@{Lager}}
+
+
+Klasse, die ein Lagerverwaltungssystem repraesentiert.  
+
+
+
+
+{\ttfamily \#include $<$lager.\+hh$>$}
+
+\doxysubsubsection*{Öffentliche Typen}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLager_ad622cffbc349323797e37293c30c95aa}\label{classLager_ad622cffbc349323797e37293c30c95aa} 
+typedef map$<$ string, \mbox{\hyperlink{classArtikel}{Artikel}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries artikel\+Map}
+\begin{DoxyCompactList}\small\item\em Typdefinition fuer eine Map von Artikelnummern zu Artikeln. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLager_a980a8eebea29178aa60e60751b752125}\label{classLager_a980a8eebea29178aa60e60751b752125} 
+{\bfseries Lager} ()=default
+\begin{DoxyCompactList}\small\item\em Standardkonstruktor fuer die Klasse \doxylink{classLager}{Lager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLager_a5658fc72ef02a9531bc3bbf96c49d3ae}{\texorpdfstring{$\sim$}{\string~}\+Lager}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor fuer die Klasse \doxylink{classLager}{Lager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLager_a9e493ff835f7b8aa22e021981f9ba71d}{read\+File}} (string filename)
+\begin{DoxyCompactList}\small\item\em Liest Artikelinformationen aus einer Datei und fuegt sie dem \doxylink{classLager}{Lager} hinzu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLager_af64d03bd21c0dd59e10a56b8694bf425}{write}} (ostream \&os)
+\begin{DoxyCompactList}\small\item\em Schreibt die Artikelinformationen in den angegebenen Ausgabeostream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLager_a5cd32208ff3095f8dab308ea521c6510}{write}} (string filename)
+\begin{DoxyCompactList}\small\item\em Schreibt die Artikelinformationen in eine Datei. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArtikel}{Artikel}} \mbox{\hyperlink{classLager_a3affa8f32de3dae7c17628b68d2b4624}{get\+Artikel}} (string artikelnummer) const
+\begin{DoxyCompactList}\small\item\em Gibt den \doxylink{classArtikel}{Artikel} mit der angegebenen Artikelnummer zurueck. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLager_ad622cffbc349323797e37293c30c95aa}{artikel\+Map}} \mbox{\hyperlink{classLager_aa28e7e2e3b26358c3657d04395ac41f8}{get\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die gesamte Map von Artikelnummern zu Artikeln zurueck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLager_ac8c1baad22988678f10d2cfd66cdf138}{update\+Artikel}} (string num, \mbox{\hyperlink{classArtikel}{Artikel}} \texorpdfstring{$\ast$}{*}artikel)
+\begin{DoxyCompactList}\small\item\em Aktualisiert die Informationen fuer einen \doxylink{classArtikel}{Artikel} in der Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLager_ac83d9f83a81a8374b0a77663bf899b84}\label{classLager_ac83d9f83a81a8374b0a77663bf899b84} 
+\mbox{\hyperlink{classLager_ad622cffbc349323797e37293c30c95aa}{artikel\+Map}} {\bfseries lager\+Map}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Die Map von Artikelnummern zu Artikeln im \doxylink{classLager}{Lager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Klasse, die ein Lagerverwaltungssystem repraesentiert. 
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classLager_a5658fc72ef02a9531bc3bbf96c49d3ae}\label{classLager_a5658fc72ef02a9531bc3bbf96c49d3ae} 
+\index{Lager@{Lager}!````~Lager@{\texorpdfstring{$\sim$}{\string~}Lager}}
+\index{````~Lager@{\texorpdfstring{$\sim$}{\string~}Lager}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Lager()}{\string~Lager()}}
+{\footnotesize\ttfamily Lager\+::\texorpdfstring{$\sim$}{\string~}\+Lager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor fuer die Klasse \doxylink{classLager}{Lager}. 
+
+Der Destruktor durchlaeuft die Lager-\/\+Map und gibt den zugewiesenen Speicher fuer jeden \doxylink{classArtikel}{Artikel} frei, bevor das Lager-\/\+Objekt zerstoert wird. 
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classLager_a3affa8f32de3dae7c17628b68d2b4624}\label{classLager_a3affa8f32de3dae7c17628b68d2b4624} 
+\index{Lager@{Lager}!getArtikel@{getArtikel}}
+\index{getArtikel@{getArtikel}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{getArtikel()}{getArtikel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArtikel}{Artikel}} Lager\+::get\+Artikel (\begin{DoxyParamCaption}\item[{string}]{artikelnummer }\end{DoxyParamCaption}) const}
+
+
+
+Gibt den \doxylink{classArtikel}{Artikel} mit der angegebenen Artikelnummer zurueck. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em artikelnummer} & Die Artikelnummer des gesuchten Artikels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Der \doxylink{classArtikel}{Artikel} mit der angegebenen Artikelnummer. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLager_a3affa8f32de3dae7c17628b68d2b4624_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLager_aa28e7e2e3b26358c3657d04395ac41f8}\label{classLager_aa28e7e2e3b26358c3657d04395ac41f8} 
+\index{Lager@{Lager}!getMap@{getMap}}
+\index{getMap@{getMap}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLager_ad622cffbc349323797e37293c30c95aa}{Lager\+::artikel\+Map}} Lager\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gibt die gesamte Map von Artikelnummern zu Artikeln zurueck. 
+
+\begin{DoxyReturn}{Rückgabe}
+Die Map von Artikelnummern zu Artikeln. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLager_aa28e7e2e3b26358c3657d04395ac41f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLager_a9e493ff835f7b8aa22e021981f9ba71d}\label{classLager_a9e493ff835f7b8aa22e021981f9ba71d} 
+\index{Lager@{Lager}!readFile@{readFile}}
+\index{readFile@{readFile}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Lager\+::read\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Liest Artikelinformationen aus einer Datei und fuegt sie dem \doxylink{classLager}{Lager} hinzu. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em filename} & Der Dateiname der Eingabedatei. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classLager_a9e493ff835f7b8aa22e021981f9ba71d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLager_ac8c1baad22988678f10d2cfd66cdf138}\label{classLager_ac8c1baad22988678f10d2cfd66cdf138} 
+\index{Lager@{Lager}!updateArtikel@{updateArtikel}}
+\index{updateArtikel@{updateArtikel}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{updateArtikel()}{updateArtikel()}}
+{\footnotesize\ttfamily void Lager\+::update\+Artikel (\begin{DoxyParamCaption}\item[{string}]{num,  }\item[{\mbox{\hyperlink{classArtikel}{Artikel}} \texorpdfstring{$\ast$}{*}}]{artikel }\end{DoxyParamCaption})}
+
+
+
+Aktualisiert die Informationen fuer einen \doxylink{classArtikel}{Artikel} in der Map. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em num} & Die Artikelnummer des zu aktualisierenden Artikels. \\
+\hline
+{\em artikel} & Der aktualisierte \doxylink{classArtikel}{Artikel}. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLager_ac8c1baad22988678f10d2cfd66cdf138_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLager_af64d03bd21c0dd59e10a56b8694bf425}\label{classLager_af64d03bd21c0dd59e10a56b8694bf425} 
+\index{Lager@{Lager}!write@{write}}
+\index{write@{write}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Lager\+::write (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Schreibt die Artikelinformationen in den angegebenen Ausgabeostream. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em os} & Der Ausgabeostream, in den die Informationen geschrieben werden. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classLager_af64d03bd21c0dd59e10a56b8694bf425_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLager_a5cd32208ff3095f8dab308ea521c6510}\label{classLager_a5cd32208ff3095f8dab308ea521c6510} 
+\index{Lager@{Lager}!write@{write}}
+\index{write@{write}!Lager@{Lager}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Lager\+::write (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Schreibt die Artikelinformationen in eine Datei. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em filename} & Der Dateiname der Ausgabedatei. \\
+\hline
+\end{DoxyParams}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+/home/yaman/\+Studium/3.\+Semster/\+Programmieren\+\_\+3/\+Aufgaben/\+Aufgabe\+\_\+3/src/\mbox{\hyperlink{lager_8hh}{lager.\+hh}}\item 
+/home/yaman/\+Studium/3.\+Semster/\+Programmieren\+\_\+3/\+Aufgaben/\+Aufgabe\+\_\+3/src/\mbox{\hyperlink{lager_8cc}{lager.\+cc}}\end{DoxyCompactItemize}

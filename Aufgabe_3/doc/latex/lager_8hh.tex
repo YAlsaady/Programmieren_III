@@ -1,0 +1,132 @@
+\doxysection{/home/yaman/\+Studium/3.Semster/\+Programmieren\+\_\+3/\+Aufgaben/\+Aufgabe\+\_\+3/src/lager.hh-\/\+Dateireferenz}
+\hypertarget{lager_8hh}{}\label{lager_8hh}\index{/home/yaman/Studium/3.Semster/Programmieren\_3/Aufgaben/Aufgabe\_3/src/lager.hh@{/home/yaman/Studium/3.Semster/Programmieren\_3/Aufgaben/Aufgabe\_3/src/lager.hh}}
+
+
+Definitionen der Lagerverwaltungsfunktionen.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include-\/\+Abhängigkeitsdiagramm für lager.\+hh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{lager_8hh__incl}
+\end{center}
+\end{figure}
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lager_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classArtikel}{Artikel}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Artikel"{} repraesentiert einen \doxylink{classArtikel}{Artikel} mit verschiedenen Eigenschaften. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classStueckgut}{Stueckgut}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Stueckgut"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Stueckgut-\/\+Artikel. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSchuettgut}{Schuettgut}}
+\item 
+class \mbox{\hyperlink{classFluessigkeit}{Fluessigkeit}}
+\begin{DoxyCompactList}\small\item\em Die Klasse "{}\+Fluessigkeit"{} erbt von der Klasse "{}\+Artikel"{} und spezialisiert sie fuer Fluessigkeits-\/\+Artikel. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLager}{Lager}}
+\begin{DoxyCompactList}\small\item\em Klasse, die ein Lagerverwaltungssystem repraesentiert. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typdefinitionen}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}\label{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3} 
+typedef double {\bfseries preis}
+\item 
+\Hypertarget{lager_8hh_ac5c1019a9dcb4b01ec8b82e3a5363aea}\label{lager_8hh_ac5c1019a9dcb4b01ec8b82e3a5363aea} 
+typedef int {\bfseries Nummer}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Aufzählungen}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}\label{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8} 
+enum {\bfseries masseinheit} \{ {\bfseries stk}
+, {\bfseries kg}
+, {\bfseries l}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funktionen}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{lager_8hh_ac024a413b1fce63b3b0e4f4f2c1b79d4}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{classArtikel}{Artikel}} produkt)
+\begin{DoxyCompactList}\small\item\em ueberladen des Ausgabeoperators fuer die Artikelklasse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classArtikel}{Artikel}} \&produkt)
+\begin{DoxyCompactList}\small\item\em ueberladen des Eingabeoperators fuer die Artikelklasse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Definitionen der Lagerverwaltungsfunktionen. 
+
+\begin{DoxyAuthor}{Autoren}
+Yaman Alsaady, Oliver Schmidt 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Datum}
+2023-\/11-\/13
+\end{DoxyDate}
+Dieses Header-\/\+Datei enthaelt die Definitionen von Klassen und Funktionen zur Verwaltung von Artikeln und Warengruppen in einem C++-\/\+Programm.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Dokumentation der Funktionen}
+\Hypertarget{lager_8hh_ac024a413b1fce63b3b0e4f4f2c1b79d4}\label{lager_8hh_ac024a413b1fce63b3b0e4f4f2c1b79d4} 
+\index{lager.hh@{lager.hh}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lager.hh@{lager.hh}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{classArtikel}{Artikel}}}]{produkt }\end{DoxyParamCaption})}
+
+
+
+ueberladen des Ausgabeoperators fuer die Artikelklasse. 
+
+Diese Funktion ermoeglicht das Ausgeben eines Artikels mit dem Ausgabeoperator \textquotesingle{}\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameter}
+{\em os} & Die Ausgabestromreferenz, in die die Informationen geschrieben werden. \\
+\hline
+{\em produkt} & Der \doxylink{classArtikel}{Artikel}, der ausgegeben werden soll. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Die Ausgabestromreferenz, in die die Informationen geschrieben wurden. 
+\end{DoxyReturn}
+\Hypertarget{lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e}\label{lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e} 
+\index{lager.hh@{lager.hh}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lager.hh@{lager.hh}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily void operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classArtikel}{Artikel}} \&}]{produkt }\end{DoxyParamCaption})}
+
+
+
+ueberladen des Eingabeoperators fuer die Artikelklasse. 
+
+Diese Funktion ermoeglicht das Einlesen von Artikelinformationen mit dem Eingabeoperator \textquotesingle{}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameter}
+{\em is} & Die Eingabestromreferenz, aus der die Informationen eingelesen werden. \\
+\hline
+{\em produkt} & Der \doxylink{classArtikel}{Artikel}, in den die Informationen eingelesen werden sollen. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{lager_8hh_ad7ef13cad0ad63b42d1ae2212814325e_cgraph}
+\end{center}
+\end{figure}

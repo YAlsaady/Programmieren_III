@@ -1,0 +1,136 @@
+\doxysection{Kasse Klassenreferenz}
+\hypertarget{classKasse}{}\label{classKasse}\index{Kasse@{Kasse}}
+
+
+Repraesentiert eine \doxylink{classKasse}{Kasse} fuer Einkaeufe und erstellt Rechnungen.  
+
+
+
+
+{\ttfamily \#include $<$kasse.\+hh$>$}
+
+
+
+Zusammengehörigkeiten von Kasse\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classKasse__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKasse_a699d4f52b5ab05e436265ed8f27ce55f}{Kasse}} (\mbox{\hyperlink{classKunde}{Kunde}} const \&\mbox{\hyperlink{classKasse_a206df067708809fb773d6c72b5a79b08}{kunde}}, \mbox{\hyperlink{classLager}{Lager}} \&\mbox{\hyperlink{classKasse_ad576716ea11fe3aad01708e357246836}{lager}})
+\begin{DoxyCompactList}\small\item\em Konstruktor fuer die \doxylink{classKasse}{Kasse} mit einem Kunden und einem \doxylink{classLager}{Lager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKasse_a793de9256fe48da6cf4a767398062b9c}{rechnung}} (ostream \&os)
+\begin{DoxyCompactList}\small\item\em Erstellt die Rechnung fuer die Einkaeufe und gibt sie auf den angegebenen Ausgabestrom aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKasse_a9565c4cd6888a27c5989c6bbdcc8c8f6}{print\+Rechnung}} (ostream \&os, const string \&date, const string \&rechnungsnummer, bool print\+\_\+auswahl)
+\begin{DoxyCompactList}\small\item\em Gibt die Rechnungsdetails auf den angegebenen Ausgabestrom aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classKasse_a206df067708809fb773d6c72b5a79b08}\label{classKasse_a206df067708809fb773d6c72b5a79b08} 
+\mbox{\hyperlink{classKunde}{Kunde}} const  \& {\bfseries kunde}
+\begin{DoxyCompactList}\small\item\em Konstante Referenz auf den Kunden fuer die Rechnung. \end{DoxyCompactList}\item 
+\Hypertarget{classKasse_ad576716ea11fe3aad01708e357246836}\label{classKasse_ad576716ea11fe3aad01708e357246836} 
+\mbox{\hyperlink{classLager}{Lager}} \& {\bfseries lager}
+\begin{DoxyCompactList}\small\item\em Referenz auf das \doxylink{classLager}{Lager} fuer die Rechnung. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Repraesentiert eine \doxylink{classKasse}{Kasse} fuer Einkaeufe und erstellt Rechnungen. 
+
+Die Klasse \doxylink{classKasse}{Kasse} ermoeglicht es, eine Rechnung fuer die Einkaeufe eines Kunden zu erstellen. Sie verwendet Informationen ueber den Kunden und das \doxylink{classLager}{Lager}, um die Rechnung zu generieren. 
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classKasse_a699d4f52b5ab05e436265ed8f27ce55f}\label{classKasse_a699d4f52b5ab05e436265ed8f27ce55f} 
+\index{Kasse@{Kasse}!Kasse@{Kasse}}
+\index{Kasse@{Kasse}!Kasse@{Kasse}}
+\doxysubsubsection{\texorpdfstring{Kasse()}{Kasse()}}
+{\footnotesize\ttfamily Kasse\+::\+Kasse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKunde}{Kunde}} const \&}]{kunde,  }\item[{\mbox{\hyperlink{classLager}{Lager}} \&}]{lager }\end{DoxyParamCaption})}
+
+
+
+Konstruktor fuer die \doxylink{classKasse}{Kasse} mit einem Kunden und einem \doxylink{classLager}{Lager}. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em kunde} & Eine Konstante Referenz auf einen Kunden, dessen Einkaeufe abgerechnet werden sollen. \\
+\hline
+{\em lager} & Eine Referenz auf ein \doxylink{classLager}{Lager}, das fuer die Rechnung benoetigt wird. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classKasse_a9565c4cd6888a27c5989c6bbdcc8c8f6}\label{classKasse_a9565c4cd6888a27c5989c6bbdcc8c8f6} 
+\index{Kasse@{Kasse}!printRechnung@{printRechnung}}
+\index{printRechnung@{printRechnung}!Kasse@{Kasse}}
+\doxysubsubsection{\texorpdfstring{printRechnung()}{printRechnung()}}
+{\footnotesize\ttfamily void Kasse\+::print\+Rechnung (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const string \&}]{date,  }\item[{const string \&}]{rechnungsnummer,  }\item[{bool}]{print\+\_\+auswahl }\end{DoxyParamCaption})}
+
+
+
+Gibt die Rechnungsdetails auf den angegebenen Ausgabestrom aus. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em os} & Der Ausgabestrom, auf dem die Rechnungsdetails ausgegeben werden sollen. \\
+\hline
+{\em date} & Das Datum der Rechnung. \\
+\hline
+{\em rechnungsnummer} & Die Rechnungsnummer. \\
+\hline
+{\em print\+\_\+auswahl} & Gibt an, ob detaillierte Informationen zu den ausgewaehlten Artikeln gedruckt werden sollen. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classKasse_a9565c4cd6888a27c5989c6bbdcc8c8f6_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classKasse_a9565c4cd6888a27c5989c6bbdcc8c8f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classKasse_a793de9256fe48da6cf4a767398062b9c}\label{classKasse_a793de9256fe48da6cf4a767398062b9c} 
+\index{Kasse@{Kasse}!rechnung@{rechnung}}
+\index{rechnung@{rechnung}!Kasse@{Kasse}}
+\doxysubsubsection{\texorpdfstring{rechnung()}{rechnung()}}
+{\footnotesize\ttfamily void Kasse\+::rechnung (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Erstellt die Rechnung fuer die Einkaeufe und gibt sie auf den angegebenen Ausgabestrom aus. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em os} & Der Ausgabestrom, auf dem die Rechnung ausgegeben werden soll. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classKasse_a793de9256fe48da6cf4a767398062b9c_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classKasse_a793de9256fe48da6cf4a767398062b9c_icgraph}
+\end{center}
+\end{figure}
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+/home/yaman/\+Studium/3.\+Semster/\+Programmieren\+\_\+3/\+Aufgaben/\+Aufgabe\+\_\+3/src/kasse.\+hh\item 
+/home/yaman/\+Studium/3.\+Semster/\+Programmieren\+\_\+3/\+Aufgaben/\+Aufgabe\+\_\+3/src/kasse.\+cc\end{DoxyCompactItemize}
