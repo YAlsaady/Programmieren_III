@@ -2,8 +2,8 @@
  * @file lager.cc
  * @authors Yaman Alsaady, Oliver Schmidt
  * @brief Implementierung der Lagerverwaltungsfunktionen.
- * @version 0.2
- * @date 2023-10-19
+ * @version 0.3
+ * @date 2023-11-13
  *
  * Dies ist die Implementierung der Funktionen fuer die Lagerverwaltung,
  * einschliesslich der Warengruppenverwaltung und der Artikelklassen.
@@ -13,7 +13,6 @@
  */
 
 #include "lager.hh"
-// #include <cmath>
 #include <cmath>
 #include <fstream>
 #include <iostream>
@@ -23,6 +22,14 @@
 #include <vector>
 
 static double rounding(double);
+
+Lager::~Lager() {
+  artikelMap::iterator it = lagerMap.begin();
+  while (it != lagerMap.end()) {
+    delete (it->second);
+    it++;
+  }
+}
 
 void Lager::readFile(string filename) {
   ifstream file(filename);
@@ -34,7 +41,6 @@ void Lager::readFile(string filename) {
         switch (tmp.getMasseinheit()) {
         case 0:
           lagerMap.insert({tmp.getArtikelnummer(), new Stueckgut(tmp)});
-          // cout << typeid(*lagerMap[tmp.getArtikelnummer()]).name() << endl;
           break;
         case 1:
           lagerMap.insert({tmp.getArtikelnummer(), new Schuettgut(tmp)});
@@ -48,6 +54,8 @@ void Lager::readFile(string filename) {
       }
     } while (!file.eof());
     file.close();
+  } else {
+    exit(EXIT_FAILURE);
   }
 }
 
@@ -59,9 +67,11 @@ void Lager::write(ostream &os) {
   }
 }
 
-void Lager::updateArtikel(string num, Artikel* artikel){
+void Lager::updateArtikel(string num, Artikel *artikel) {
+  delete (lagerMap[num]);
   lagerMap[num] = artikel;
 }
+
 void Lager::write(string filename) {
   ofstream file(filename);
   if (file.is_open()) {
@@ -74,7 +84,7 @@ void Lager::write(string filename) {
 }
 
 Artikel Lager::getArtikel(string artikelnummer) const {
-  
+
   return *artikelMap(lagerMap)[artikelnummer];
 }
 
@@ -111,7 +121,6 @@ int Artikel::getGruppe() const {
   string artnum = artikelnummer;
   artnum = artnum.erase(4);
   return stoi(artnum);
-  // return artnum;
 }
 
 void Artikel::setName(string name) { artikelname = name; }
@@ -147,7 +156,6 @@ void operator>>(istream &is, Artikel &produkt) {
   for (size_t i = 0; getline(ss, text, '|') && i < 6; i++) {
     beschreibung.push_back(text);
   }
-  // cout << beschreibung.size()<< endl;
   if (beschreibung.size() < 5)
     throw -1;
   name = beschreibung[0];
@@ -245,7 +253,7 @@ void Fluessigkeit::setVerkaufpreis(preis vp) {
   volume = rounding(volume);
 }
 
-static double rounding(double num){
+static double rounding(double num) {
   num *= 100;
   num += 0.5;
   num = int(num);

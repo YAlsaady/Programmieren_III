@@ -2,12 +2,11 @@
  * @file lager.hh
  * @authors Yaman Alsaady, Oliver Schmidt
  * @brief Definitionen der Lagerverwaltungsfunktionen.
- * @version 0.2
- * @date 2023-10-19
+ * @version 0.3
+ * @date 2023-11-13
  *
- * Dieses Header-Datei enthaelt die Definitionen von Klassen und
- * Funktionen zur Verwaltung von Artikeln und Warengruppen in einem
- * C++-Programm.
+ * Dieses Header-Datei enthaelt die Definitionen von Klassen und Funktionen zur
+ * Verwaltung von Artikeln und Warengruppen in einem C++-Programm.
  *
  * @copyright Copyright (c) 2023
  *
@@ -349,21 +348,71 @@ public:
    */
   void setVolume(double vol);
 };
-
+/**
+ * @class Lager
+ * @brief Klasse, die ein Lagerverwaltungssystem repraesentiert.
+ */
 class Lager {
 public:
+  /**
+   * @brief Standardkonstruktor fuer die Klasse Lager.
+   */
   Lager() = default;
 
+  /**
+   * @brief Destruktor fuer die Klasse Lager.
+   *
+   * Der Destruktor durchlaeuft die Lager-Map und gibt den zugewiesenen Speicher
+   * fuer jeden Artikel frei, bevor das Lager-Objekt zerstoert wird.
+   */
+  ~Lager();
+
+  /**
+   * @brief Typdefinition fuer eine Map von Artikelnummern zu Artikeln.
+   */
   typedef map<string, Artikel *> artikelMap;
 
+  /**
+   * @brief Liest Artikelinformationen aus einer Datei und fuegt sie dem Lager
+   * hinzu.
+   * @param filename Der Dateiname der Eingabedatei.
+   */
   void readFile(string filename);
+
+  /**
+   * @brief Schreibt die Artikelinformationen in den angegebenen Ausgabeostream.
+   * @param os Der Ausgabeostream, in den die Informationen geschrieben werden.
+   */
   void write(ostream &os);
+
+  /**
+   * @brief Schreibt die Artikelinformationen in eine Datei.
+   * @param filename Der Dateiname der Ausgabedatei.
+   */
   void write(string filename);
+
+  /**
+   * @brief Gibt den Artikel mit der angegebenen Artikelnummer zurueck.
+   * @param artikelnummer Die Artikelnummer des gesuchten Artikels.
+   * @return Der Artikel mit der angegebenen Artikelnummer.
+   */
   Artikel getArtikel(string artikelnummer) const;
+
+  /**
+   * @brief Gibt die gesamte Map von Artikelnummern zu Artikeln zurueck.
+   * @return Die Map von Artikelnummern zu Artikeln.
+   */
   artikelMap getMap();
-  void updateArtikel(string num, Artikel* artikel);
+
+  /**
+   * @brief Aktualisiert die Informationen fuer einen Artikel in der Map.
+   * @param num Die Artikelnummer des zu aktualisierenden Artikels.
+   * @param artikel Der aktualisierte Artikel.
+   */
+  void updateArtikel(string num, Artikel *artikel);
 
 private:
+  ///< Die Map von Artikelnummern zu Artikeln im Lager.
   artikelMap lagerMap;
 };
 #endif // !LAGER_HH

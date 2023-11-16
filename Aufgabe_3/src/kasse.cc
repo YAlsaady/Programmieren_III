@@ -1,3 +1,16 @@
+/**
+ * @file laden.hh
+ * @authors Yaman Alsaady, Oliver Schmidt
+ * @brief Enthaelt die Deklaration der Klasse Kasse.
+ * @version 0.3
+ * @date 2023-11-13
+ *
+ * Dieses Header-Datei enthaelt die Definitionen von Klassen und
+ * Funktionen zur Verwaltung von der Kasse in einem C++-Programm.
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "kasse.hh"
 #include "laden.hh"
@@ -16,8 +29,7 @@
 using namespace std;
 
 #define CLEAR u8"\033[2J\033[1;1H"
-Kasse::Kasse(Kunde const &kunde, Lager &lager)
-    : kunde(kunde), lager(lager) {}
+Kasse::Kasse(Kunde const &kunde, Lager &lager) : kunde(kunde), lager(lager) {}
 
 void Kasse::rechnung(ostream &os) {
 
@@ -32,8 +44,8 @@ void Kasse::rechnung(ostream &os) {
   string rechnungsnummer = to_string(month) + to_string(year) + to_string(day);
 
   filesystem::path currentDir = filesystem::current_path();
-  string dateiname = "rechnungen/" + date + "_" +kunde.getName() + ".txt";
-  
+  string dateiname = "rechnungen/" + date + "_" + kunde.getName() + ".txt";
+
   if (!filesystem::exists("rechnungen")) {
     filesystem::create_directory("rechnungen");
   }
@@ -78,11 +90,13 @@ void Kasse::printRechnung(ostream &os, const string &date,
   for (Kunde::waren ware : kunde.getWarenkorb()) {
     Artikel artikel = lager.getArtikel(ware.artikelnummer);
     os << one_long << endl;
-    os << artikel.getName() << "\t" << artikel.getNormpreis() << " x "
-       << ware.menge << " " << artikel.getStrMasseinheit() << "/€"
-       << "\t" << artikel.getNormpreis() * ware.menge << "€" << endl;
-    artikel.setLagerbestand(artikel.getLagerbestand()- ware.menge);
-    lager.updateArtikel(ware.artikelnummer, new Artikel(artikel));
+    os << artikel.getName() << "\t" << artikel.getNormpreis() << " x ";
+    os << ware.menge << " " << artikel.getStrMasseinheit() << "/€";
+    os << "\t" << artikel.getNormpreis() * ware.menge << "€" << endl;
+    artikel.setLagerbestand(artikel.getLagerbestand() - ware.menge);
+    if (print_auswahl == false) {
+      lager.updateArtikel(ware.artikelnummer, new Artikel(artikel));
+    }
     sum += artikel.getNormpreis() * ware.menge;
   }
 

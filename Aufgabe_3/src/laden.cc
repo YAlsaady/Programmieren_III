@@ -1,3 +1,17 @@
+/**
+ * @file laden.hh
+ * @authors Yaman Alsaady, Oliver Schmidt
+ * @brief Enthaelt die Deklaration der Klasse Regal und der Klasse Kunde.
+ * @version 0.3
+ * @date 2023-11-13
+ *
+ * Dieses Header-Datei enthaelt die Definitionen von Klassen und Funktionen zur
+ * Verwaltung von Regale und Kunden und Warengruppen in einem C++-Programm.
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "laden.hh"
 #include "kasse.hh"
 #include "lager.hh"
@@ -23,8 +37,8 @@ std::set<int> Regal::getWaren() const { return waren; }
 
 Artikel Regal::getArtikel(string num) const { return lager.getArtikel(num); }
 
-vector<string> Regal::getImRegal() {
-  Lager::artikelMap map = Lager(lager).getMap();
+vector<string> Regal::getImRegal() const {
+  Lager::artikelMap map = lager.getMap();
   vector<string> imRegal;
   for (int ware : waren) {
     Lager::artikelMap::iterator it = map.begin();
@@ -48,7 +62,7 @@ ostream &operator<<(ostream &os, Regal regal) {
   int i = 0;
   for (auto num : imRegal) {
     // cout << Lager(regal.lager).getArtikel(num) << endl;
-    Artikel artikel = Lager(regal.lager).getArtikel(num);
+    Artikel artikel = regal.lager.getArtikel(num);
     i++;
     cout << setw(5) << "";
     cout << i << setw(9) << ":" << left;
@@ -62,17 +76,19 @@ ostream &operator<<(ostream &os, Regal regal) {
 }
 
 Kunde::Kunde(string name, vector<Regal> const &regale)
-    : name(name) , regale(regale){}
+    : name(name), regale(regale) {}
+
 vector<Kunde::waren> Kunde::getWarenkorb() const { return warenkorb; }
+
 string Kunde::getName() const { return name; }
-void Kunde::kundeUI() { printRegale(); }
-void Kunde::printRegale() {
+
+void Kunde::kundeUI() {
   string wahl;
   size_t wahlNum;
   cout << CLEAR;
   int i = 0;
   cout << "Warenkorb: " << warenkorb.size() << endl;
-  cout << "Wählen Sie einen Regal aus\n" << left << endl;
+  cout << "Waehlen Sie einen Regal aus\n" << left << endl;
   cout << setw(2) << "";
   cout << "Wahl" << setw(9) << ":" << left;
   cout << setw(30) << "Bezeichnung" << endl;
@@ -121,7 +137,7 @@ void Kunde::printArtikel(int num) {
   size_t wahl1Num;
   double wahl2num;
   cout << "Warenkorb: " << warenkorb.size() << endl;
-  cout << "Wählen Sie einen Artikel aus\n" << left << endl;
+  cout << "Waehlen Sie einen Artikel aus\n" << left << endl;
   cout << setw(15) << "";
   cout << setw(30) << "Bezeichnung";
   cout << setw(20) << "Lagerbestand";
@@ -130,7 +146,7 @@ void Kunde::printArtikel(int num) {
   cout << regale[num];
   cout << setw(5) << "";
   cout << "." << setw(9) << ":" << left;
-  cout << "Zurück" << left;
+  cout << "Zurueck" << left;
   cout << endl;
   cout << setw(5) << "";
   cout << "q" << setw(9) << ":" << left;
@@ -144,7 +160,7 @@ void Kunde::printArtikel(int num) {
       break;
     }
     if (wahl1[0] == '.') {
-      printRegale();
+      kundeUI();
       break;
     }
     try {
@@ -153,23 +169,17 @@ void Kunde::printArtikel(int num) {
       if (wahl1Num > Regal(regale[num]).getImRegal().size()) {
       } else {
         wahl1Num--;
-        Artikel artikel =
-            Regal(regale[num])
-                .getArtikel(Regal(regale[num]).getImRegal()[wahl1Num]);
+        string artnum = Regal(regale[num]).getImRegal()[wahl1Num];
+        Artikel artikel = Regal(regale[num]).getArtikel(artnum);
         cout << artikel.getName() << endl;
-        // cout << Regal(regale[num]).getImRegal()[wahl1Num] << endl;
         cout << "Geben Sie die Menge" << endl;
         cin >> wahl2;
         wahl2num = stof(wahl2);
         if (wahl2num <= artikel.getLagerbestand()) {
-          warenkorb.push_back(
-              {Regal(regale[num]).getImRegal()[wahl1Num], wahl2num});
+          warenkorb.push_back({artnum, wahl2num});
           cout << CLEAR;
-          cout << warenkorb[warenkorb.size() - 1].menge << " * "
-               << Regal(regale[num])
-                      .getArtikel(warenkorb[warenkorb.size() - 1].artikelnummer)
-                      .getName()
-               << endl;
+          float menge = warenkorb[warenkorb.size() - 1].menge;
+          cout << menge << " * " << artikel.getName() << endl;
           sleep(1);
           printArtikel(num);
           break;
@@ -185,7 +195,7 @@ void Kunde::printWarenkorb() {
   int i = 0;
   cout << CLEAR;
   cout << "Warenkorb: " << warenkorb.size() << endl;
-  cout << "Wählen Sie aus\n" << left << endl;
+  cout << "Waehlen Sie aus\n" << left << endl;
   for (auto ware : warenkorb) {
     Artikel artikel = regale[0].getArtikel(ware.artikelnummer);
     i++;
@@ -197,8 +207,8 @@ void Kunde::printWarenkorb() {
          << artikel.getVerkaufpreis() / artikel.getNormpreis();
     cout << setw(20) << artikel.getStrMasseinheit();
     cout << setw(20) << ware.menge;
-    cout << setw(20) << showbase
-         << put_money(artikel.getVerkaufpreis() * ware.menge) << endl;
+    cout << setw(20) << showbase << (artikel.getNormpreis() * ware.menge)
+         << endl;
   }
   cout << setw(5) << "";
   cout << "k" << setw(9) << ":" << left;
@@ -206,7 +216,7 @@ void Kunde::printWarenkorb() {
   cout << endl;
   cout << setw(5) << "";
   cout << "." << setw(9) << ":" << left;
-  cout << "Zurück" << left;
+  cout << "Zurueck" << left;
   cout << endl;
   cout << setw(5) << "";
   cout << "q" << setw(9) << ":" << left;
@@ -218,7 +228,7 @@ void Kunde::printWarenkorb() {
       break;
     }
     if (wahl[0] == '.') {
-      printRegale();
+      kundeUI();
       break;
     }
     if (wahl[0] == 'k') {
