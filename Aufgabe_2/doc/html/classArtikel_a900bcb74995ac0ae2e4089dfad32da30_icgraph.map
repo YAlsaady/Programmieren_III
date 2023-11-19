@@ -1,5 +1,0 @@
-<map id="Artikel::getStrMasseinheit" name="Artikel::getStrMasseinheit">
-<area shape="rect" id="Node000001" title="Gibt die Masseinheit des Artikels als Zeichenkette zurück." alt="" coords="145,5,316,32"/>
-<area shape="rect" id="Node000002" href="$classArtikel.html#a38a8a06be813582c5ca881e6f6127c3a" title="Gibt die Artikelinformationen aus." alt="" coords="5,5,97,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
-</map>

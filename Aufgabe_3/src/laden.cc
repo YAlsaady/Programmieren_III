@@ -16,9 +16,10 @@
 #include "kasse.hh"
 #include "lager.hh"
 #include <iomanip>
+#include <iostream>
 #include <string>
 #include <unistd.h>
-#include <vector>
+// #include <vector>
 
 using namespace std;
 #define CLEAR u8"\033[2J\033[1;1H"

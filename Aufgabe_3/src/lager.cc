@@ -13,12 +13,12 @@
  */
 
 #include "lager.hh"
-#include <cmath>
+// #include <cmath>
 #include <fstream>
-#include <iostream>
-#include <map>
+// #include <iostream>
+// #include <map>
 #include <sstream>
-#include <string>
+// #include <string>
 #include <vector>
 
 static double rounding(double);

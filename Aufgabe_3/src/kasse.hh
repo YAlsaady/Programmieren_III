@@ -17,10 +17,10 @@
 
 #include "laden.hh"
 #include "lager.hh"
-#include <iomanip>
-#include <string>
-#include <unistd.h>
-#include <vector>
+// #include <iomanip>
+// #include <string>
+// #include <unistd.h>
+// #include <vector>
 
 /**
  * @class Kasse

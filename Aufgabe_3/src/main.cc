@@ -16,6 +16,7 @@
 #include "kasse.hh"
 #include "laden.hh"
 #include "lager.hh"
+#include <iomanip>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>

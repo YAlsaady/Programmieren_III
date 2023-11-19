@@ -15,16 +15,16 @@
 #include "kasse.hh"
 #include "laden.hh"
 #include "lager.hh"
-#include <ctime>
+// #include <ctime>
 #include <filesystem>
 #include <fstream>
-#include <iomanip>
-#include <ios>
+// #include <iomanip>
+// #include <ios>
 #include <iostream>
-#include <ostream>
-#include <string>
-#include <unistd.h>
-#include <vector>
+// #include <ostream>
+// #include <string>
+// #include <unistd.h>
+// #include <vector>
 
 using namespace std;
 
