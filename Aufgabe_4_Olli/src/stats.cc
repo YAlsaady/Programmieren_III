@@ -56,16 +56,10 @@ int main() {
                               }) /
                    frequencyMap.size();
   cout << "Durchschnittliche Häufigkeit: " << average << endl;
-  
+
   double average_value = accumulate(begin(v), end(v), 0.0) / v.size();
 
   cout << "Durchschnitt der Zufallszahlen: " << average_value << endl;
-
-  /**
-   * @brief Zusatzaufgabe .
-   * Hier könnten weitere Funktionen oder Verbesserungen implementiert werden,
-   * um die Fähigkeiten des Programms zu erweitern.
-   */
 
   return 0;
 }
