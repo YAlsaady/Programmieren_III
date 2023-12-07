@@ -1,0 +1,7 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,90,32"/>
+<area shape="rect" id="Node000002" href="$classArtikel.html#a38a8a06be813582c5ca881e6f6127c3a" title="Gibt die Artikelinformationen aus." alt="" coords="138,5,229,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,16,122,16,122,21,90,21"/>
+<area shape="rect" id="Node000003" href="$classArtikel.html#a900bcb74995ac0ae2e4089dfad32da30" title="Gibt die Masseinheit des Artikels als Zeichenkette zurueck." alt="" coords="277,5,448,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,16,261,16,261,21,229,21"/>
+</map>

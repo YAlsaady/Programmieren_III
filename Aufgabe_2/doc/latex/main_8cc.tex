@@ -1,0 +1,155 @@
+\doxysection{src/main.cc-\/\+Dateireferenz}
+\hypertarget{main_8cc}{}\label{main_8cc}\index{src/main.cc@{src/main.cc}}
+
+
+Implementierung des Lagerverwaltungssystems.  
+
+
+{\ttfamily \#include "{}lager.\+hh"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include-\/\+Abhängigkeitsdiagramm für main.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funktionen}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a}{read}} (string filename)
+\begin{DoxyCompactList}\small\item\em Liest Artikelinformationen aus einer Datei und gruppiert sie nach Artikeltyp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cc_a9e4e0a3d90397030ff67b7f527277c77}{read\+Write}} (string \mbox{\hyperlink{main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a}{read}}, string write)
+\begin{DoxyCompactList}\small\item\em Liest Artikelinformationen aus einer Eingabedatei und schreibt sie in eine Ausgabedatei. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cc_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lesen und Schreiben von \doxylink{classArtikel}{Artikel} aus Dateien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Implementierung des Lagerverwaltungssystems. 
+
+\begin{DoxyAuthor}{Autoren}
+Yaman Alsaady, Oliver Schmidt 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Datum}
+2023-\/10-\/19
+\end{DoxyDate}
+Dieses Programm implementiert ein Lagerverwaltungssystem, das es ermoeglicht, Artikelinformationen aus Dateien zu lesen und sie nach Artikeltyp zu gruppieren. Die Informationen werden entweder auf der Konsole ausgegeben oder in eine Ausgabedatei geschrieben. Der Name der Ausgabedatei wird als Befehlszeilenargument uebergeben.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+Definiert in Datei \mbox{\hyperlink{main_8cc_source}{main.\+cc}}.
+
+
+
+\doxysubsection{Dokumentation der Funktionen}
+\Hypertarget{main_8cc_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cc_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Lesen und Schreiben von \doxylink{classArtikel}{Artikel} aus Dateien. 
+
+Diese Funktion ist der Einstiegspunkt des Programms und ermoeglicht das Lesen und Schreiben von Artikelinformationen aus Dateien. Die Dateinamen werden als Befehlszeilenargumente uebergeben. Es kann maximal eine Datei zum Schreiben angegeben werden, waehrend mehrere Dateien zum Lesen zugelassen sind.
+
+
+\begin{DoxyParams}{Parameter}
+{\em argc} & Die Anzahl der Befehlszeilenargumente. \\
+\hline
+{\em argv} & Ein Array von Zeichenketten, das die Befehlszeilenargumente enthaelt. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+Eine Ganzzahl, die den Programmstatus zurueckgibt (0 fuer Erfolg, andere Werte fuer Fehler). 
+\end{DoxyReturn}
+
+
+Definiert in Zeile \mbox{\hyperlink{main_8cc_source_l00070}{70}} der Datei \mbox{\hyperlink{main_8cc_source}{main.\+cc}}.
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a}\label{main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a} 
+\index{main.cc@{main.cc}!read@{read}}
+\index{read@{read}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void read (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Liest Artikelinformationen aus einer Datei und gruppiert sie nach Artikeltyp. 
+
+Diese Funktion liest Artikelinformationen aus einer angegebenen Datei und gruppiert sie in die entsprechenden Vektoren je nach Artikeltyp (\doxylink{classStueckgut}{Stueckgut}, \doxylink{classSchuettgut}{Schuettgut}, \doxylink{classFluessigkeit}{Fluessigkeit}). Anschliessend gibt sie die Informationen der Artikeltypen nacheinander aus.
+
+
+\begin{DoxyParams}{Parameter}
+{\em filename} & Der Dateiname der Eingabedatei, aus der die Informationen gelesen werden. \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \mbox{\hyperlink{main_8cc_source_l00101}{101}} der Datei \mbox{\hyperlink{main_8cc_source}{main.\+cc}}.
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{main_8cc_a4a7d7d004e5ff455bfb82bdc04aef14a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a9e4e0a3d90397030ff67b7f527277c77}\label{main_8cc_a9e4e0a3d90397030ff67b7f527277c77} 
+\index{main.cc@{main.cc}!readWrite@{readWrite}}
+\index{readWrite@{readWrite}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{readWrite()}{readWrite()}}
+{\footnotesize\ttfamily void read\+Write (\begin{DoxyParamCaption}\item[{string}]{read,  }\item[{string}]{write }\end{DoxyParamCaption})}
+
+
+
+Liest Artikelinformationen aus einer Eingabedatei und schreibt sie in eine Ausgabedatei. 
+
+Diese Funktion liest Artikelinformationen aus einer angegebenen Eingabedatei und gruppiert sie in die entsprechenden Vektoren je nach Artikeltyp (\doxylink{classStueckgut}{Stueckgut}, \doxylink{classSchuettgut}{Schuettgut}, \doxylink{classFluessigkeit}{Fluessigkeit}). Anschliessend werden die Informationen in die angegebene Ausgabedatei geschrieben.
+
+
+\begin{DoxyParams}{Parameter}
+{\em read} & Der Dateiname der Eingabedatei, aus der die Informationen gelesen werden. \\
+\hline
+{\em write} & Der Dateiname der Ausgabedatei \\
+\hline
+\end{DoxyParams}
+
+
+Definiert in Zeile \mbox{\hyperlink{main_8cc_source_l00141}{141}} der Datei \mbox{\hyperlink{main_8cc_source}{main.\+cc}}.
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{main_8cc_a9e4e0a3d90397030ff67b7f527277c77_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{main_8cc_a9e4e0a3d90397030ff67b7f527277c77_icgraph}
+\end{center}
+\end{figure}
