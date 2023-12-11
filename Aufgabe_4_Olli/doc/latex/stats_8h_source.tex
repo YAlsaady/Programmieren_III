@@ -1,0 +1,21 @@
+\doxysection{stats.\+h}
+\hypertarget{stats_8h_source}{}\label{stats_8h_source}\mbox{\hyperlink{stats_8h}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATS\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATS\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classData}{Data}}\ \{}
+\DoxyCodeLine{00009\ \ \ std::mt19937\ \mbox{\hyperlink{classData_a62b8f367c2f8e2afa46dc07d8b257a77}{rng}};}
+\DoxyCodeLine{00010\ \ \ std::uniform\_int\_distribution<unsigned\ int>\ \mbox{\hyperlink{classData_a2cbe6ab057565b2a4b61d773073c3ecc}{dist}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{classData_a702f757f79e179c918b8feb50ee87290}{Data}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classData_a62b8f367c2f8e2afa46dc07d8b257a77}{rng}}(std::random\_device()()),\ \mbox{\hyperlink{classData_a2cbe6ab057565b2a4b61d773073c3ecc}{dist}}(a,\ b)\ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classData_a30f45a71e52bf238e18cdc0d5388952d}{operator()}}(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classData_a2cbe6ab057565b2a4b61d773073c3ecc}{dist}}(\mbox{\hyperlink{classData_a62b8f367c2f8e2afa46dc07d8b257a77}{rng}});\ \}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STATS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

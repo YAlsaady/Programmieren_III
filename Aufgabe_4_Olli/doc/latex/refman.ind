@@ -1,0 +1,32 @@
+\begin{theindex}
+
+  \item {Data}, \hyperpage{11}
+    \subitem {Data}, \hyperpage{11}
+    \subitem {dist}, \hyperpage{12}
+    \subitem {operator()}, \hyperpage{12}
+    \subitem {rng}, \hyperpage{12}
+  \item {dist}
+    \subitem {Data}, \hyperpage{12}
+
+  \indexspace
+
+  \item {main}
+    \subitem {stats.cc}, \hyperpage{13}
+
+  \indexspace
+
+  \item {operator()}
+    \subitem {Data}, \hyperpage{12}
+
+  \indexspace
+
+  \item {rng}
+    \subitem {Data}, \hyperpage{12}
+
+  \indexspace
+
+  \item {stats.cc}, \hyperpage{13}
+    \subitem {main}, \hyperpage{13}
+  \item {stats.h}, \hyperpage{14}
+
+\end{theindex}

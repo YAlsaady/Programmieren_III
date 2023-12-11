@@ -1,0 +1,84 @@
+\doxysection{Data Klassenreferenz}
+\hypertarget{classData}{}\label{classData}\index{Data@{Data}}
+
+
+Klasse fuer die Generierung von Zufallszahlen im angegebenen Intervall.  
+
+
+
+
+{\ttfamily \#include $<$stats.\+h$>$}
+
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classData_a702f757f79e179c918b8feb50ee87290}{Data}} (unsigned int a, unsigned int b)
+\begin{DoxyCompactList}\small\item\em Konstruktor fuer die Initialisierung des Zufallszahlengenerators und der Verteilung. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classData_a30f45a71e52bf238e18cdc0d5388952d}{operator()}} (void)
+\begin{DoxyCompactList}\small\item\em Operatorfunktion zum Generieren einer Zufallszahl. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{classData_a62b8f367c2f8e2afa46dc07d8b257a77}{rng}}
+\item 
+std\+::uniform\+\_\+int\+\_\+distribution$<$ unsigned int $>$ \mbox{\hyperlink{classData_a2cbe6ab057565b2a4b61d773073c3ecc}{dist}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Klasse fuer die Generierung von Zufallszahlen im angegebenen Intervall. 
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classData_a702f757f79e179c918b8feb50ee87290}\label{classData_a702f757f79e179c918b8feb50ee87290} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{unsigned int}]{a,  }\item[{unsigned int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor fuer die Initialisierung des Zufallszahlengenerators und der Verteilung. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em a} & Untere Grenze des Intervalls. \\
+\hline
+{\em b} & Obere Grenze des Intervalls. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classData_a30f45a71e52bf238e18cdc0d5388952d}\label{classData_a30f45a71e52bf238e18cdc0d5388952d} 
+\index{Data@{Data}!operator()@{operator()}}
+\index{operator()@{operator()}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily auto Data\+::operator() (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operatorfunktion zum Generieren einer Zufallszahl. 
+
+\begin{DoxyReturn}{Rückgabe}
+Zufallszahl im spezifizierten Intervall. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\Hypertarget{classData_a2cbe6ab057565b2a4b61d773073c3ecc}\label{classData_a2cbe6ab057565b2a4b61d773073c3ecc} 
+\index{Data@{Data}!dist@{dist}}
+\index{dist@{dist}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned int$>$ Data\+::dist\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classData_a62b8f367c2f8e2afa46dc07d8b257a77}\label{classData_a62b8f367c2f8e2afa46dc07d8b257a77} 
+\index{Data@{Data}!rng@{rng}}
+\index{rng@{rng}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{rng}{rng}}
+{\footnotesize\ttfamily std\+::mt19937 Data\+::rng\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stats_8h}{stats.\+h}}\end{DoxyCompactItemize}
