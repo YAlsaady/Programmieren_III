@@ -3,7 +3,7 @@
 #include <random>
 
 /**
- * @brief Klasse für die Generierung von Zufallszahlen im angegebenen Intervall.
+ * @brief Klasse fuer die Generierung von Zufallszahlen im angegebenen Intervall.
  */
 class Data {
   std::mt19937 rng;
@@ -11,7 +11,7 @@ class Data {
 
 public:
   /**
-   * @brief Konstruktor für die Initialisierung des Zufallszahlengenerators und
+   * @brief Konstruktor fuer die Initialisierung des Zufallszahlengenerators und
    * der Verteilung.
    * @param a Untere Grenze des Intervalls.
    * @param b Obere Grenze des Intervalls.
