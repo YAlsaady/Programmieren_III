@@ -1,0 +1,5 @@
+<map id="Stueckgut" name="Stueckgut">
+<area shape="rect" id="Node000001" title="Die Klasse &quot;Stueckgut&quot; erbt von der Klasse &quot;Artikel&quot; und spezialisiert sie fuer Stueckgut&#45;Artikel." alt="" coords="5,80,86,107"/>
+<area shape="rect" id="Node000002" href="$classArtikel.html" title="Die Klasse &quot;Artikel&quot; repraesentiert einen Artikel mit verschiedenen Eigenschaften." alt="" coords="16,5,75,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,48,48,80,43,80,43,48"/>
+</map>

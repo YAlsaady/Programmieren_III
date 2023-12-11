@@ -1,0 +1,211 @@
+\doxysection{lager.\+cc}
+\hypertarget{lager_8cc_source}{}\label{lager_8cc_source}\index{src/lager.cc@{src/lager.cc}}
+\mbox{\hyperlink{lager_8cc}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lager_8hh}{lager.hh}}"{}}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00023}\mbox{\hyperlink{classWarengruppen_a79390470455e7bb27edf75b611c1d47a}{00023}}\ \mbox{\hyperlink{classWarengruppen_a79390470455e7bb27edf75b611c1d47a}{Warengruppen::Warengruppen}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00024}\mbox{\hyperlink{classWarengruppen_a38eb20b76418f44b94f05e54d19380d7}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWarengruppen_a38eb20b76418f44b94f05e54d19380d7}{Warengruppen::defaultList}}()\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00025}00025\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}1005"{}}]\ =\ \textcolor{stringliteral}{"{}Fahrrad"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00026}00026\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}4000"{}}]\ =\ \textcolor{stringliteral}{"{}Gemuese"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00027}00027\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}4106"{}}]\ =\ \textcolor{stringliteral}{"{}Gemuese"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00028}00028\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}4370"{}}]\ =\ \textcolor{stringliteral}{"{}Kaffee"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00029}00029\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}5500"{}}]\ =\ \textcolor{stringliteral}{"{}Bier"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00030}00030\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[\textcolor{stringliteral}{"{}5031"{}}]\ =\ \textcolor{stringliteral}{"{}Milch"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00032}\mbox{\hyperlink{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c}{00032}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c}{Warengruppen::getGruppe}}(\textcolor{keywordtype}{string}\ code)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00033}00033\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[code]\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}[code];}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00035}00035\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00037}00037\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00040}\mbox{\hyperlink{classWarengruppen_aa41ecb8faea7854d3f0208cc3070006f}{00040}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWarengruppen_aa41ecb8faea7854d3f0208cc3070006f}{Warengruppen::addGruppe}}(\textcolor{keywordtype}{string}\ code,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00041}00041\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}.insert(\{code,\ name\});}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00043}\mbox{\hyperlink{classWarengruppen_ac29ff5381af7d3a21c65a672f7580c43}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWarengruppen_ac29ff5381af7d3a21c65a672f7580c43}{Warengruppen::changeGruppe}}(\textcolor{keywordtype}{string}\ code,\ \textcolor{keywordtype}{string}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00044}00044\ \ \ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}.insert\_or\_assign(code,\ name);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00046}\mbox{\hyperlink{classWarengruppen_a429683e4d82350e9ca966bd7116fe0d4}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWarengruppen_a429683e4d82350e9ca966bd7116fe0d4}{Warengruppen::delGruppe}}(\textcolor{keywordtype}{string}\ code)\ \{\ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}.erase(code);\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00048}\mbox{\hyperlink{classWarengruppen_a9b278fa7cd5fec175f82d00d4b774517}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWarengruppen_a9b278fa7cd5fec175f82d00d4b774517}{Warengruppen::clear}}()\ \{\ \mbox{\hyperlink{classWarengruppen_aadf745d9c42280c9c3cd47ba16d5710c}{mapGruppe}}.clear();\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00050}00050\ \mbox{\hyperlink{classWarengruppen}{Warengruppen}}\ \mbox{\hyperlink{classArtikel_acc0e9e2efdb39f46ccabf1ba845f5047}{Artikel::gruppe}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00051}\mbox{\hyperlink{classArtikel_ab87892348868c564b20a5a5a0fcb5cd2}{00051}}\ \mbox{\hyperlink{classArtikel_ab87892348868c564b20a5a5a0fcb5cd2}{Artikel::Artikel}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00052}\mbox{\hyperlink{classArtikel_a18c5b0543f34f969a2869192bf8afc7c}{00052}}\ \mbox{\hyperlink{classArtikel_ab87892348868c564b20a5a5a0fcb5cd2}{Artikel::Artikel}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ num,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bestand,}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}{masseinheit}}\ einheit,\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp,\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ np)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00054}00054\ \ \ \ \ :\ artikelname(name),\ artikelnummer(num),\ lagerbestand(bestand),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00055}00055\ \ \ \ \ \ \ einheit(einheit),\ verkaufpreis(vp),\ normpreis(np)\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00056}\mbox{\hyperlink{classArtikel_a919d51c4f7144d977436d46b3d649643}{00056}}\ \mbox{\hyperlink{classArtikel_a919d51c4f7144d977436d46b3d649643}{Artikel::\string~Artikel}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00058}\mbox{\hyperlink{classArtikel_a26b5f73a75444c9cc4f5a0b9a6b3248a}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_a26b5f73a75444c9cc4f5a0b9a6b3248a}{Artikel::setGruppe}}(\mbox{\hyperlink{classWarengruppen}{Warengruppen}}\ g)\ \{\ \mbox{\hyperlink{classArtikel_acc0e9e2efdb39f46ccabf1ba845f5047}{gruppe}}\ =\ g;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00059}\mbox{\hyperlink{classArtikel_a5d6957c608452333fbd97dfe68903538}{00059}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classArtikel_a5d6957c608452333fbd97dfe68903538}{Artikel::getName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_a292d7affab61cb3882afb07fd90f0fdd}{artikelname}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00060}\mbox{\hyperlink{classArtikel_a03226a80f8f65e33ef55370e524d85cf}{00060}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classArtikel_a03226a80f8f65e33ef55370e524d85cf}{Artikel::getArtikelnummer}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_ac8a5cb2ca379cdc94a8240c2c198ec37}{artikelnummer}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00061}\mbox{\hyperlink{classArtikel_a2d3babab7c98f37b16e4547e4c298306}{00061}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classArtikel_a2d3babab7c98f37b16e4547e4c298306}{Artikel::getLagerabstand}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_a2d90b637c7cfde30189fab4d74d0e1b6}{lagerbestand}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00062}\mbox{\hyperlink{classArtikel_a6673ed4baa8fe3190f23de55ea1ee680}{00062}}\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}{masseinheit}}\ \mbox{\hyperlink{classArtikel_a6673ed4baa8fe3190f23de55ea1ee680}{Artikel::getMasseinheit}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_a91b38941102bde28f0dfc1ddd76f21eb}{einheit}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00063}\mbox{\hyperlink{classArtikel_a900bcb74995ac0ae2e4089dfad32da30}{00063}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classArtikel_a900bcb74995ac0ae2e4089dfad32da30}{Artikel::getStrMasseinheit}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00064}00064\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classArtikel_a91b38941102bde28f0dfc1ddd76f21eb}{einheit}})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00065}00065\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Stk"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00067}00067\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}kg"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00069}00069\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}l"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00071}00071\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}None"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00073}00073\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00076}\mbox{\hyperlink{classArtikel_abb39b12f98c3bf5804f47b673627c261}{00076}}\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ \mbox{\hyperlink{classArtikel_abb39b12f98c3bf5804f47b673627c261}{Artikel::getVerkaufpreis}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00077}\mbox{\hyperlink{classArtikel_a9fe9802d1739baca518a46994a7e331d}{00077}}\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ \mbox{\hyperlink{classArtikel_a9fe9802d1739baca518a46994a7e331d}{Artikel::getNormpreis}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00078}\mbox{\hyperlink{classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa}{00078}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classArtikel_ad63de1c4058b5b31bdc74f549e5d2dfa}{Artikel::getGruppe}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00079}00079\ \ \ \textcolor{keywordtype}{string}\ artnum\ =\ \mbox{\hyperlink{classArtikel_ac8a5cb2ca379cdc94a8240c2c198ec37}{artikelnummer}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00080}00080\ \ \ artnum\ =\ artnum.erase(4);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00081}00081\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArtikel_acc0e9e2efdb39f46ccabf1ba845f5047}{gruppe}}.\mbox{\hyperlink{classWarengruppen_ac8850d8bf5e312c620125495c2235b4c}{getGruppe}}(artnum);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00082}00082\ \ \ \textcolor{comment}{//\ return\ artnum;}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00085}\mbox{\hyperlink{classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d}{00085}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d}{Artikel::setName}}(\textcolor{keywordtype}{string}\ name)\ \{\ \mbox{\hyperlink{classArtikel_a292d7affab61cb3882afb07fd90f0fdd}{artikelname}}\ =\ name;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00086}\mbox{\hyperlink{classArtikel_aa3c19491e117cf8c72c168a6a64b1663}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_aa3c19491e117cf8c72c168a6a64b1663}{Artikel::setArtikelnummer}}(\textcolor{keywordtype}{string}\ num)\ \{\ \mbox{\hyperlink{classArtikel_ac8a5cb2ca379cdc94a8240c2c198ec37}{artikelnummer}}\ =\ num;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00087}\mbox{\hyperlink{classArtikel_ada867198ef58d55e7515812983fe71c3}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_ada867198ef58d55e7515812983fe71c3}{Artikel::setLagerbestand}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bestand)\ \{\ \mbox{\hyperlink{classArtikel_a2d90b637c7cfde30189fab4d74d0e1b6}{lagerbestand}}\ =\ bestand;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00088}\mbox{\hyperlink{classArtikel_a238b06b2d69a41b69c145d92859889f9}{00088}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_a238b06b2d69a41b69c145d92859889f9}{Artikel::setMasseinheit}}(\mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}{masseinheit}}\ einheit)\ \{\ this-\/>einheit\ =\ \mbox{\hyperlink{classArtikel_a91b38941102bde28f0dfc1ddd76f21eb}{einheit}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00089}\mbox{\hyperlink{classArtikel_a43c3c148333da4650007c453c091cb51}{00089}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_a43c3c148333da4650007c453c091cb51}{Artikel::setVerkaufpreis}}(\mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp)\ \{\ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ =\ vp;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00090}\mbox{\hyperlink{classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5}{00090}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5}{Artikel::setNormpreis}}(\mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ np)\ \{\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}}\ =\ np;\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00092}\mbox{\hyperlink{classArtikel_a38a8a06be813582c5ca881e6f6127c3a}{00092}}\ std::ostream\ \&\mbox{\hyperlink{classArtikel_a38a8a06be813582c5ca881e6f6127c3a}{Artikel::print}}(std::ostream\ \&os)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00093}00093\ \ \ \textcolor{keywordflow}{return}\ os\ <<\ \mbox{\hyperlink{classArtikel_a292d7affab61cb3882afb07fd90f0fdd}{artikelname}}\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ \mbox{\hyperlink{classArtikel_ac8a5cb2ca379cdc94a8240c2c198ec37}{artikelnummer}}\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ \mbox{\hyperlink{classArtikel_a2d90b637c7cfde30189fab4d74d0e1b6}{lagerbestand}}\ <<\ \textcolor{stringliteral}{"{}|"{}}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ \mbox{\hyperlink{classArtikel_a900bcb74995ac0ae2e4089dfad32da30}{getStrMasseinheit}}()\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00097}\mbox{\hyperlink{lager_8cc_a1367b14f2250e61d309f2d035f8de0ed}{00097}}\ std::ostream\ \&\mbox{\hyperlink{lager_8cc_a1367b14f2250e61d309f2d035f8de0ed}{operator<<}}(std::ostream\ \&os,\ \mbox{\hyperlink{classArtikel}{Artikel}}\ produkt)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00098}00098\ \ \ \textcolor{keywordflow}{return}\ produkt.\mbox{\hyperlink{classArtikel_a38a8a06be813582c5ca881e6f6127c3a}{print}}(os);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00101}\mbox{\hyperlink{lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e}{00101}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lager_8cc_ad7ef13cad0ad63b42d1ae2212814325e}{operator>>}}(istream\ \&is,\ \mbox{\hyperlink{classArtikel}{Artikel}}\ \&produkt)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00102}00102\ \ \ vector<string>\ beschreibung;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00103}00103\ \ \ \textcolor{keywordtype}{string}\ text,\ name,\ num;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00104}00104\ \ \ \textcolor{keywordtype}{int}\ bestand\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00105}00105\ \ \ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp\ =\ 0,\ np\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00106}00106\ \ \ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8}{masseinheit}}\ einheit;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00108}00108\ \ \ getline(is,\ text);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00109}00109\ \ \ stringstream\ ss(text);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00111}00111\ \ \ \textcolor{keywordflow}{if}\ (!text[0])\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{throw}(-\/1);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00113}00113\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00114}00114\ \ \ text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00115}00115\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ getline(ss,\ text,\ \textcolor{charliteral}{'|'})\ \&\&\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00116}00116\ \ \ \ \ beschreibung.push\_back(text);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00117}00117\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00118}00118\ \ \ \textcolor{comment}{//\ cout\ <<\ beschreibung.size()<<\ endl;}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00119}00119\ \ \ \textcolor{keywordflow}{if}\ (beschreibung.size()\ <\ 5)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{throw}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00121}00121\ \ \ name\ =\ beschreibung[0];}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00122}00122\ \ \ num\ =\ beschreibung[1];}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00124}00124\ \ \ \textcolor{keywordflow}{if}\ (beschreibung[4]\ ==\ \textcolor{stringliteral}{"{}kg"{}})}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00125}00125\ \ \ \ \ einheit\ =\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8a8835e1c0ac1481cc67747c2ffb4dfbcd}{kg}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00126}00126\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (beschreibung[4]\ ==\ \textcolor{stringliteral}{"{}l"{}})}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00127}00127\ \ \ \ \ einheit\ =\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8afec48674e69529e52b1724bc9164052f}{l}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00128}00128\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (beschreibung[4]\ ==\ \textcolor{stringliteral}{"{}stk"{}})}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00129}00129\ \ \ \ \ einheit\ =\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8aabc4040cf42a969c39b3b1605436a9bd}{stk}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00130}00130\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00131}00131\ \ \ \ \ einheit\ =\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8aabc4040cf42a969c39b3b1605436a9bd}{stk}};}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00132}00132\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00134}00134\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ beschreibung[i].length();\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00136}00136\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (beschreibung[i][j]\ ==\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00137}00137\ \ \ \ \ \ \ \ \ beschreibung[i].erase(beschreibung[i].begin()\ +\ j);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00138}00138\ \ \ \ \ \ \ \ \ j-\/-\/;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00139}00139\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00141}00141\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00143}00143\ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{stringliteral}{"{}"{}}\ ||\ num\ ==\ \textcolor{stringliteral}{"{}"{}}\ ||\ num.length()\ !=\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{throw}(-\/1);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00145}00145\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00146}00146\ \ \ \textcolor{keywordflow}{if}\ (beschreibung[3]\ ==\ \textcolor{stringliteral}{"{}"{}}\ \&\&\ beschreibung[4]\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{throw}(-\/1);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00148}00148\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00150}00150\ \ \ \textcolor{keywordflow}{if}\ (beschreibung[2]\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00151}00151\ \ \ \ \ bestand\ =\ stoi(beschreibung[2]);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00152}00152\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00153}00153\ \ \ \ \ bestand\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00154}00154\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00155}00155\ \ \ \textcolor{keywordflow}{if}\ (beschreibung[3]\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00156}00156\ \ \ \ \ vp\ =\ stof(beschreibung[3]);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00157}00157\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00159}00159\ \ \ \textcolor{keywordflow}{if}\ (beschreibung.size()\ >\ 5\ \&\&\ beschreibung[5]\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00160}00160\ \ \ \ \ np\ =\ stof(beschreibung[5]);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00161}00161\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00162}00162\ \ \ \textcolor{keywordflow}{if}\ (vp\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00163}00163\ \ \ \ \ vp\ =\ np;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00164}00164\ \ \ \textcolor{keywordflow}{if}\ (np\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00165}00165\ \ \ \ \ np\ =\ vp;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00167}00167\ \ \ produkt.\mbox{\hyperlink{classArtikel_a238b06b2d69a41b69c145d92859889f9}{setMasseinheit}}(einheit);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00168}00168\ \ \ produkt.\mbox{\hyperlink{classArtikel_a9d7acb4495b74dc82ed6f6e63b97270d}{setName}}(beschreibung[0]);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00169}00169\ \ \ produkt.\mbox{\hyperlink{classArtikel_aa3c19491e117cf8c72c168a6a64b1663}{setArtikelnummer}}(beschreibung[1]);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00170}00170\ \ \ produkt.\mbox{\hyperlink{classArtikel_ada867198ef58d55e7515812983fe71c3}{setLagerbestand}}(bestand);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00171}00171\ \ \ produkt.\mbox{\hyperlink{classArtikel_a43c3c148333da4650007c453c091cb51}{setVerkaufpreis}}(vp);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00172}00172\ \ \ produkt.\mbox{\hyperlink{classArtikel_a347ef535f08ce2ff802a8e2c73b37fd5}{setNormpreis}}(np);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00175}\mbox{\hyperlink{classStueckgut_a616238cc8cd7fbbd0a5614e2108ef596}{00175}}\ \mbox{\hyperlink{classStueckgut_a616238cc8cd7fbbd0a5614e2108ef596}{Stueckgut::Stueckgut}}(\mbox{\hyperlink{classArtikel}{Artikel}}\ produkt)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00176}00176\ \ \ \ \ :\ \mbox{\hyperlink{classStueckgut}{Stueckgut}}(produkt.getName(),\ produkt.getArtikelnummer(),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkt.getVerkaufpreis(),\ produkt.getLagerabstand())\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00178}\mbox{\hyperlink{classStueckgut_a15e3b3bd3f926ee1d8e2499bb33dcc29}{00178}}\ \mbox{\hyperlink{classStueckgut_a616238cc8cd7fbbd0a5614e2108ef596}{Stueckgut::Stueckgut}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ num,\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bestand)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00179}00179\ \ \ \ \ :\ \mbox{\hyperlink{classArtikel}{Artikel}}(name,\ num,\ bestand,\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8aabc4040cf42a969c39b3b1605436a9bd}{stk}},\ vp,\ vp)\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00181}\mbox{\hyperlink{classSchuettgut_ad2f17d0570fc6f447a605c4eaeea13bb}{00181}}\ \mbox{\hyperlink{classSchuettgut_ad2f17d0570fc6f447a605c4eaeea13bb}{Schuettgut::Schuettgut}}(\mbox{\hyperlink{classArtikel}{Artikel}}\ produkt)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00182}00182\ \ \ \ \ :\ \mbox{\hyperlink{classSchuettgut}{Schuettgut}}(produkt.getName(),\ produkt.getArtikelnummer(),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkt.getVerkaufpreis()\ /\ produkt.getNormpreis(),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkt.getNormpreis(),\ produkt.getLagerabstand())\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00185}\mbox{\hyperlink{classSchuettgut_a7d6cc93c35da85222b9be26fa909496f}{00185}}\ \mbox{\hyperlink{classSchuettgut_ad2f17d0570fc6f447a605c4eaeea13bb}{Schuettgut::Schuettgut}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ num,\ \textcolor{keywordtype}{double}\ groesse,\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ np,}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bestand)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00187}00187\ \ \ \ \ :\ \mbox{\hyperlink{classArtikel}{Artikel}}(name,\ num,\ bestand,\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8a8835e1c0ac1481cc67747c2ffb4dfbcd}{kg}},\ (groesse\ *\ np),\ np),\ losgroesse(groesse)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00189}\mbox{\hyperlink{classSchuettgut_a12400a8813b499fbef8fc4ea44f2e644}{00189}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSchuettgut_a12400a8813b499fbef8fc4ea44f2e644}{Schuettgut::getLosgroesse}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSchuettgut_a94131712d19b1175724b9f4a309521e5}{losgroesse}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00190}\mbox{\hyperlink{classSchuettgut_a4e18db86d5cc620b42011b60f330ca50}{00190}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSchuettgut_a4e18db86d5cc620b42011b60f330ca50}{Schuettgut::setLosgroesse}}(\textcolor{keywordtype}{double}\ groesse)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00191}00191\ \ \ \mbox{\hyperlink{classSchuettgut_a94131712d19b1175724b9f4a309521e5}{losgroesse}}\ =\ groesse;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00192}00192\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ =\ int((\mbox{\hyperlink{classSchuettgut_a94131712d19b1175724b9f4a309521e5}{losgroesse}}\ *\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}})\ *\ 100\ +\ 0.5);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00193}00193\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ /=\ 100;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00195}\mbox{\hyperlink{classSchuettgut_a28d8e609a231002586a949a8c95b72ec}{00195}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSchuettgut_a28d8e609a231002586a949a8c95b72ec}{Schuettgut::setVerkaufpreis}}(\mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00196}00196\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ =\ vp;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00197}00197\ \ \ \mbox{\hyperlink{classSchuettgut_a94131712d19b1175724b9f4a309521e5}{losgroesse}}\ =\ int((\mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ /\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}})\ *\ 100\ +\ 0.5);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00198}00198\ \ \ \mbox{\hyperlink{classSchuettgut_a94131712d19b1175724b9f4a309521e5}{losgroesse}}\ /=\ 100;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00199}00199\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00201}\mbox{\hyperlink{classFluessigkeit_a7df52cbdc0b16eb2893e7b191d946e88}{00201}}\ \mbox{\hyperlink{classFluessigkeit_a7df52cbdc0b16eb2893e7b191d946e88}{Fluessigkeit::Fluessigkeit}}(\mbox{\hyperlink{classArtikel}{Artikel}}\ produkt)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00202}00202\ \ \ \ \ :\ \mbox{\hyperlink{classFluessigkeit}{Fluessigkeit}}(produkt.getName(),\ produkt.getArtikelnummer(),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkt.getVerkaufpreis()\ /\ produkt.getNormpreis(),}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkt.getNormpreis(),\ produkt.getLagerabstand())\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00205}\mbox{\hyperlink{classFluessigkeit_a150e65b4951336d00a3dfc2b2a8b9ce4}{00205}}\ \mbox{\hyperlink{classFluessigkeit_a7df52cbdc0b16eb2893e7b191d946e88}{Fluessigkeit::Fluessigkeit}}(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ num,\ \textcolor{keywordtype}{double}\ vol,\ \mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ np,}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bestand)}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00207}00207\ \ \ \ \ :\ \mbox{\hyperlink{classArtikel}{Artikel}}(name,\ num,\ bestand,\ \mbox{\hyperlink{lager_8hh_ad4e2de7dee91aceabe93c82ec93288b8afec48674e69529e52b1724bc9164052f}{l}},\ (vol\ *\ np),\ np),\ volume(vol)\ \{\}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00208}\mbox{\hyperlink{classFluessigkeit_ab5da321475ed03f532f5812f4d256539}{00208}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classFluessigkeit_ab5da321475ed03f532f5812f4d256539}{Fluessigkeit::getVolume}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFluessigkeit_a1487559d2825515bf479c19c1a9a86f7}{volume}};\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00209}\mbox{\hyperlink{classFluessigkeit_a624753ee9ce57b771883bd6ad6949af5}{00209}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFluessigkeit_a624753ee9ce57b771883bd6ad6949af5}{Fluessigkeit::setVolume}}(\textcolor{keywordtype}{double}\ vol)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00210}00210\ \ \ \mbox{\hyperlink{classFluessigkeit_a1487559d2825515bf479c19c1a9a86f7}{volume}}\ =\ vol;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00211}00211\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ =\ int((\mbox{\hyperlink{classFluessigkeit_a1487559d2825515bf479c19c1a9a86f7}{volume}}\ *\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}})\ *\ 100\ +\ 0.5);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00212}00212\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ /=\ 100;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00214}\mbox{\hyperlink{classFluessigkeit_a66cf7a591b16c805055d0c6435ab9f1e}{00214}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFluessigkeit_a66cf7a591b16c805055d0c6435ab9f1e}{Fluessigkeit::setVerkaufpreis}}(\mbox{\hyperlink{lager_8hh_afc8975df94888b9d2632ca5cd51dcaa3}{preis}}\ vp)\ \{}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00215}00215\ \ \ \mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ =\ vp;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00216}00216\ \ \ \mbox{\hyperlink{classFluessigkeit_a1487559d2825515bf479c19c1a9a86f7}{volume}}\ =\ int((\mbox{\hyperlink{classArtikel_a74dfff0f629fc7bbe3f6a0f064b21931}{verkaufpreis}}\ /\ \mbox{\hyperlink{classArtikel_a6cdb909d6ce5efad3295eded75a67c37}{normpreis}})\ *\ 100\ +\ 0.5);}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00217}00217\ \ \ \mbox{\hyperlink{classFluessigkeit_a1487559d2825515bf479c19c1a9a86f7}{volume}}\ /=\ 100;}
+\DoxyCodeLine{\Hypertarget{lager_8cc_source_l00218}00218\ \}}
+
+\end{DoxyCode}
