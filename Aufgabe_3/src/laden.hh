@@ -49,6 +49,21 @@ public:
   Regal(string name, Lager &lager, std::set<int> warengruppen);
 
   /**
+   * @brief Template-Funktion zum Abrufen von Produkten basierend auf den
+   * angegebenen Kriterien.
+   *
+   * Diese Funktion ruft Produkte aus dem Regal basierend auf bestimmten
+   * Kriterien ab und gibt die Ergebnisse an den angegebenen Ausgabeiterator
+   * aus.
+   *
+   * @tparam OutputIterator Der Typ des Ausgabeiterators, der den Container
+   * oder das Ziel repraesentiert, in das die Produkt eingefuegt werden sollen.
+   * @param out Der Ausgabeiterator, der das Ziel für die Produkte
+   * repräsentiert.
+   */
+  template <class OutputIterator> void products(OutputIterator out) const;
+
+  /**
    * @brief Gibt eine Referenz auf das Lager zurueck, zu dem das Regal gehoert.
    *
    * @return Eine Referenz auf das Lager.

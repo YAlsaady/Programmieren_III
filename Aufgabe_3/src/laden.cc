@@ -38,21 +38,27 @@ std::set<int> Regal::getWaren() const { return waren; }
 
 Artikel Regal::getArtikel(string num) const { return lager.getArtikel(num); }
 
-vector<string> Regal::getImRegal() const {
+template <class OutputIterator> 
+void Regal::products(OutputIterator out) const {
+  cout << "Test Template" << endl;
   Lager::artikelMap map = lager.getMap();
-  vector<string> imRegal;
   for (int ware : waren) {
     Lager::artikelMap::iterator it = map.begin();
     while (it != map.end()) {
       int num = (*it->second).getGruppe();
       num /= 100;
       if (ware == num) {
-        imRegal.push_back(it->first);
         // cout << typeid(*it->second).name() << endl;
+        *out = it->first;
+        ++out;
       }
       it++;
     }
   }
+}
+vector<string> Regal::getImRegal() const {
+  vector<std::string> imRegal;
+  products(std::back_insert_iterator(imRegal));
   return imRegal;
 }
 
