@@ -40,12 +40,17 @@ Artikel Regal::getArtikel(string num) const { return lager.getArtikel(num); }
 
 template <class OutputIterator> 
 void Regal::products(OutputIterator out) const {
+  Lager::artikelMap map = lager.getMap();
   for (int ware : waren) {
-    for(auto const it : lager.getMap()){
-      if (ware == (it.second->getGruppe() / 100)) {
-        *out = it.first;
+    Lager::artikelMap::iterator it = map.begin();
+    while (it != map.end()) {
+      int num = (*it->second).getGruppe();
+      num /= 100;
+      if (ware == num) {
+        *out = it->first;
         out++;
       }
+      it++;
     }
   }
 }
