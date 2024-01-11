@@ -1,5 +1,5 @@
 CXX = g++
-CFLAGS = -Wall -Wextra -pedantic 
+CFLAGS = -Wall -Wextra -pedantic -O3
 SRC1 = $(wildcard *.cc)
 SRC2 = $(wildcard *.cpp)
 OBJ1 = $(patsubst %.cc, build/%.o, $(SRC1))
@@ -22,4 +22,4 @@ clean:
 	rm -rf build
 
 run:
-	./build/main -i waren.txt -o $(shell date +'%d.%m.%Y').txt
+	./build/main 
